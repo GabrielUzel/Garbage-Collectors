@@ -16,10 +16,10 @@ jobs:
           dotnet-version: 9.0.202
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore Tests/
 
       - name: Run Tests
-        run: dotnet test
+        run: dotnet test Tests/
 
   build:
     name: Build for ${{ matrix.targetPlatform }}
