@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1094852614}
   - component: {fileID: 1094852613}
   - component: {fileID: 1094852612}
+  - component: {fileID: 1094852616}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -337,7 +338,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094852610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1233711f44c3fa4bae6b52afb741a00, type: 3}
   m_Name: 
@@ -386,9 +387,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1094852612}
-        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
-        m_MethodName: doQuitGame
+      - m_Target: {fileID: 1094852616}
+        m_TargetAssemblyTypeName: ReturnButtonHandler, Scripts
+        m_MethodName: LoadMainMenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -436,6 +437,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094852610}
   m_CullTransparentMesh: 1
+--- !u!114 &1094852616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094852610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6dccca89c7eb34fb9b99f4d2da9c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1146642375
 GameObject:
   m_ObjectHideFlags: 0
