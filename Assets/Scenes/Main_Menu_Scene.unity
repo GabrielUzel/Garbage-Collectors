@@ -494,6 +494,8 @@ GameObject:
   - component: {fileID: 831497161}
   - component: {fileID: 831497160}
   - component: {fileID: 831497159}
+  - component: {fileID: 831497162}
+  - component: {fileID: 831497163}
   m_Layer: 5
   m_Name: WasteCatalogButton
   m_TagString: Untagged
@@ -534,17 +536,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: -1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.8704806, g: 0.93962264, b: 0.93723553, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -552,7 +554,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -564,7 +566,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831497160}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 831497162}
+        m_TargetAssemblyTypeName: WasteCatalogButtonHandler, Scripts
+        m_MethodName: LoadWasteCatalogScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Waste-Catalog-Scene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &831497160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +617,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831497157}
   m_CullTransparentMesh: 1
+--- !u!114 &831497162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831497157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9197cd633a8eeb4a828b7af6ac447f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &831497163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831497157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7179d2139bf85fe47af381c429721fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &844028114
 GameObject:
   m_ObjectHideFlags: 0

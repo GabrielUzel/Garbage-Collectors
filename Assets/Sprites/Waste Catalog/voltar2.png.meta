@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e89ad5cbf14718341a15587ee6b74f4a
+guid: 9ab4e73d0efe7d3499ceab0c51cab2e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2028552309428718345
-    second: sound_effects_off_0
+      213: -1865791877794370795
+    second: voltar2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sound_effects_off_0
+      name: voltar2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1080
-        height: 902
+        height: 901
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f4f33c1c6229d3e0800000000000000
-      internalID: -2028552309428718345
+      spriteID: 51be14b2c206b16e0800000000000000
+      internalID: -1865791877794370795
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sound_effects_off_0: -2028552309428718345
+      voltar2_0: -1865791877794370795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
