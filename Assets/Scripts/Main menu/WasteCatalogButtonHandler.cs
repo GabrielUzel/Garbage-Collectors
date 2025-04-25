@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class WasteCatalogButtonHandler : MonoBehaviour
 {
-
-     public void LoadWasteCatalogScene()
-      {
-          SceneManager.LoadScene("Waste-Catalog-Scene");
-      }
-    
+    public void LoadWasteCatalogScene()
+    {
+        SceneManager.LoadScene("Waste-Catalog-Scene");
+    }
 }
