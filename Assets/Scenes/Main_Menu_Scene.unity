@@ -495,7 +495,6 @@ GameObject:
   - component: {fileID: 831497160}
   - component: {fileID: 831497159}
   - component: {fileID: 831497162}
-  - component: {fileID: 831497163}
   m_Layer: 5
   m_Name: WasteCatalogButton
   m_TagString: Untagged
@@ -567,16 +566,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 831497162}
-        m_TargetAssemblyTypeName: WasteCatalogButtonHandler, Scripts
-        m_MethodName: LoadWasteCatalogScene
+      - m_Target: {fileID: 11500000, guid: a9197cd633a8eeb4a828b7af6ac447f1, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Waste-Catalog-Scene
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &831497160
@@ -627,18 +626,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9197cd633a8eeb4a828b7af6ac447f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &831497163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831497157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7179d2139bf85fe47af381c429721fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &844028114

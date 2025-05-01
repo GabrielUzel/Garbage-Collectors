@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ReturnButtonHandler : MonoBehaviour
+public class ReturnButtonController : MonoBehaviour
 {
     public void LoadMainMenuScene()
     {
