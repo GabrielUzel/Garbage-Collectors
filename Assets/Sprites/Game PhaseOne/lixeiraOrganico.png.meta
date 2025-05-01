@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lixeiraOrganico_0: -8853527402272089365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

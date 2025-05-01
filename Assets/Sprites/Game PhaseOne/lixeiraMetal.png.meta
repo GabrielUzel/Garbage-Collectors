@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lixeiraMetal_0: -8236097986800022497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
