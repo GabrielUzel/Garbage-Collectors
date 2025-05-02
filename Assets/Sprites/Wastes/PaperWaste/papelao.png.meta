@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5592390b79e87904e8930280eb6f9d2a
+guid: c66754cd9c9f5994b9e78bfde3a1ce5c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 522088977183124511
-    second: embalagens-de-produto-de-limpeza_0
+      213: 3452070352657992247
+    second: papelao_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: embalagens-de-produto-de-limpeza_0
+      name: papelao_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 512
-        height: 478
+        x: 55
+        y: 55
+        width: 402
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1ca52a9825de3700800000000000000
-      internalID: 522088977183124511
+      spriteID: 73a46d522b738ef20800000000000000
+      internalID: 3452070352657992247
       vertices: []
       indices: 
       edges: []

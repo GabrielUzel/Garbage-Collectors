@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] plasticWastes; // array com todos os prefabs
-    public int amount = 100000000; // número total de objetos a gerar
+    public GameObject[] Wastes; 
+    public int amount = 100000000;
 
     void Start()
     {
@@ -12,13 +12,13 @@ public class Spawner : MonoBehaviour
 
     void GerarObjetos()
     {
-        if (plasticWastes.Length == 0)
+        if (Wastes.Length == 0)
         {
-            Debug.LogWarning("Nenhum prefab atribuído ao array 'plasticWastes'.");
+            Debug.LogWarning("Nenhum prefab atribuído ao array 'Wastes'.");
             return;
         }
 
-        int totalTypes = plasticWastes.Length;
+        int totalTypes = Wastes.Length;
         int baseAmount = amount / totalTypes;
         int extra = amount % totalTypes;
 
@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
             for (int j = 0; j < objectsToSpawn; j++)
             {
                 Vector2 randomPosition = GenerateRandomPosition();
-                Instantiate(plasticWastes[i], randomPosition, Quaternion.identity);
+                Instantiate(Wastes[i], randomPosition, Quaternion.identity);
             }
         }
     }
