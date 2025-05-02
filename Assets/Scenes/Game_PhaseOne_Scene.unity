@@ -167,8 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c045cdb531ae7343b7292876fb71867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlasticCup1: {fileID: 2401834701937866557, guid: b921ab6f1210a8748954b80ce24b20a6, type: 3}
-  amount: 10
+  plasticWastes:
+  - {fileID: 2401834701937866557, guid: 19cc8db49696f1d488ae00de9bdd5630, type: 3}
+  - {fileID: 2401834701937866557, guid: b921ab6f1210a8748954b80ce24b20a6, type: 3}
+  - {fileID: 2401834701937866557, guid: cc4856309de42024cbcd2ae73ec7c978, type: 3}
+  amount: 100
 --- !u!1 &411639752
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.5, y: -199}
+  m_AnchoredPosition: {x: -407.49997, y: -199}
   m_SizeDelta: {x: -897, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &815049293
