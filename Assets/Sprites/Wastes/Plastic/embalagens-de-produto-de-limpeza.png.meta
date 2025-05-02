@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fac1bb6b94694ee4fa446d78cde86867
+guid: 5592390b79e87904e8930280eb6f9d2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9158555635218862786
-    second: efeitosOff_0
+      213: 522088977183124511
+    second: embalagens-de-produto-de-limpeza_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: efeitosOff_0
+      name: embalagens-de-produto-de-limpeza_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1080
-        height: 902
+        y: 17
+        width: 512
+        height: 478
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3da0238c2646e080800000000000000
-      internalID: -9158555635218862786
+      spriteID: f1ca52a9825de3700800000000000000
+      internalID: 522088977183124511
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      efeitosOff_0: -9158555635218862786
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
