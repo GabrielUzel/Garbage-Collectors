@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6435ef7b7d4f5d247a081e173a4635c5
+guid: 925a3b9fe8048e743831eedb2af1fa45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1871015954481326989
-    second: musicaOn_0
+      213: -5958691657180897121
+    second: garrafa-pet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: musicaOn_0
+      name: garrafa-pet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 143
         y: 0
-        width: 1080
-        height: 902
+        width: 226
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3745d0807e0d806e0800000000000000
-      internalID: -1871015954481326989
+      spriteID: f9026af12897e4da0800000000000000
+      internalID: -5958691657180897121
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      musicaOn_0: -1871015954481326989
+      garrafa-pet_0: -5958691657180897121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

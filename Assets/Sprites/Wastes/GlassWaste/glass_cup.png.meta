@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c66754cd9c9f5994b9e78bfde3a1ce5c
+guid: 203e60fcdf270ae4cbe8f525cd2bcbd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3452070352657992247
-    second: papelao_0
+      213: -3405386829925400341
+    second: copo-de-vidro_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: papelao_0
+      name: copo-de-vidro_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 55
-        width: 402
-        height: 354
+        x: 95
+        y: 0
+        width: 322
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73a46d522b738ef20800000000000000
-      internalID: 3452070352657992247
+      spriteID: be0c08f78b2adb0d0800000000000000
+      internalID: -3405386829925400341
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      copo-de-vidro_0: -3405386829925400341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

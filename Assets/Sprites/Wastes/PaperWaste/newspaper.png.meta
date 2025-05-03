@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 19cd0c8e31d210840a0cc645571cba37
+guid: 5558d03c03c9bea4aa622a9e7c23386b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2575262340757203794
-    second: canudo_0
-  - first:
-      213: -320419392885504677
-    second: canudo_1
-  - first:
-      213: -390760643344479512
-    second: canudo_2
+      213: -3654593817251309115
+    second: jornal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -119,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: canudo_0
+      name: jornal_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 0
-        width: 129
-        height: 506
+        x: 21
+        y: 104
+        width: 470
+        height: 304
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25b2640647b2db320800000000000000
-      internalID: 2575262340757203794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: canudo_1
-      rect:
-        serializedVersion: 2
-        x: 219
-        y: 0
-        width: 60
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b55c9e38244ad8bf0800000000000000
-      internalID: -320419392885504677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: canudo_2
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 0
-        width: 142
-        height: 489
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8eacf35e34db39af0800000000000000
-      internalID: -390760643344479512
+      spriteID: 5c9956c3946484dc0800000000000000
+      internalID: -3654593817251309115
       vertices: []
       indices: 
       edges: []
@@ -197,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      jornal_0: -3654593817251309115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

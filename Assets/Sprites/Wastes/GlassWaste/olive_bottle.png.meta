@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f2120009fe3b5e246b54e79a23665c55
+guid: ace87a8ee98f689489cc5295f8dd8af0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1180109681982136634
-    second: efeitosOn_0
+      213: 673617043452196552
+    second: vidro-de-azeite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: efeitosOn_0
+      name: vidro-de-azeite_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 66
         y: 0
-        width: 1080
-        height: 902
+        width: 380
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a316b86d087906010800000000000000
-      internalID: 1180109681982136634
+      spriteID: 8c6fd9dc12b295900800000000000000
+      internalID: 673617043452196552
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      efeitosOn_0: 1180109681982136634
+      vidro-de-azeite_0: 673617043452196552
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] Wastes; 
+    public GameObject[] Wastes;
     public int amount = 100000000;
 
     void Start()
     {
-        GerarObjetos();
+        GenerateWastes();
     }
 
-    void GerarObjetos()
+    void GenerateWastes()
     {
         if (Wastes.Length == 0)
         {

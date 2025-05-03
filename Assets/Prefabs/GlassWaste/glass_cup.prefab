@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 336014868783027081}
   - component: {fileID: -3923938951105980915}
   m_Layer: 5
-  m_Name: YellowStraw
+  m_Name: glass_cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -390760643344479512, guid: 19cd0c8e31d210840a0cc645571cba37, type: 3}
+  m_Sprite: {fileID: -3405386829925400341, guid: 203e60fcdf270ae4cbe8f525cd2bcbd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
