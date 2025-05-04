@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d654e8830f27a424e9c2470f753ae83f
+guid: 015d20b9e91c79348a21f3e6bdcfba41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6603347801808154869
-    second: sacola_0
+      213: -3292357944798076309
+    second: copo-de-plastico_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sacola_0
+      name: copo-de-plastico_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 0
-        width: 406
-        height: 512
+        x: 74
+        y: 4
+        width: 364
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f0b127f6ddc3ab50800000000000000
-      internalID: 6603347801808154869
+      spriteID: b6220e294e13f42d0800000000000000
+      internalID: -3292357944798076309
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      copo-de-plastico_0: -3292357944798076309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

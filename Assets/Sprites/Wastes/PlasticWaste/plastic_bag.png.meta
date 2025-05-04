@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f249c15f6ca0892488412987a5296188
+guid: d654e8830f27a424e9c2470f753ae83f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 864901563841675910
-    second: guardanapo_0
+      213: 6603347801808154869
+    second: sacola_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: guardanapo_0
+      name: sacola_0
       rect:
         serializedVersion: 2
-        x: 28
+        x: 53
         y: 0
-        width: 456
+        width: 406
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 682867ec36fb00c00800000000000000
-      internalID: 864901563841675910
+      spriteID: 5f0b127f6ddc3ab50800000000000000
+      internalID: 6603347801808154869
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sacola_0: 6603347801808154869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
