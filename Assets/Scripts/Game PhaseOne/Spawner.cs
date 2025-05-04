@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
 
     Vector2 GenerateRandomPosition()
     {
-        Vector2 screenPosition = new Vector2(Random.Range(0f, Screen.width), Random.Range(0f, Screen.height));
+        Vector2 screenPosition = new Vector2(Random.Range(0f, Screen.width), Random.Range(0f, Screen.height/2));
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
         return worldPosition;
     }
