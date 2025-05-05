@@ -14,5 +14,6 @@ public class SoundEffectsController : MonoBehaviour {
         isMuted = !isMuted;
         // soundEffectsSource.SetFloat("SFXVolume", isSfxMuted ? -80f : 0f);
         soundEffectsButton.image.sprite = isMuted ? soundEffectsOff : soundEffectsOn;
+        
     }
 }
