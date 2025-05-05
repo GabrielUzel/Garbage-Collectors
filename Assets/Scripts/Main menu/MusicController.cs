@@ -23,7 +23,6 @@ public class MusicController : MonoBehaviour {
         
         audioSource.volume = musicIsMuted ? 0f : 1f;
 
-        print(audioSource.volume);
         musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
     }
 }
