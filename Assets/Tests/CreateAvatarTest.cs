@@ -32,5 +32,5 @@ public class CreateAvatarTest
 
     public void ApplySelectGirlTest(){}
 
-    public void SetImageOpacityTest(Image img, float alpha){}
+    public void SetImageOpacityTest(){}
 }
