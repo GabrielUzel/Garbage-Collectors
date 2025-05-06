@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class ButtonPopUp : MonoBehaviour
 {    public void BackHome()
     {
-        SceneManager.LoadScene("Main_Menu_Scene");
+          SceneManager.LoadScene("Main_Menu_Scene");
     }
 
     
