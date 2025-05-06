@@ -148,14 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meninaAcenando: {fileID: 841626103}
-  meninoAcenando: {fileID: 1996985733}
-  meninoSelecionarImage: {fileID: 515319834}
-  meninaSelecionarImage: {fileID: 1096156296}
-  meninoSelecionarBtn: {fileID: 515319830}
-  meninoSelecionadoBtn: {fileID: 810222537}
-  meninaSelecionarBtn: {fileID: 1096156292}
-  meninaSelecionadoBtn: {fileID: 1616449240}
+  girlWaving: {fileID: 841626103}
+  boyWaving: {fileID: 1996985733}
+  selectBoyImage: {fileID: 515319834}
+  selectGirlImage: {fileID: 1096156296}
+  selectBoyBtn: {fileID: 515319830}
+  selectedBoyBtn: {fileID: 810222537}
+  selectGirlBtn: {fileID: 1096156292}
+  selectedGirlBtn: {fileID: 1616449240}
 --- !u!4 &37925405
 Transform:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8844519564237029997, guid: 0768aefeac59a2d4ca0f7e1924e5d12b, type: 3}
+  m_Sprite: {fileID: -8586693324203152019, guid: 0768aefeac59a2d4ca0f7e1924e5d12b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -453,14 +453,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meninaAcenando: {fileID: 841626103}
-  meninoAcenando: {fileID: 1996985733}
-  meninoSelecionarImage: {fileID: 515319834}
-  meninaSelecionarImage: {fileID: 1096156296}
-  meninoSelecionarBtn: {fileID: 515319830}
-  meninoSelecionadoBtn: {fileID: 810222537}
-  meninaSelecionarBtn: {fileID: 1096156292}
-  meninaSelecionadoBtn: {fileID: 1616449240}
+  girlWaving: {fileID: 841626103}
+  boyWaving: {fileID: 1996985733}
+  selectBoyImage: {fileID: 515319834}
+  selectGirlImage: {fileID: 1096156296}
+  selectBoyBtn: {fileID: 515319830}
+  selectedBoyBtn: {fileID: 810222537}
+  selectGirlBtn: {fileID: 1096156292}
+  selectedGirlBtn: {fileID: 1616449240}
 --- !u!1 &561572768
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4860819755821110834, guid: 208b4ede31bc12749ae142381aeab6b4, type: 3}
+  m_Sprite: {fileID: -995779289211046693, guid: 208b4ede31bc12749ae142381aeab6b4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -904,19 +904,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 810222541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: avatarCustomization, Assembly-CSharp
-        m_MethodName: Start
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &810222541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8193671410091104729, guid: e3235b16e2ee5664d86d2938e8aee56d, type: 3}
+  m_Sprite: {fileID: 7586469070100464371, guid: e3235b16e2ee5664d86d2938e8aee56d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1012,7 +1000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5264420026233044711, guid: c0e3a1840b4571442a8115c34d3c51ef, type: 3}
+  m_Sprite: {fileID: -3531168494600248182, guid: c0e3a1840b4571442a8115c34d3c51ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1224,7 +1212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2401033671934805638, guid: 88c9368072d92bf43bdaf0d3d73c4009, type: 3}
+  m_Sprite: {fileID: -7443756053782179069, guid: 88c9368072d92bf43bdaf0d3d73c4009, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1254,14 +1242,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meninaAcenando: {fileID: 841626103}
-  meninoAcenando: {fileID: 1996985733}
-  meninoSelecionarImage: {fileID: 515319834}
-  meninaSelecionarImage: {fileID: 1096156296}
-  meninoSelecionarBtn: {fileID: 515319830}
-  meninoSelecionadoBtn: {fileID: 810222537}
-  meninaSelecionarBtn: {fileID: 1096156292}
-  meninaSelecionadoBtn: {fileID: 1616449240}
+  girlWaving: {fileID: 0}
+  boyWaving: {fileID: 0}
+  selectBoyImage: {fileID: 0}
+  selectGirlImage: {fileID: 0}
+  selectBoyBtn: {fileID: 0}
+  selectedBoyBtn: {fileID: 0}
+  selectGirlBtn: {fileID: 0}
+  selectedGirlBtn: {fileID: 0}
 --- !u!1 &1096156292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8844519564237029997, guid: 0768aefeac59a2d4ca0f7e1924e5d12b, type: 3}
+  m_Sprite: {fileID: -8586693324203152019, guid: 0768aefeac59a2d4ca0f7e1924e5d12b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1408,14 +1396,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meninaAcenando: {fileID: 841626103}
-  meninoAcenando: {fileID: 1996985733}
-  meninoSelecionarImage: {fileID: 515319834}
-  meninaSelecionarImage: {fileID: 1096156296}
-  meninoSelecionarBtn: {fileID: 515319830}
-  meninoSelecionadoBtn: {fileID: 810222537}
-  meninaSelecionarBtn: {fileID: 1096156292}
-  meninaSelecionadoBtn: {fileID: 1616449240}
+  girlWaving: {fileID: 841626103}
+  boyWaving: {fileID: 1996985733}
+  selectBoyImage: {fileID: 515319834}
+  selectGirlImage: {fileID: 1096156296}
+  selectBoyBtn: {fileID: 515319830}
+  selectedBoyBtn: {fileID: 810222537}
+  selectGirlBtn: {fileID: 1096156292}
+  selectedGirlBtn: {fileID: 1616449240}
 --- !u!1 &1356622920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,7 +1761,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8193671410091104729, guid: e3235b16e2ee5664d86d2938e8aee56d, type: 3}
+  m_Sprite: {fileID: 7586469070100464371, guid: e3235b16e2ee5664d86d2938e8aee56d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2005,7 +1993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8264895967306619451, guid: e90d397705f73714aa4b0c84e65d1526, type: 3}
+  m_Sprite: {fileID: 6381638239514321969, guid: e90d397705f73714aa4b0c84e65d1526, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

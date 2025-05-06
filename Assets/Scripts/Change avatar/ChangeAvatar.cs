@@ -4,55 +4,55 @@ using UnityEngine.UI;
 
 public class ChangeAvatar : MonoBehaviour
 {
-    public Image meninaAcenando;
-    public Image meninoAcenando;
-    public Image meninoSelecionarImage;
-    public Image meninaSelecionarImage;
+    public Image girlWaving;
+    public Image boyWaving;
+    public Image selectBoyImage;
+    public Image selectGirlImage;
 
-    public GameObject meninoSelecionarBtn;
-    public GameObject meninoSelecionadoBtn;
-    public GameObject meninaSelecionarBtn;
-    public GameObject meninaSelecionadoBtn;
+    public GameObject selectBoyBtn;
+    public GameObject selectedBoyBtn;
+    public GameObject selectGirlBtn;
+    public GameObject selectedGirlBtn;
 
     private float fadedOpacity = 0.8f;
     private float fullOpacity = 1f;
 
-    private string avatarSelecionado = "";
+    private string selectedAvatar = "";
 
     void Start()
     {
         // Pegamos o avatar salvo, se existir
-        avatarSelecionado = PlayerPrefs.GetString("avatarSelecionado", "");
+        selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
 
-        if (avatarSelecionado == "menino")
+        if (selectedAvatar == "boy")
         {
             ApplySelectBoy();
         }
-        else if (avatarSelecionado == "menina")
+        else if (selectedAvatar == "girl")
         {
             ApplySelectGirl();
         }
         else
         {
             // Nenhum avatar selecionado: mostrar estado neutro
-            SetImageOpacity(meninoAcenando, fullOpacity);
-            SetImageOpacity(meninaAcenando, fullOpacity);
+            SetImageOpacity(boyWaving, fullOpacity);
+            SetImageOpacity(girlWaving, fullOpacity);
 
-            meninoSelecionadoBtn.SetActive(false);
-            meninoSelecionarBtn.SetActive(true);
+            selectedBoyBtn.SetActive(false);
+            selectBoyBtn.SetActive(true);
 
-            meninaSelecionadoBtn.SetActive(false);
-            meninaSelecionarBtn.SetActive(true);
+            selectedGirlBtn.SetActive(false);
+            selectGirlBtn.SetActive(true);
 
-            SetImageOpacity(meninoSelecionarImage, fullOpacity);
-            SetImageOpacity(meninaSelecionarImage, fullOpacity);
+            SetImageOpacity(selectBoyImage, fullOpacity);
+            SetImageOpacity(selectGirlImage, fullOpacity);
         }
     }
 
     public void SelectGirl()
     {
-        avatarSelecionado = "menina";
-        PlayerPrefs.SetString("avatarSelecionado", avatarSelecionado);
+        selectedAvatar = "girl";
+        PlayerPrefs.SetString("selected_avatar", selectedAvatar);
         PlayerPrefs.Save();
 
         ApplySelectGirl();
@@ -60,8 +60,8 @@ public class ChangeAvatar : MonoBehaviour
 
     public void SelectBoy()
     {
-        avatarSelecionado = "menino";
-        PlayerPrefs.SetString("avatarSelecionado", avatarSelecionado);
+        selectedAvatar = "boy";
+        PlayerPrefs.SetString("selected_avatar", selectedAvatar);
         PlayerPrefs.Save();
 
         ApplySelectBoy();
@@ -69,32 +69,32 @@ public class ChangeAvatar : MonoBehaviour
 
     private void ApplySelectGirl()
     {
-        SetImageOpacity(meninoSelecionarImage, fadedOpacity);
-        SetImageOpacity(meninaSelecionarImage, fullOpacity);
+        SetImageOpacity(selectBoyImage, fadedOpacity);
+        SetImageOpacity(selectGirlImage, fullOpacity);
 
-        SetImageOpacity(meninoAcenando, fadedOpacity);
-        SetImageOpacity(meninaAcenando, fullOpacity);
+        SetImageOpacity(boyWaving, fadedOpacity);
+        SetImageOpacity(girlWaving, fullOpacity);
 
-        meninoSelecionadoBtn.SetActive(false);
-        meninoSelecionarBtn.SetActive(true);
+        selectedBoyBtn.SetActive(false);
+        selectBoyBtn.SetActive(true);
 
-        meninaSelecionadoBtn.SetActive(true);
-        meninaSelecionarBtn.SetActive(false);
+        selectedGirlBtn.SetActive(true);
+        selectGirlBtn.SetActive(false);
     }
 
     private void ApplySelectBoy()
     {
-        SetImageOpacity(meninoSelecionarImage, fullOpacity);
-        SetImageOpacity(meninaSelecionarImage, fadedOpacity);
+        SetImageOpacity(selectBoyImage, fullOpacity);
+        SetImageOpacity(selectGirlImage, fadedOpacity);
 
-        SetImageOpacity(meninoAcenando, fullOpacity);
-        SetImageOpacity(meninaAcenando, fadedOpacity);
+        SetImageOpacity(boyWaving, fullOpacity);
+        SetImageOpacity(girlWaving, fadedOpacity);
 
-        meninoSelecionadoBtn.SetActive(true);
-        meninoSelecionarBtn.SetActive(false);
+        selectedBoyBtn.SetActive(true);
+        selectBoyBtn.SetActive(false);
 
-        meninaSelecionadoBtn.SetActive(false);
-        meninaSelecionarBtn.SetActive(true);
+        selectedGirlBtn.SetActive(false);
+        selectGirlBtn.SetActive(true);
     }
 
     void SetImageOpacity(Image img, float alpha)
@@ -104,10 +104,6 @@ public class ChangeAvatar : MonoBehaviour
             Color color = img.color;
             color.a = alpha;
             img.color = color;
-        }
-        else
-        {
-            Debug.LogWarning("Tentando alterar opacidade de uma imagem que não foi atribuída.");
         }
     }
 }

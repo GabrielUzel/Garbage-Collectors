@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class AvatarInitializer : MonoBehaviour
 {
-    public GameObject meninaAvatar;
-    public GameObject meninoAvatar;
+    public GameObject girlAvatar;
+    public GameObject boyAvatar;
 
     void Start()
     {
-        string avatar = PlayerPrefs.GetString("avatarSelecionado", "menina");
+        string avatar = PlayerPrefs.GetString("selected_avatar", "girl");
 
-        if (avatar == "menino")
+        if (avatar == "boy")
         {
-            meninoAvatar.SetActive(true);
-            meninaAvatar.SetActive(false);
+            boyAvatar.SetActive(true);
+            girlAvatar.SetActive(false);
         }
         else
         {
-            meninaAvatar.SetActive(true);
-            meninoAvatar.SetActive(false);
+            girlAvatar.SetActive(true);
+            boyAvatar.SetActive(false);
         }
     }
 }
