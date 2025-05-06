@@ -1254,14 +1254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meninaAcenando: {fileID: 0}
-  meninoAcenando: {fileID: 0}
-  meninoSelecionarImage: {fileID: 0}
-  meninaSelecionarImage: {fileID: 0}
-  meninoSelecionarBtn: {fileID: 0}
-  meninoSelecionadoBtn: {fileID: 0}
-  meninaSelecionarBtn: {fileID: 0}
-  meninaSelecionadoBtn: {fileID: 0}
+  meninaAcenando: {fileID: 841626103}
+  meninoAcenando: {fileID: 1996985733}
+  meninoSelecionarImage: {fileID: 515319834}
+  meninaSelecionarImage: {fileID: 1096156296}
+  meninoSelecionarBtn: {fileID: 515319830}
+  meninoSelecionadoBtn: {fileID: 810222537}
+  meninaSelecionarBtn: {fileID: 1096156292}
+  meninaSelecionadoBtn: {fileID: 1616449240}
 --- !u!1 &1096156292
 GameObject:
   m_ObjectHideFlags: 0
