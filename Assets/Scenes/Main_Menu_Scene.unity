@@ -566,13 +566,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: a9197cd633a8eeb4a828b7af6ac447f1, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 831497162}
+        m_TargetAssemblyTypeName: WasteCatalogButtonController, Scripts
+        m_MethodName: LoadWasteCatalogScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 831497157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9197cd633a8eeb4a828b7af6ac447f1, type: 3}
+  m_Script: {fileID: 11500000, guid: cf00aa9fae539714e9cb1732ef2ce0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &844028114
