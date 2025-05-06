@@ -19,7 +19,7 @@ public class ChangeAvatar : MonoBehaviour
 
     private string selectedAvatar = "";
 
-    void Start()
+    public void Start()
     {
         // Pegamos o avatar salvo, se existir
         selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");

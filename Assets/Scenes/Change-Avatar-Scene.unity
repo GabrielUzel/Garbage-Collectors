@@ -164,7 +164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37925403}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1038.3307, y: 401.8095, z: -0.30441996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1165,7 +1165,6 @@ GameObject:
   - component: {fileID: 1074209169}
   - component: {fileID: 1074209172}
   - component: {fileID: 1074209171}
-  - component: {fileID: 1074209173}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1230,26 +1229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074209168}
   m_CullTransparentMesh: 1
---- !u!114 &1074209173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074209168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb70fb0396c256442a8310b50019af57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  girlWaving: {fileID: 0}
-  boyWaving: {fileID: 0}
-  selectBoyImage: {fileID: 0}
-  selectGirlImage: {fileID: 0}
-  selectBoyBtn: {fileID: 0}
-  selectedBoyBtn: {fileID: 0}
-  selectGirlBtn: {fileID: 0}
-  selectedGirlBtn: {fileID: 0}
 --- !u!1 &1096156292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,5 +2105,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 1659341246}
   - {fileID: 2034647384}
-  - {fileID: 617567271}
   - {fileID: 37925405}
+  - {fileID: 617567271}

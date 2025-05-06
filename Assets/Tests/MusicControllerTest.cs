@@ -11,7 +11,8 @@ public class MusicControllerTests {
     private Sprite spriteOff;
 
     [SetUp]
-    public void SetUp() {
+    public void SetUp() 
+    {
         gameObject = new GameObject();
         musicController = gameObject.AddComponent<MusicController>();
 
@@ -28,19 +29,22 @@ public class MusicControllerTests {
     }
 
     [TearDown]
-    public void TearDown() {
+    public void TearDown() 
+    {
         UnityEngine.Object.DestroyImmediate(gameObject);
     }
 
     [Test]
-    public void ToggleMusic_UnmutedToMuted_Test() {
+    public void ToggleMusic_UnmutedToMuted_Test() 
+    {
         musicController.toggleMusic();
 
         Assert.AreEqual(spriteOff, testButton.image.sprite);
     }
 
     [Test]
-    public void ToggleMusic_mutedToUnmuted_Test() {
+    public void ToggleMusic_mutedToUnmuted_Test() 
+    {
         musicController.toggleMusic();
         musicController.toggleMusic();
 
