@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c06546c3bf644b4c81d94defbcd5da2
+guid: 0768aefeac59a2d4ca0f7e1924e5d12b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5018124557860297802
-    second: inicio_0
+      213: -8586693324203152019
+    second: select_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inicio_0
+      name: select_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 902
+        x: 23
+        y: 24
+        width: 1019
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4c5dedb2b5f3a540800000000000000
-      internalID: 5018124557860297802
+      spriteID: d6d27a77aefe5d880800000000000000
+      internalID: -8586693324203152019
       vertices: []
       indices: 
       edges: []
