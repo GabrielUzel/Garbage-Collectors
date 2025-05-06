@@ -26,11 +26,11 @@ public class ChangeAvatar : MonoBehaviour
 
         if (avatarSelecionado == "menino")
         {
-            AplicarSelecaoMenino();
+            ApplySelectBoy();
         }
         else if (avatarSelecionado == "menina")
         {
-            AplicarSelecaoMenina();
+            ApplySelectGirl();
         }
         else
         {
@@ -55,7 +55,7 @@ public class ChangeAvatar : MonoBehaviour
         PlayerPrefs.SetString("avatarSelecionado", avatarSelecionado);
         PlayerPrefs.Save();
 
-        AplicarSelecaoMenina();
+        ApplySelectGirl();
     }
 
     public void SelectBoy()
@@ -64,10 +64,10 @@ public class ChangeAvatar : MonoBehaviour
         PlayerPrefs.SetString("avatarSelecionado", avatarSelecionado);
         PlayerPrefs.Save();
 
-        AplicarSelecaoMenino();
+        ApplySelectBoy();
     }
 
-    private void AplicarSelecaoMenina()
+    private void ApplySelectGirl()
     {
         SetImageOpacity(meninoSelecionarImage, fadedOpacity);
         SetImageOpacity(meninaSelecionarImage, fullOpacity);
@@ -82,7 +82,7 @@ public class ChangeAvatar : MonoBehaviour
         meninaSelecionarBtn.SetActive(false);
     }
 
-    private void AplicarSelecaoMenino()
+    private void ApplySelectBoy()
     {
         SetImageOpacity(meninoSelecionarImage, fullOpacity);
         SetImageOpacity(meninaSelecionarImage, fadedOpacity);
