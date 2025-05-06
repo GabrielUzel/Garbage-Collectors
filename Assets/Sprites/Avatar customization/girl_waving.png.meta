@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      girl_waving_0: -3531168494600248182
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
