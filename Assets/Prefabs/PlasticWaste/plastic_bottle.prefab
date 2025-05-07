@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1660368006342887099}
   m_Layer: 5
   m_Name: plastic_bottle
-  m_TagString: Untagged
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,3 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75fbab6c65e62841bea97608894836b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasteType: 0

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4371139177042046161}
   - component: {fileID: 3152034047076983743}
   m_Layer: 5
-  m_Name: perfume
-  m_TagString: Untagged
+  m_Name: Perfume
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

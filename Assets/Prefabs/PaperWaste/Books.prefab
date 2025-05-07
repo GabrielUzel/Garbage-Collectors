@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6374697918208470280}
   - component: {fileID: 846997997389578837}
   m_Layer: 5
-  m_Name: books
-  m_TagString: Untagged
+  m_Name: Books
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

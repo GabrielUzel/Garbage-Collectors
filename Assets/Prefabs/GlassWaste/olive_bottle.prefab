@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 315128030080769833}
   m_Layer: 5
   m_Name: olive_bottle
-  m_TagString: Untagged
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

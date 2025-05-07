@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7752152435535658513}
   m_Layer: 5
   m_Name: envelope
-  m_TagString: Untagged
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

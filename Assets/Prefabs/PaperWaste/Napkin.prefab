@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7616508286698653717}
   - component: {fileID: 68169434290616484}
   m_Layer: 5
-  m_Name: napkin
-  m_TagString: Untagged
+  m_Name: Napkin
+  m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
