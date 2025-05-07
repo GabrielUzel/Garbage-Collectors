@@ -45,7 +45,7 @@ namespace Assets.Scripts.Level_One
                     else
                     {
                         //Aqui é caso foi jogado na lixeira incorreta
-                        ScoreManager.Instance.SubScore();
+                        // TODO: Player perde uma vida
                         Destroy(gameObject);
                         return;
                     }

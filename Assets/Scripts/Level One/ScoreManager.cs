@@ -31,12 +31,6 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
-        public void SubScore()
-    {
-        score -= 100;
-        UpdateScoreText();
-    }
-
     private void UpdateScoreText()
     {
         Debug.Log(scoreText.text);
