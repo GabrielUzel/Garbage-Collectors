@@ -7,13 +7,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Level_One
 {
-
     public class DragWasteHandler : MonoBehaviour
     {
         public TrashType wasteType;
         private Vector3 offset;
         private bool dragging = false;
-
 
         void OnMouseDown()
         {
@@ -24,7 +22,6 @@ namespace Assets.Scripts.Level_One
                 dragging = true;
             }
         }
-
 
         void OnMouseUp()
         {
@@ -41,13 +38,14 @@ namespace Assets.Scripts.Level_One
                     if (binType != null && binType.acceptedType == wasteType)
                     {
                         // Aqui é caso o item está jogado na lixeira correta, ai vc coloca pra somar os pontos
+                        ScoreManager.Instance.AddScore();
                         Destroy(gameObject);
                         return;
                     }
                     else
                     {
                         //Aqui é caso foi jogado na lixeira incorreta
-                        Debug.Log("Lixeira errada!");
+                        ScoreManager.Instance.SubScore();
                         Destroy(gameObject);
                         return;
                     }
@@ -70,5 +68,4 @@ namespace Assets.Scripts.Level_One
             return Camera.main.ScreenToWorldPoint(mousePoint);
         }
     }
-
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] Wastes;
-    public int amount = 100000000;
+    public int amount;
 
     void Start()
     {
@@ -12,12 +12,6 @@ public class Spawner : MonoBehaviour
 
     void GenerateWastes()
     {
-        if (Wastes.Length == 0)
-        {
-            Debug.LogWarning("Nenhum prefab atribuído ao array 'Wastes'.");
-            return;
-        }
-
         int totalTypes = Wastes.Length;
         int baseAmount = amount / totalTypes;
         int extra = amount % totalTypes;

@@ -3,8 +3,8 @@ guid: 9801fecaeab413940afd5bb57d544fe1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6086220978277522248
-    second: pontuacao_0
+      213: -2975575803646206400
+    second: scorepoints_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pontuacao_0
+      name: scorepoints_0
       rect:
         serializedVersion: 2
         x: 2
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b4ec353446698ba0800000000000000
-      internalID: -6086220978277522248
+      spriteID: 04e9b656291a4b6d0800000000000000
+      internalID: -2975575803646206400
       vertices: []
       indices: 
       edges: []
