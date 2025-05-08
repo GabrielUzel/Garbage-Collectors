@@ -3,11 +3,11 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class Spawner
+public class AvatarTest
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void SpawnerSimplePasses()
+    public void AvatarTestSimplePasses()
     {
         // Use the Assert class to test conditions
     }
@@ -15,13 +15,13 @@ public class Spawner
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator SpawnerWithEnumeratorPasses()
+    public IEnumerator AvatarTestWithEnumeratorPasses()
     {
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
         yield return null;
     }
-    void GenerateWastesTest(){
-
+    void UpdateSprite(int wasteAmount){
+        
     }
 }
