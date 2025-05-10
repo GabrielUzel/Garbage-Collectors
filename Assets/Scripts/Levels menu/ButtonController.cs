@@ -3,13 +3,12 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public int Level = 2;
+    public int PlayerCurrentLevel;
     public Button LevelOne;
     public Button LevelTwo;
     public Button LevelThree;
     public Button LevelFour;
     public Button LevelFive;
-
     private Image ImageButtonTwo;
     private Image ImageButtonThree;
     private Image ImageButtonFour;
@@ -27,22 +26,24 @@ public class ButtonController : MonoBehaviour
         LevelFour.interactable = false;
         LevelFive.interactable = false;
 
-        if (Level >= 2)
+        // Read save file containing the current level
+
+        if (PlayerCurrentLevel >= 2)
         {
             LevelTwo.interactable = true;
             ImageButtonTwo.color = new Color(1f, 1f, 1f, 0f);
         }
-        if (Level >= 3)
+        if (PlayerCurrentLevel >= 3)
         {
             LevelThree.interactable = true;
             ImageButtonThree.color = new Color(1f, 1f, 1f, 0f);
         }
-        if (Level >= 4)
+        if (PlayerCurrentLevel >= 4)
         {
             LevelFour.interactable = true;
             ImageButtonFour.color = new Color(1f, 1f, 1f, 0f);
         }
-        if (Level >= 5)
+        if (PlayerCurrentLevel >= 5)
         {
             LevelFive.interactable = true;
             ImageButtonFive.color = new Color(1f, 1f, 1f, 0f);

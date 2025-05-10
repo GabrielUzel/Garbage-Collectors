@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b21ea46e1344df478d7e5a50e3a08b3
+guid: 30655832bd45ed149bed2c51280599bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5607819680231318820
-    second: voltar_0
+      213: -6364488757183509343
+    second: close_popup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: voltar_0
+      name: close_popup_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 902
+        x: 23
+        y: 28
+        width: 1032
+        height: 1159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 425e1a4a94af2dd40800000000000000
-      internalID: 5607819680231318820
+      spriteID: 1ac0c13223bcca7a0800000000000000
+      internalID: -6364488757183509343
       vertices: []
       indices: 
       edges: []

@@ -1,0 +1,15 @@
+{
+    "player_current_level": 1,
+    "levels_info": [
+        {
+            "id": 1,
+            "best_time": 60, 
+            "highscore": 1000
+        },
+        {
+            "id": 2,
+            "best_time": -1, 
+            "highscore": 0
+        }
+    ]
+}

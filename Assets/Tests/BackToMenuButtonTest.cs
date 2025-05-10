@@ -3,7 +3,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class PanelPopUpTests
+public class BackToMenuButtonTests
 {
     [SetUp]
     public void SetUp() {

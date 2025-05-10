@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.TestTools;
 
-public class SoundEffectsControllerTests {
+public class SoundEffectsControllerTests 
+{
     private GameObject gameObject;
     private SoundEffectsController SoundEffectsController;
     private Button testButton;

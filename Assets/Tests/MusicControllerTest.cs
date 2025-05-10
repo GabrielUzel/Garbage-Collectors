@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.TestTools;
 
-public class MusicControllerTests {
+public class MusicControllerTests 
+{
     private GameObject gameObject;
     private MusicController musicController;
     private Button testButton;
