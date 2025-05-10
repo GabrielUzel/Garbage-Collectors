@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayLevelOne : MonoBehaviour
+public class PlayLevel : MonoBehaviour
 {
-    public void LevelOne()
+    public void LoadLevelPopUp()
     {
         SceneManager.LoadScene("Main_Menu_Scene");
     }
