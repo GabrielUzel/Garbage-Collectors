@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3b435eec687f5271682e9cdcb546df0e
+guid: a52d0c2e243bda7d0ad49fa20e74db1c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1865791877794370795
-    second: voltar2_0
+      213: 2297465005247137311
+    second: block_level_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: voltar2_0
+      name: block_level_2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 1080
-        height: 901
+        width: 1078
+        height: 1078
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51be14b2c206b16e0800000000000000
-      internalID: -1865791877794370795
+      spriteID: f1685a1ff3c32ef10800000000000000
+      internalID: 2297465005247137311
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      voltar2_0: -1865791877794370795
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
