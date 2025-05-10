@@ -5,6 +5,6 @@ public class PlayLevel : MonoBehaviour
 {
     public void LoadLevelPopUp()
     {
-        SceneManager.LoadScene("Main_Menu_Scene");
+        SceneManager.LoadScene("PopUp");
     }
 }
