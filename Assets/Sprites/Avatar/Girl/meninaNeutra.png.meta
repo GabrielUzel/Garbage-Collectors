@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meninaNeutra_0: -1712855682722279964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

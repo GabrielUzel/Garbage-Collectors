@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meninaAcenandoInvertido_0: 8609069508404409866
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

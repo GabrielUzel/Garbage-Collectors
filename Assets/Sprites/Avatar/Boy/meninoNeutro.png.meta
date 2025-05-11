@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      meninoNeutro_0: -6914424346562136372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
