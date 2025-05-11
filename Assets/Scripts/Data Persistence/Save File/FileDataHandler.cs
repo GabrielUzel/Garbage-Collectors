@@ -59,7 +59,6 @@ public class FileDataHandler
                     writer.Write(dataToStore);
                 }
             }
-            Debug.Log("Game data saved successfully.");
         }
         catch (Exception e)
         {

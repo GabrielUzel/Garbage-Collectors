@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 189309938}
   - component: {fileID: 189309937}
   m_Layer: 5
-  m_Name: PainelPopUp
+  m_Name: PanelPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,67 +870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3606675f1ee82dd4caf5362fc1ee8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
-  TrashCount: 0
-  TimeInSeconds: 0
-  infoPanel: {fileID: 0}
---- !u!1001 &555082588
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 981.70636
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 519.21985
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 622278795579432506, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 888025070194943529, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
-      propertyPath: m_Name
-      value: DataPersistenceManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 144ee1e9aa5a04e46bcc75d7a70951f4, type: 3}
 --- !u!1 &654556797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,10 +1156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3606675f1ee82dd4caf5362fc1ee8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
-  TrashCount: 0
-  TimeInSeconds: 0
-  infoPanel: {fileID: 0}
 --- !u!1 &932345425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,10 +1796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3606675f1ee82dd4caf5362fc1ee8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
-  TrashCount: 0
-  TimeInSeconds: 0
-  infoPanel: {fileID: 0}
 --- !u!1 &1464437343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,10 +1971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3606675f1ee82dd4caf5362fc1ee8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
-  TrashCount: 0
-  TimeInSeconds: 0
-  infoPanel: {fileID: 0}
 --- !u!1 &1492252366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,7 +2699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PopUpPanel: {fileID: 189309935}
-  LevelButtonsGroup: {fileID: 0}
+  LevelButtonsGroup: {fileID: 1891249181}
   ReturnToHomeButton: {fileID: 1845726375}
   Background: {fileID: 1106124201}
 --- !u!114 &1857238296
@@ -2787,10 +2714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3606675f1ee82dd4caf5362fc1ee8370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelNumber: 0
-  TrashCount: 0
-  TimeInSeconds: 0
-  infoPanel: {fileID: 0}
 --- !u!1 &1869982249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,6 +3319,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1881536348}
-  - {fileID: 555082588}
   - {fileID: 932345429}
   - {fileID: 108251540}

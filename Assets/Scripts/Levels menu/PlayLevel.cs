@@ -9,8 +9,8 @@ public class PlayLevel : MonoBehaviour
     public Button ReturnToHomeButton;
     public Image Background;
 
-    private Color normalColor = new Color(1, 1, 1, 1);
-    private Color fadedColor = new Color(1, 1, 1, 0.5f);
+    private Color normalColor = new Color(255, 255, 255, 1);
+    private Color fadedColor = new Color(255, 255, 255, 0.5f);
     private List<Button> ActiveButtons = new List<Button>();
 
     void Start()

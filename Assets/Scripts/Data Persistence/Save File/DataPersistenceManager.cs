@@ -9,7 +9,7 @@ public class DataPersistenceManager : MonoBehaviour
     [SerializeField] private string fileName;
 
     private GameData gameData;
-    private List<IDataPersistence> DataPersistenceObjects;
+    private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler fileDataHandler;
     public static DataPersistenceManager Instance { get; private set; }
 
@@ -28,23 +28,23 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnEnable()
     {
-        SceneManager.sceneLoaded += onSceneLoaded;
-        SceneManager.sceneUnloaded += onSceneUnloaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     public void OnDisable()
     {
-        SceneManager.sceneLoaded -= onSceneLoaded;
-        SceneManager.sceneUnloaded -= onSceneUnloaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
-    public void onSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        this.DataPersistenceObjects = FindAllDataPersistenceObjects();
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
 
-    public void onSceneUnloaded(Scene scene)
+    public void OnSceneUnloaded(Scene scene)
     {
         SaveGame();
     }
@@ -60,12 +60,11 @@ public class DataPersistenceManager : MonoBehaviour
 
         if (gameData == null)
         {
-            Debug.Log("No game data found. Please start a new game.");
             NewGame();
             SaveGame();
         }
 
-        foreach (IDataPersistence dataPersistenceObject in DataPersistenceObjects)
+        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.LoadData(gameData);
         }
@@ -73,7 +72,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        foreach (IDataPersistence dataPersistenceObject in DataPersistenceObjects)
+        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(ref gameData);
         }

@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels_Menu_Scene.unity
     guid: 6eb8b786dff06bac3b186f76e2d454c2
-  - enabled: 0
-    path: Assets/Scenes/Pop_Up.unity
-    guid: 621290744b8501949926272d20fcf1d5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

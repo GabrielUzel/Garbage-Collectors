@@ -1,13 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Collections.Generic;
 
-public class UpdateInfoPanelOnButtonPressed : MonoBehaviour
+public class UpdateInfoPanelOnButtonPressed : MonoBehaviour, ILevelPersistence
 {
-    public int LevelNumber;
-    public int TrashCount;
-    public float TimeInSeconds;
-
-    public InfoPanel infoPanel;
+    private int LevelId;
+    private int TrashCount;
+    private float TimeInSeconds;
+    private InfoPanel infoPanel;
+    private LevelData levelData;
 
     public void OnClickLevelButton(Button clickedButton)
     {
@@ -16,26 +18,36 @@ public class UpdateInfoPanelOnButtonPressed : MonoBehaviour
         switch (buttonName) 
         {
             case "LevelOne":
-                LevelNumber = 1;
+                LevelId = 1;
                 break;
             case "LevelTwo":
-                LevelNumber = 2;
+                LevelId = 2;
                 break;
             case "LevelThree":
-                LevelNumber = 3;
+                LevelId = 3;
                 break;
             case "LevelFour":
-                LevelNumber = 4;
+                LevelId = 4;
                 break;
             case "LevelFive":
-                LevelNumber = 5;
+                LevelId = 5;
                 break;
         }
-
         
-        // TODO: Read a file with all the levels and their info and return this info based on the button pressed
-        TrashCount = 25;
-        TimeInSeconds = 170;
-        InfoPanel.Instance.UpdatePanel(LevelNumber, TrashCount, TimeInSeconds);
+        UpdateLevelInfo(LevelId);
+
+        InfoPanel.Instance.UpdatePanel(LevelId, TrashCount, TimeInSeconds);
+    }
+
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
+    }
+
+    public void UpdateLevelInfo(int levelId)
+    {
+        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == levelId);
+        TrashCount = currentLevelInfo.trashCount;
+        TimeInSeconds = currentLevelInfo.timeInSeconds;
     }
 }
