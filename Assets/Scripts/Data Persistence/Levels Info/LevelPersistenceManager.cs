@@ -24,7 +24,7 @@ public class LevelPersistenceManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        this.levelDataHandler = new LevelDataHandler(Path.Combine(Application.dataPath, "Data"), fileName);
+        this.levelDataHandler = new LevelDataHandler(Application.streamingAssetsPath, fileName);
     }
 
     public void OnEnable()
