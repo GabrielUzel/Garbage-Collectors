@@ -7,6 +7,6 @@ public class WasteCatalogButtonHandler : MonoBehaviour
 {
     public void LoadWasteCatalogScene()
     {
-        SceneManager.LoadScene("Waste-Catalog-Scene");
+        SceneManager.LoadScene("Waste_Catalog_Scene");
     }
 }
