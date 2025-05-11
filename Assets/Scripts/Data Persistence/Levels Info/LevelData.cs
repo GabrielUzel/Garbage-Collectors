@@ -6,7 +6,7 @@ public class LevelInfo
 {
     public int levelId;
     public int trashCount;
-    public float timeInSeconds;
+    public int timeInSeconds;
 }
 
 [System.Serializable]

@@ -16,13 +16,13 @@ public class InfoPanel : MonoBehaviour
         }
     }
 
-    public void UpdatePanel(int level, int trash, float timeInSeconds)
+    public void UpdatePanel(int level, int trash, int timeInSeconds)
     {
         LevelText.text = level.ToString();
         TrashText.text = trash.ToString();
 
-        int minutes = Mathf.FloorToInt(timeInSeconds  / 60f);
-        int seconds = Mathf.FloorToInt(timeInSeconds  % 60f);
+        int minutes = timeInSeconds  / 60;
+        int seconds = timeInSeconds  % 60;
         TimeText.text = $"{minutes}:{seconds:00}";
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class PlayLevel : MonoBehaviour
+public class PlayLevel : MonoBehaviour, ILevelPersistence
 {
     public GameObject PopUpPanel;
     public GameObject LevelButtonsGroup;
@@ -12,6 +12,12 @@ public class PlayLevel : MonoBehaviour
     private Color normalColor = new Color(255, 255, 255, 1);
     private Color fadedColor = new Color(255, 255, 255, 0.5f);
     private List<Button> ActiveButtons = new List<Button>();
+
+    private int LevelId;
+    private int TrashCount;
+    private int TimeInSeconds;
+    private InfoPanel infoPanel;
+    private LevelData levelData;
 
     void Start()
     {
@@ -34,6 +40,47 @@ public class PlayLevel : MonoBehaviour
         }
 
         Background.color = fadedColor;
+        OnClickLevelButton(clickedButton);
+    }
+
+    public void OnClickLevelButton(Button clickedButton)
+    {
+        string buttonName = clickedButton.name;
+
+        switch (buttonName) 
+        {
+            case "LevelOne":
+                LevelId = 1;
+                break;
+            case "LevelTwo":
+                LevelId = 2;
+                break;
+            case "LevelThree":
+                LevelId = 3;
+                break;
+            case "LevelFour":
+                LevelId = 4;
+                break;
+            case "LevelFive":
+                LevelId = 5;
+                break;
+        }
+        
+        UpdateLevelInfo(LevelId);
+
+        InfoPanel.Instance.UpdatePanel(this.LevelId, this.TrashCount, this.TimeInSeconds);
+    }
+
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
+    }
+
+    public void UpdateLevelInfo(int levelId)
+    {
+        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == levelId);
+        this.TrashCount = currentLevelInfo.trashCount;
+        this.TimeInSeconds = currentLevelInfo.timeInSeconds;
     }
 
     public void ClosePopUp()
@@ -43,9 +90,7 @@ public class PlayLevel : MonoBehaviour
 
         foreach (Button btn in ActiveButtons)
         {
-            if (btn != null) {
-                btn.interactable = true;
-            }
+            btn.interactable = true;
         }
 
         ActiveButtons.Clear();

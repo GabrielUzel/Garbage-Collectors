@@ -5,6 +5,6 @@ public class PlayGame : MonoBehaviour
 {
     public void LoadLevelsMenuScene()
     {
-        SceneManager.LoadSceneAsync("Levels_Menu_Scene");
+        SceneManager.LoadScene("Levels_Menu_Scene");
     }
 }
