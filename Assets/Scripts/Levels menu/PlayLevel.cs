@@ -97,4 +97,19 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
 
         Background.color = normalColor;
     }
+
+    public int GetLevelId()
+    {
+        return LevelId;
+    }
+
+    public int GetTrashCount()
+    {
+        return TrashCount;
+    }
+
+    public int GetTimeInSeconds()
+    {
+        return TimeInSeconds;
+    }
 }

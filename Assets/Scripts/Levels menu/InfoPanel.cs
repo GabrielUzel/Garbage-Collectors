@@ -8,7 +8,7 @@ public class InfoPanel : MonoBehaviour
     public Text TrashText;
     public Text TimeText;
 
-    void Awake()
+    public void Awake()
     {
         if (Instance == null)
         {

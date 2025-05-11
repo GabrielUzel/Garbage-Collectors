@@ -9,12 +9,12 @@ public class ButtonController : MonoBehaviour, IDataPersistence
     public Button LevelThree;
     public Button LevelFour;
     public Button LevelFive;
-    private Image ImageButtonTwo;
-    private Image ImageButtonThree;
-    private Image ImageButtonFour;
-    private Image ImageButtonFive;
+    public Image ImageButtonTwo;
+    public Image ImageButtonThree;
+    public Image ImageButtonFour;
+    public Image ImageButtonFive;
 
-    void Start()
+    public void Start()
     {
         ImageButtonTwo = LevelTwo.GetComponent<Image>();
         ImageButtonThree = LevelThree.GetComponent<Image>();
@@ -55,6 +55,6 @@ public class ButtonController : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData gameData)
     {
-
+        // Empty implementation
     }
 }
