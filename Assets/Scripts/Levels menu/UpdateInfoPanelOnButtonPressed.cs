@@ -32,6 +32,7 @@ public class UpdateInfoPanelOnButtonPressed : MonoBehaviour
                 break;
         }
 
+        
         // TODO: Read a file with all the levels and their info and return this info based on the button pressed
         TrashCount = 25;
         TimeInSeconds = 170;

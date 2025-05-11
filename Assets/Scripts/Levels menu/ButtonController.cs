@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonController : MonoBehaviour
+public class ButtonController : MonoBehaviour, IDataPersistence
 {
     public int PlayerCurrentLevel;
     public Button LevelOne;
@@ -26,8 +26,6 @@ public class ButtonController : MonoBehaviour
         LevelFour.interactable = false;
         LevelFive.interactable = false;
 
-        // Read save file containing the current level
-
         if (PlayerCurrentLevel >= 2)
         {
             LevelTwo.interactable = true;
@@ -48,5 +46,15 @@ public class ButtonController : MonoBehaviour
             LevelFive.interactable = true;
             ImageButtonFive.color = new Color(1f, 1f, 1f, 0f);
         }
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        PlayerCurrentLevel = gameData.PlayerCurrentLevel;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+
     }
 }
