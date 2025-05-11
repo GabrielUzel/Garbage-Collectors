@@ -12,7 +12,8 @@ public class SoundEffectsControllerTests
     private Sprite spriteOff;
 
     [SetUp]
-    public void SetUp() {
+    public void SetUp() 
+    {
         gameObject = new GameObject();
         SoundEffectsController = gameObject.AddComponent<SoundEffectsController>();
 
@@ -29,19 +30,22 @@ public class SoundEffectsControllerTests
     }
 
     [TearDown]
-    public void TearDown() {
+    public void TearDown() 
+    {
         UnityEngine.Object.DestroyImmediate(gameObject);
     }
 
     [Test]
-    public void ToggleMusic_UnmutedToMuted_Test() {
+    public void ToggleMusic_UnmutedToMuted_Test() 
+    {
         SoundEffectsController.toggleSoundEffects();
 
         Assert.AreEqual(spriteOff, testButton.image.sprite);
     }
 
     [Test]
-    public void ToggleMusic_mutedToUnmuted_Test() {
+    public void ToggleMusic_mutedToUnmuted_Test() 
+    {
         SoundEffectsController.toggleSoundEffects();
         SoundEffectsController.toggleSoundEffects();
 
