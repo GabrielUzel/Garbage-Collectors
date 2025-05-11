@@ -1,19 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MusicController : MonoBehaviour 
+public class MusicController : MonoBehaviour
 {
-    // public AudioSource musicSource; TODO: Adionar uma música para o menu
+    public AudioSource musicSource;
     public Sprite musicOff;
     public Sprite musicOn;
     public Button musicButton;
-    
-    private bool musicIsMuted = false; // TODO: Essa variável deverá ler algum arquivo de salvamento de configurações para persistir a config do usuário 
+
+    private bool musicIsMuted = false;
+    private const string musicPrefKey = "MusicMuted";
+
+    public void getMusicState(){
+
+        musicIsMuted = PlayerPrefs.GetInt(musicPrefKey, 0) == 1;
+
+        musicSource.mute = musicIsMuted;
+        musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
+    }
+
 
     public void toggleMusic() 
     {
+
         musicIsMuted = !musicIsMuted;
-        // musicSource.mute = musicIsMuted;
+        musicSource.mute = musicIsMuted;
         musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
+        
+        PlayerPrefs.SetInt(musicPrefKey, musicIsMuted ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }
