@@ -11,18 +11,16 @@ public class MusicController : MonoBehaviour
     private bool musicIsMuted = false;
     private const string musicPrefKey = "MusicMuted";
 
-    public void getMusicState(){
-
+    public void getMusicState()
+    {
         musicIsMuted = PlayerPrefs.GetInt(musicPrefKey, 0) == 1;
 
         musicSource.mute = musicIsMuted;
         musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
     }
 
-
     public void toggleMusic() 
     {
-
         musicIsMuted = !musicIsMuted;
         musicSource.mute = musicIsMuted;
         musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95f50d91a6310064ebfb834cd7047bd2
+guid: bc8559350659d2c4c80ee9cf4a00096e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1712855682722279964
-    second: meninaNeutra_0
+      213: 8851227909351521830
+    second: boy_happy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meninaNeutra_0
+      name: boy_happy_0
       rect:
         serializedVersion: 2
-        x: 142
+        x: 0
         y: 0
-        width: 751
-        height: 1563
+        width: 954
+        height: 1509
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ed44d7e4d6ba38e0800000000000000
-      internalID: -1712855682722279964
+      spriteID: 62ebbe243e0e5da70800000000000000
+      internalID: 8851227909351521830
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meninaNeutra_0: -1712855682722279964
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

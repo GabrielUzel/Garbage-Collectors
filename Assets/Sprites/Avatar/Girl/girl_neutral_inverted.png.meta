@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 67ae3b83c7d85f6459d84f050d4f189a
+guid: 1102f96d07e61ea4a8012e0e6bc75951
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6093782754969354039
-    second: meninoNeutroInvertido_0
+      213: 5777336310647740438
+    second: girl_neutral_inverted_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meninoNeutroInvertido_0
+      name: girl_neutral_inverted_0
       rect:
         serializedVersion: 2
-        x: 109
+        x: 86
         y: 0
-        width: 732
-        height: 1509
+        width: 751
+        height: 1563
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73f79502127719450800000000000000
-      internalID: 6093782754969354039
+      spriteID: 618df10d3c83d2050800000000000000
+      internalID: 5777336310647740438
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meninoNeutroInvertido_0: 6093782754969354039
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6baf826be1fc9f541be0a41c7854d8f2
+guid: 43e66952b5830bd4b8da8385f68647d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3352600406209122149
-    second: meninoAcenandoInvertido_0
+      213: -8182057697280143066
+    second: girl_waving_inverted_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meninoAcenandoInvertido_0
+      name: girl_waving_inverted_0
       rect:
         serializedVersion: 2
-        x: 97
+        x: 102
         y: 0
-        width: 841
-        height: 1509
+        width: 824
+        height: 1563
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56fcced7e44d68e20800000000000000
-      internalID: 3352600406209122149
+      spriteID: 621ddddefdd737e80800000000000000
+      internalID: -8182057697280143066
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meninoAcenandoInvertido_0: 3352600406209122149
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

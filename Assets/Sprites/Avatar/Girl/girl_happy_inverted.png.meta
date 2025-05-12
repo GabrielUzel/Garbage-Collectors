@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a569f6a6152d4e345998819cbbc252eb
+guid: a1dfa767a260c7641bb5a7945947e2bd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 758713770905827650
-    second: meninoTristeInvertido_0
+      213: 5377901683722393498
+    second: girl_happy_inverted_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meninoTristeInvertido_0
+      name: girl_happy_inverted_0
       rect:
         serializedVersion: 2
-        x: 146
+        x: 12
         y: 0
-        width: 717
-        height: 1510
+        width: 956
+        height: 1563
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 249f901a72e778a00800000000000000
-      internalID: 758713770905827650
+      spriteID: a979f37861522aa40800000000000000
+      internalID: 5377901683722393498
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meninoTristeInvertido_0: 758713770905827650
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

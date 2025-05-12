@@ -1113,12 +1113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 758713770905827650, guid: a569f6a6152d4e345998819cbbc252eb, type: 3}
-  - {fileID: -6914424346562136372, guid: 5541fc05c2b46f54fb36639c9c76f77c, type: 3}
-  - {fileID: -5638016391593956900, guid: bc8559350659d2c4c80ee9cf4a00096e, type: 3}
-  - {fileID: -4572302883042821036, guid: db972bb46dcf90b4896602203c6d46d0, type: 3}
-  - {fileID: -1712855682722279964, guid: 95f50d91a6310064ebfb834cd7047bd2, type: 3}
-  - {fileID: -8206352582653415517, guid: bc73721c03f40fd449b8c2053ecbcff1, type: 3}
+  - {fileID: -2923118850104278176, guid: a569f6a6152d4e345998819cbbc252eb, type: 3}
+  - {fileID: 613349031253447684, guid: 5541fc05c2b46f54fb36639c9c76f77c, type: 3}
+  - {fileID: 8851227909351521830, guid: bc8559350659d2c4c80ee9cf4a00096e, type: 3}
+  - {fileID: 7496430579478527828, guid: db972bb46dcf90b4896602203c6d46d0, type: 3}
+  - {fileID: -2496984265990508334, guid: 95f50d91a6310064ebfb834cd7047bd2, type: 3}
+  - {fileID: 7453236362669762780, guid: bc73721c03f40fd449b8c2053ecbcff1, type: 3}
 --- !u!1 &1689806677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1890,7 +1890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6324090312129353371, guid: 9a526f8c39b72a748b7a46bc821f6313, type: 3}
       propertyPath: m_Name
-      value: meninoAcenando_0
+      value: BoyWaving
       objectReference: {fileID: 0}
     - target: {fileID: 7149191008721241323, guid: 9a526f8c39b72a748b7a46bc821f6313, type: 3}
       propertyPath: m_Sprite

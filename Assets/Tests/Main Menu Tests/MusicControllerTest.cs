@@ -2,11 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
-<<<<<<< HEAD:Assets/Tests/MusicControllerTest.cs
-public class MusicControllerTests
-=======
 public class MusicControllerTests 
->>>>>>> main:Assets/Tests/Main Menu Tests/MusicControllerTest.cs
 {
     private GameObject gameObject;
     private MusicController musicController;

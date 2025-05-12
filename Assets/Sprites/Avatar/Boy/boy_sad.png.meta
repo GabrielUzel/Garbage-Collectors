@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 43e66952b5830bd4b8da8385f68647d2
+guid: 11487deeafae86645a1d76fdedd6e53a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8609069508404409866
-    second: meninaAcenandoInvertido_0
+      213: -3982906351554437458
+    second: boy_sad_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: meninaAcenandoInvertido_0
+      name: boy_sad_0
       rect:
         serializedVersion: 2
-        x: 102
+        x: 101
         y: 0
-        width: 824
-        height: 1563
+        width: 717
+        height: 1510
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a067717ea1f897770800000000000000
-      internalID: 8609069508404409866
+      spriteID: eae53fd86cfd9b8c0800000000000000
+      internalID: -3982906351554437458
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      meninaAcenandoInvertido_0: 8609069508404409866
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
