@@ -6,7 +6,6 @@ using UnityEngine.TestTools;
 
 public class ChangeAvatarTest
 {
-
     private GameObject gameObject;
     private ChangeAvatar avatarController;
     private Image girlWaving;

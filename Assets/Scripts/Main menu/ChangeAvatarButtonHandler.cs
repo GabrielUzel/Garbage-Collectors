@@ -7,6 +7,6 @@ public class ChangeAvatarButtonHandler : MonoBehaviour
 {
     public void LoadChangeAvatarScene()
     {
-        SceneManager.LoadScene("Change-Avatar-Scene");
+        SceneManager.LoadScene("Change_Avatar_Scene");
     }
 }

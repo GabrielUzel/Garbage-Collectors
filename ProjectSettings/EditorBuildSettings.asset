@@ -9,14 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu_Scene.unity
     guid: b4ae70c984b95834d9a14a935568bd44
   - enabled: 1
-    path: Assets/Scenes/Waste-Catalog-Scene.unity
-    guid: 9aaf24032e7064c488272eb923277de6
+    path: Assets/Scenes/Levels_Menu_Scene.unity
+    guid: 6eb8b786dff06bac3b186f76e2d454c2
   - enabled: 1
-    path: Assets/Scenes/Change-Avatar-Scene.unity
+    path: Assets/Scenes/Change_Avatar_Scene.unity
     guid: b2304fa75f18170488c6777092859bf9
   - enabled: 1
-    path: Assets/Scenes/Level_One_Scene.unity
-    guid: 93998b71bac228b42a279a5b42aacbdc
-  m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    path: Assets/Scenes/Waste_Catalog_Scene.unity
+    guid: 9aaf24032e7064c488272eb923277de6
+  m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
