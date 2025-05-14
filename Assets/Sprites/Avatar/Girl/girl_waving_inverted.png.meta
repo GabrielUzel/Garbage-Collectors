@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      girl_waving_inverted_0: -8182057697280143066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

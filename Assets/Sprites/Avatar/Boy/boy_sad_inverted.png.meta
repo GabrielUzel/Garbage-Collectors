@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boy_sad_inverted_0: -2923118850104278176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

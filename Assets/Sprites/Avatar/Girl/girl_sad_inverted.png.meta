@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      girl_sad_inverted_0: 1265669007294293026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
