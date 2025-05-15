@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      prato-quebrado_0: 5624745740597452516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

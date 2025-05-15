@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lampada-quebrada_0: -521968827693024518
+      lampada-quebrada_1: 470786202256057988
+      lampada-quebrada_2: 7872997256063387382
+      lampada-quebrada_3: 2865650603917693497
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1817455498418763871}
   - component: {fileID: 6499421187489749599}
   m_Layer: 5
-  m_Name: glass_bottle 1
+  m_Name: banana_peel
   m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75fbab6c65e62841bea97608894836b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteType: 1
+  wasteType: 4

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      esponja_0: 1552250095395780857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

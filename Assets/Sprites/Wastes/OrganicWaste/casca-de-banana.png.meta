@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      casca-de-banana_0: 3486020971465749240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

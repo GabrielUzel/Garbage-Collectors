@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      papel-de-aluminio_0: 308328209935297426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

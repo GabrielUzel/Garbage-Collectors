@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Waste_Catalog_Scene.unity
     guid: 9aaf24032e7064c488272eb923277de6
+  - enabled: 1
+    path: Assets/Scenes/Level_One_Scene.unity
+    guid: 93998b71bac228b42a279a5b42aacbdc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
