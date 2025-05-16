@@ -15,7 +15,6 @@ namespace Assets.Scripts.Level_One
         public bool timerIsRunning = false;
         [SerializeField] TextMeshProUGUI timeText;
 
-
         private void Start()
         {
 

@@ -356,6 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128042534}
   - component: {fileID: 128042535}
+  - component: {fileID: 128042536}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -393,6 +394,19 @@ MonoBehaviour:
   timeRemaining: 150
   timerIsRunning: 0
   timeText: {fileID: 1950840273}
+--- !u!114 &128042536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128042533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab35a994aea6e54ea70d7515c9ad967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeManager: {fileID: 128042535}
 --- !u!1 &203539994
 GameObject:
   m_ObjectHideFlags: 0
