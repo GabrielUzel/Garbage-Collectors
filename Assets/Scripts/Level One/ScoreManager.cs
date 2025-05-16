@@ -39,4 +39,5 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = $"Pontuação: {score}";
         }
     }
+    //talvez adicionar aq caso o usuário chegue na maior pontuação possivel antes de finalizar o jogo, dai ele ganha
 }

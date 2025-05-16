@@ -12,6 +12,7 @@ namespace Assets.Scripts.Level_One
         public TrashType wasteType;
         private Vector3 offset;
         private bool dragging = false;
+        
 
         void OnMouseDown()
         {
@@ -44,8 +45,8 @@ namespace Assets.Scripts.Level_One
                     }
                     else
                     {
-                        //Aqui é caso foi jogado na lixeira incorreta
-                        // TODO: Player perde uma vida
+                        //Aqui é caso foi jogado na lixeira incorreta                       
+                        LifeQuantityManager.Instance.LoseHeart();
                         Destroy(gameObject);
                         return;
                     }
