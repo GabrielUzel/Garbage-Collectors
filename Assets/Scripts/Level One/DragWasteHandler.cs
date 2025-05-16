@@ -55,7 +55,7 @@ namespace Assets.Scripts.Level_One
 
         void Update()
         {
-            if (dragging)
+            if (dragging && Time.timeScale == 1f)
             {
                 transform.position = GetMouseWorldPos() + offset;
             }

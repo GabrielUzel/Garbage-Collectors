@@ -13,5 +13,13 @@ public class PauseMenuHandler : MonoBehaviour
     {
         // Ativa ou desativa o menu
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+        if (Time.timeScale == 1f)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 }
