@@ -66,6 +66,11 @@ namespace Assets.Scripts.Level_One
            level = gameData.PlayerCurrentLevel;
         }
 
-     
+        public void SaveData(ref GameData gameData)
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }
