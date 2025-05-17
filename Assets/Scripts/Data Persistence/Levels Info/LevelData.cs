@@ -7,10 +7,15 @@ public class LevelInfo
     public int levelId;
     public int trashCount;
     public int timeInSeconds;
+
+
+    public LevelInfo()
+    {
+    }
 }
 
 [System.Serializable]
 public class LevelData
 {
-    public List<LevelInfo> levelsInitialInfo;
+    public List<LevelInfo> levelsInitialInfo = new List<LevelInfo>();
 }

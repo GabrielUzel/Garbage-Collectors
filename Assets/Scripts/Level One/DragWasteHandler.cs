@@ -40,6 +40,7 @@ namespace Assets.Scripts.Level_One
                     {
                         // Aqui é caso o item está jogado na lixeira correta, ai vc coloca pra somar os pontos
                         ScoreManager.Instance.AddScore();
+                        TrashCountManager.Instance.AddTrashCount();
                         Destroy(gameObject);
                         return;
                     }
