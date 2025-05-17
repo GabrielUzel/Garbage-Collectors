@@ -46,8 +46,9 @@ namespace Assets.Scripts.Level_One
                     }
                     else
                     {
-                        //Aqui é caso foi jogado na lixeira incorreta                       
+                        //Aqui é caso foi jogado na lixeira incorreta          
                         LifeQuantityManager.Instance.LoseHeart();
+                        TrashCountManager.Instance.CleanAllTrashs();
                         Destroy(gameObject);
                         return;
                     }

@@ -21,9 +21,9 @@ namespace Assets.Scripts.Level_One
         public LevelData LevelDatas;
         public List<LevelInfo> levelsInitialInfo;
 
-       public int lifes = 9;
+        public int lifes = 9;
 
-       
+
 
         private void Awake()
         {
@@ -33,30 +33,44 @@ namespace Assets.Scripts.Level_One
             }
             else
             {
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
         }
+
 
         public void AddTrashCount()
         {
             TrashCount++;
             CleanAllTrashs();
         }
+      
 
         public void CleanAllTrashs()
         {
             LevelInfo level = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
             Debug.Log(level.trashCount);
-
+            GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
+            Debug.Log("Quantidade de lixos: " + (wastes.Length - 1));
             if (level != null)
             {
-                Debug.Log(level.trashCount);
-                Debug.Log(lifes);
-                Debug.Log(TrashCount);
-                if(TrashCount == (level.trashCount + lifes)){
+                if (TrashCount >= (level.trashCount + lifes)) { //o maior > eh temporario, enquanto n colca dados consistentes
                     // chamo a cena de vitoria
                     // SceneManager.LoadScene("Victory_Scene");
+                    Debug.Log("vc ganhou");
                     AddCurrentLevel();
+                }
+
+                else if (wastes.Length - 1 == 0)
+                 {
+                   // Debug.Log("entrei na checagem de zero lixo");
+
+                    if (UserWon())
+                    {
+                        // chamo a cena de vitoria
+                        // SceneManager.LoadScene("Victory_Scene");
+                        Debug.Log("vc ganhou");
+                        AddCurrentLevel();
+                    }
                 }
             }
 
@@ -64,10 +78,12 @@ namespace Assets.Scripts.Level_One
 
         public bool UserWon()
         {
+           // Debug.Log("checagem se ganhou");
             LevelInfo levelAux = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
             if (levelAux != null)
             {
                 if((TrashCount >= levelAux.trashCount)){
+                  
                     return true;
                 }
                 return false;
@@ -75,7 +91,7 @@ namespace Assets.Scripts.Level_One
             else { return false; }
            
         }
-
+        //adiciono um no nivel e ja salvo no documento
         public void AddCurrentLevel()
         {
             PlayerCurrentLevel++;
@@ -85,7 +101,7 @@ namespace Assets.Scripts.Level_One
         }
 
 
-
+        //recupero as infos do GameData existentes
         public void LoadData(GameData gameData)
         {
            PlayerCurrentLevel = gameData.PlayerCurrentLevel;
@@ -98,6 +114,7 @@ namespace Assets.Scripts.Level_One
             gameData.LevelInfosPhase = this.GameInfoPhase;
         }
 
+        //recupero as infos do levelData existentes
         public void LoadData(LevelData levelData)
         {
            foreach(var Data in levelData.levelsInitialInfo)
