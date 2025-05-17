@@ -9,16 +9,21 @@ using UnityEngine;
 
 namespace Assets.Scripts.Level_One
 {
-    public class TrashCountManager : MonoBehaviour, IDataPersistence
+    public class TrashCountManager : MonoBehaviour, IDataPersistence, ILevelPersistence
     {
         public static TrashCountManager Instance;
         public int TrashCount = 0;
         public GameData GameData;
+        public List<LevelInfoInPhases> GameInfoPhase;
+        public int PlayerCurrentLevel;
+
+
         public LevelData LevelDatas;
-        public int level;
-      //  public List<LevelInfo> levelsInitialInfo;
+        public List<LevelInfo> levelsInitialInfo;
 
+       public int lifes = 9;
 
+       
 
         private void Awake()
         {
@@ -35,42 +40,70 @@ namespace Assets.Scripts.Level_One
         public void AddTrashCount()
         {
             TrashCount++;
-            Debug.Log("chegou ate aq");
-           // CleanAllTrashs();
+            CleanAllTrashs();
         }
 
         public void CleanAllTrashs()
         {
-           
-            Debug.Log(level);
-          
-          //  Debug.Log(levelInfo);
-            /*
-            LevelInfo levelInfo = LevelPersistenceImplementation.Instance.GetLevelInfo(currentLevel);
-            Debug.Log("Conteúdo do arquivo JSON:\n" + levelInfo);
+            LevelInfo level = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
+            Debug.Log(level.trashCount);
 
-            Debug.Log(levelInfo);
-            if (levelInfo != null)
+            if (level != null)
             {
-                if(TrashCount == 2){
+                Debug.Log(level.trashCount);
+                Debug.Log(lifes);
+                Debug.Log(TrashCount);
+                if(TrashCount == (level.trashCount + lifes)){
                     // chamo a cena de vitoria
-                    Debug.Log("vc ganhou");
+                    // SceneManager.LoadScene("Victory_Scene");
+                    AddCurrentLevel();
                 }
             }
-        */
-        
-    }
+
+        }
+
+        public bool UserWon()
+        {
+            LevelInfo levelAux = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
+            if (levelAux != null)
+            {
+                if((TrashCount >= levelAux.trashCount)){
+                    return true;
+                }
+                return false;
+            }
+            else { return false; }
+           
+        }
+
+        public void AddCurrentLevel()
+        {
+            PlayerCurrentLevel++;
+
+            DataPersistenceManager.Instance.SaveGame();
+            Debug.Log("O nivel agr é " + PlayerCurrentLevel);
+        }
+
+
 
         public void LoadData(GameData gameData)
         {
-           level = gameData.PlayerCurrentLevel;
+           PlayerCurrentLevel = gameData.PlayerCurrentLevel;
+           GameInfoPhase = gameData.LevelInfosPhase;
         }
 
         public void SaveData(ref GameData gameData)
         {
-            throw new NotImplementedException();
+            gameData.PlayerCurrentLevel = this.PlayerCurrentLevel;
+            gameData.LevelInfosPhase = this.GameInfoPhase;
         }
 
-       
+        public void LoadData(LevelData levelData)
+        {
+           foreach(var Data in levelData.levelsInitialInfo)
+            {
+             levelsInitialInfo.Add(Data);
+            }
+        }
     }
 }

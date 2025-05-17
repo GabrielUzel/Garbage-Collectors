@@ -75,13 +75,14 @@ namespace Assets.Scripts.Level_One
             }
             if(quantityLifes == 0)
             {
-                loseGame();
+                LoseGame();
             }
 
         }
 
-        public void loseGame()
+        public void LoseGame()
         {
+            Debug.Log("Voce perdeu");
           //  SceneManager.LoadScene("Lost_Scene");
         }
     }
