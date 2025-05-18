@@ -16,6 +16,8 @@ public class LevelResult : MonoBehaviour
     public GameObject RetryLevel;
     public SpriteRenderer Background;
 
+    private TimeManager timeManager;
+
     private bool vitoria = false;
 
     private float timer;
@@ -23,8 +25,8 @@ public class LevelResult : MonoBehaviour
 
     public void Start()
     {
-        timer = 0f;
         PanelPopUp.SetActive(false);
+        timeManager = FindObjectOfType<TimeManager>();
     }
 
     [SerializeField] private int tempoLimiteSegundos = 150; // exemplo: 2m30s
@@ -57,6 +59,10 @@ public class LevelResult : MonoBehaviour
 
         PanelPopUp.SetActive(true);
         Fade.SetActive(true);
+        if (timeManager != null)
+        {
+            timeManager.timerIsRunning = false;
+        }
 
 
         // 1. Recuperar TrashCount e level
