@@ -35,7 +35,7 @@ namespace Assets.Scripts.Level_One
                 if (hit.CompareTag("TrashBin"))
                 {
                     TrashBinHandler binType = hit.GetComponent<TrashBinHandler>();
-
+                    Debug.Log("chegou até aqui");
                     if (binType != null && binType.acceptedType == wasteType)
                     {
                         // Aqui é caso o item está jogado na lixeira correta, ai vc coloca pra somar os pontos

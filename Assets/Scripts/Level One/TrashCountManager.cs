@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 namespace Assets.Scripts.Level_One
 {
     public class TrashCountManager : MonoBehaviour, IDataPersistence, ILevelPersistence
@@ -42,6 +43,8 @@ namespace Assets.Scripts.Level_One
         {
             TrashCount++;
             CleanAllTrashs();
+                // FindObjectOfType<LevelResult>().CheckVictoryCondition();
+
         }
       
 
@@ -55,7 +58,7 @@ namespace Assets.Scripts.Level_One
             {
                 if (TrashCount >= (level.trashCount + lifes)) { //o maior > eh temporario, enquanto n colca dados consistentes
                     // chamo a cena de vitoria
-                    // SceneManager.LoadScene("Victory_Scene");
+                        FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
                     Debug.Log("vc ganhou");
                     AddCurrentLevel();
                 }
@@ -67,7 +70,7 @@ namespace Assets.Scripts.Level_One
                     if (UserWon())
                     {
                         // chamo a cena de vitoria
-                        // SceneManager.LoadScene("Victory_Scene");
+                        FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
                         Debug.Log("vc ganhou");
                         AddCurrentLevel();
                     }

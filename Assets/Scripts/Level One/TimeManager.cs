@@ -51,14 +51,14 @@ namespace Assets.Scripts.Level_One
                     if (userWon)
                     {
                         Debug.Log("vc ganhou");
-                        // SceneManager.LoadScene("Victory_Scene");
+                        FindObjectOfType<LevelResult>().ShowPopUp("Você venceu!");
                         TrashCountManager.Instance.AddCurrentLevel();
-                       // chamar tela de vitoria
+                        // chamar tela de vitoria
                     }
                     else
                     {
                         Debug.Log("Tempo acabou e vc perdeu");
-                        // SceneManager.LoadScene("Lost_Scene");
+                        FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
                         //chamar tela de derrota
                     }
 

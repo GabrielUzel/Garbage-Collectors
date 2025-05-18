@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Level_One
 {
-   public class LifeQuantityManager : MonoBehaviour
+    public class LifeQuantityManager : MonoBehaviour
 
     {
         public static LifeQuantityManager Instance;
@@ -42,6 +42,7 @@ namespace Assets.Scripts.Level_One
         public void LoseHeart()
         {
             quantityLifes--;
+            // FindObjectOfType<LevelResult>().CheckVictoryCondition();
 
             if (quantityLifes < 0)
                 quantityLifes = 0;
@@ -65,7 +66,7 @@ namespace Assets.Scripts.Level_One
                 case 7:
                     lifes.sprite = fourLivesHalf; break;
                 case 8:
-                    lifes.sprite= fourLivesFull; break;
+                    lifes.sprite = fourLivesFull; break;
                 case 9:
                     lifes.sprite = fiveLivesHalf; break;
                 case 10:
@@ -73,7 +74,7 @@ namespace Assets.Scripts.Level_One
                 default:
                     lifes.sprite = lifeEmpty; break;
             }
-            if(quantityLifes == 0)
+            if (quantityLifes == 0)
             {
                 LoseGame();
             }
@@ -83,7 +84,7 @@ namespace Assets.Scripts.Level_One
         public void LoseGame()
         {
             Debug.Log("Voce perdeu");
-          //  SceneManager.LoadScene("Lost_Scene");
+            FindObjectOfType<LevelResult>().ShowPopUp("Ficou sem vidas");
         }
     }
 }
