@@ -12,8 +12,23 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        data.PlayerCurrentLevel = 1; 
-        data.timeInSeconds = 150f - timeManager.timeRemaining; 
-        data.trashCount = ScoreManager.Instance.score;
+        int currentLevel = 1;//UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        float timeSpent = 150f - timeManager.timeRemaining;
+        int score = ScoreManager.Instance.score;
+
+        LevelInfoInPhases levelInfo = data.LevelInfosPhase.Find(l => l.id == currentLevel);
+
+        if (levelInfo != null)
+        {
+            if (levelInfo.best_time == -1 || timeSpent < levelInfo.best_time)
+            {
+                levelInfo.best_time = Mathf.FloorToInt(timeSpent); 
+            }
+
+            if (score > levelInfo.highscore)
+            {
+                levelInfo.highscore = score;
+            }
+        }
     }
 }
