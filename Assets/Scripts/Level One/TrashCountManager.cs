@@ -17,6 +17,7 @@ namespace Assets.Scripts.Level_One
         public GameData GameData;
         public List<LevelInfoInPhases> GameInfoPhase;
         public int PlayerCurrentLevel;
+        public int LastPlayedLevel; 
 
 
         public LevelData LevelDatas;

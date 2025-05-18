@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Assets.Scripts.Level_One;
 
 public class PlayLevel : MonoBehaviour, ILevelPersistence
 {
@@ -65,9 +66,10 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
                 LevelId = 5;
                 break;
         }
-        
-        UpdateLevelInfo(LevelId);
+        GameSessionData.LastPlayedLevel = LevelId;
 
+        // TrashCountManager.Instance.LastPlayedLevel = LevelId;
+        UpdateLevelInfo(LevelId);
         InfoPanel.Instance.UpdatePanel(this.LevelId, this.TrashCount, this.TimeInSeconds);
     }
 

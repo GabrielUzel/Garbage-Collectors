@@ -29,7 +29,7 @@ public class LevelResult : MonoBehaviour
         timeManager = FindObjectOfType<TimeManager>();
     }
 
-    [SerializeField] private int tempoLimiteSegundos = 150; // exemplo: 2m30s
+    [SerializeField] private int tempoLimiteSegundos = 150;
 
     void Update()
     {
@@ -46,12 +46,13 @@ public class LevelResult : MonoBehaviour
 
     public void ShowPopUp(string reason)
     {
+        int nivel = GameSessionData.LastPlayedLevel;
 
         LevelInfo nivelAtual = null;
         if (TrashCountManager.Instance != null && TrashCountManager.Instance.levelsInitialInfo != null)
         {
             nivelAtual = TrashCountManager.Instance.levelsInitialInfo
-                .Find(l => l.levelId == TrashCountManager.Instance.PlayerCurrentLevel);
+                .Find(l => l.levelId == nivel);
         }
 
         if (jogoFinalizado) return;
@@ -59,13 +60,12 @@ public class LevelResult : MonoBehaviour
 
         PanelPopUp.SetActive(true);
         Fade.SetActive(true);
+
         if (timeManager != null)
         {
             timeManager.timerIsRunning = false;
         }
 
-
-        // 1. Recuperar TrashCount e level
         int objetivoLixos = 0;
         int tempoObjetivo = 0;
 
@@ -75,22 +75,9 @@ public class LevelResult : MonoBehaviour
             tempoObjetivo = nivelAtual.timeInSeconds;
         }
 
-        int lixosCorretos = 0;
-        int nivel = 0;
-        int pontuacao = 0;
+        int lixosCorretos = TrashCountManager.Instance.TrashCount;
+        int pontuacao = lixosCorretos * 200;
 
-        if (TrashCountManager.Instance != null)
-        {
-            lixosCorretos = TrashCountManager.Instance.TrashCount;
-            nivel = TrashCountManager.Instance.PlayerCurrentLevel;
-            pontuacao = lixosCorretos * 200;
-        }
-        else
-        {
-            Debug.LogWarning("TrashCountManager.Instance está null!");
-        }
-
-        // 2. Calcular tempo
         int tempoGasto = Mathf.FloorToInt(timer);
         int min = tempoGasto / 60;
         int seg = tempoGasto % 60;
@@ -98,8 +85,6 @@ public class LevelResult : MonoBehaviour
         int minObjetivo = tempoObjetivo / 60;
         int segObjetivo = tempoObjetivo % 60;
 
-
-        // 3. Atualizar textos da UI
         Level.text = $"{nivel}";
         ScoreText.text = $"PONTUAÇÃO: {pontuacao}";
         TrashText.text = $"{lixosCorretos}/{objetivoLixos}";
@@ -107,34 +92,28 @@ public class LevelResult : MonoBehaviour
 
         Debug.Log($"[LevelResult] Fim do jogo");
 
-
         vitoria = (lixosCorretos >= objetivoLixos && tempoGasto <= tempoObjetivo);
-
 
         CheckVictoryCondition();
     }
 
     public void CheckVictoryCondition()
     {
-        // Primeiro, desativa tudo
         TrashOk.SetActive(false);
         TrashNotOk.SetActive(false);
         TimeOk.SetActive(false);
         TimeNotOk.SetActive(false);
 
-        // Recupera dados reais
-        int objetivoLixos = TrashCountManager.Instance.levelsInitialInfo
-            .Find(l => l.levelId == TrashCountManager.Instance.PlayerCurrentLevel)
-            .trashCount;
+        int nivel = GameSessionData.LastPlayedLevel;
 
+        LevelInfo nivelAtual = TrashCountManager.Instance.levelsInitialInfo
+            .Find(l => l.levelId == nivel);
+
+        int objetivoLixos = nivelAtual.trashCount;
+        int tempoObjetivo = nivelAtual.timeInSeconds;
         int lixosCorretos = TrashCountManager.Instance.TrashCount;
-        int tempoObjetivo = TrashCountManager.Instance.levelsInitialInfo
-            .Find(l => l.levelId == TrashCountManager.Instance.PlayerCurrentLevel)
-            .timeInSeconds;
-
         int tempoGasto = Mathf.FloorToInt(timer);
 
-        // Ativa ícones conforme acertos
         if (lixosCorretos >= objetivoLixos)
             TrashOk.SetActive(true);
         else
@@ -158,5 +137,4 @@ public class LevelResult : MonoBehaviour
             RetryLevel.SetActive(true);
         }
     }
-
 }
