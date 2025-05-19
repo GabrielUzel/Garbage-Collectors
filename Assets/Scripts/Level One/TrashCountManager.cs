@@ -51,10 +51,11 @@ namespace Assets.Scripts.Level_One
 
         public void CleanAllTrashs()
         {
-            LevelInfo level = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
+            LevelInfo level = levelsInitialInfo.Find(l => l.levelId == GameSessionData.LastPlayedLevel);
             Debug.Log(level.trashCount);
             GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
             Debug.Log("Quantidade de lixos: " + (wastes.Length - 1));
+
             if (level != null)
             {
                 if (TrashCount >= (level.trashCount + lifes)) { //o maior > eh temporario, enquanto n colca dados consistentes
@@ -98,10 +99,18 @@ namespace Assets.Scripts.Level_One
         //adiciono um no nivel e ja salvo no documento
         public void AddCurrentLevel()
         {
-            PlayerCurrentLevel++;
+            if (PlayerCurrentLevel <= GameSessionData.LastPlayedLevel)
+            {
 
-            DataPersistenceManager.Instance.SaveGame();
-            Debug.Log("O nivel agr é " + PlayerCurrentLevel);
+                PlayerCurrentLevel++;
+
+                DataPersistenceManager.Instance.SaveGame();
+                Debug.Log("O nivel agr é " + PlayerCurrentLevel);
+            }
+            else
+            {
+                Debug.Log("O nivel mantem o mesmo sendo ele " + PlayerCurrentLevel);
+            }
         }
 
 
