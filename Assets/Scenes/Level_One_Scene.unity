@@ -614,7 +614,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 164363559}
-        m_TargetAssemblyTypeName: LevelResult, Scripts
+        m_TargetAssemblyTypeName: ButtonsPopUp, Scripts
         m_MethodName: RetryCurrentLevel
         m_Mode: 1
         m_Arguments:
@@ -672,24 +672,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 164363554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrashOk: {fileID: 0}
-  TrashNotOk: {fileID: 0}
-  TimeOk: {fileID: 0}
-  TimeNotOk: {fileID: 0}
-  PanelPopUp: {fileID: 0}
-  Fade: {fileID: 0}
-  TrashText: {fileID: 0}
-  TimeText: {fileID: 0}
-  ScoreText: {fileID: 0}
-  Level: {fileID: 0}
-  RestartLevel: {fileID: 0}
-  NextLevel: {fileID: 0}
-  RetryLevel: {fileID: 0}
-  Background: {fileID: 0}
-  tempoLimiteSegundos: 150
 --- !u!1 &203539994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1315,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 779880022}
-        m_TargetAssemblyTypeName: LevelResult, Scripts
+        m_TargetAssemblyTypeName: ButtonsPopUp, Scripts
         m_MethodName: RetryCurrentLevel
         m_Mode: 1
         m_Arguments:
@@ -1388,24 +1373,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 779880017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrashOk: {fileID: 0}
-  TrashNotOk: {fileID: 0}
-  TimeOk: {fileID: 0}
-  TimeNotOk: {fileID: 0}
-  PanelPopUp: {fileID: 0}
-  Fade: {fileID: 0}
-  TrashText: {fileID: 0}
-  TimeText: {fileID: 0}
-  ScoreText: {fileID: 0}
-  Level: {fileID: 0}
-  RestartLevel: {fileID: 0}
-  NextLevel: {fileID: 0}
-  RetryLevel: {fileID: 0}
-  Background: {fileID: 0}
-  tempoLimiteSegundos: 150
 --- !u!1 &806709983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,8 +1410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 767.78, y: -66}
-  m_SizeDelta: {x: 806.1157, y: 50}
+  m_AnchoredPosition: {x: 700.1826, y: -64.96002}
+  m_SizeDelta: {x: 670.9209, y: 47.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806709985
 MonoBehaviour:
@@ -1465,8 +1435,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Pontua\xE7\xE3o:"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
+  m_sharedMaterial: {fileID: 7678163840609230783, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2766,7 +2736,6 @@ GameObject:
   - component: {fileID: 1374291992}
   - component: {fileID: 1374291994}
   - component: {fileID: 1374291993}
-  - component: {fileID: 1374291995}
   m_Layer: 5
   m_Name: PanelPopUp
   m_TagString: Untagged
@@ -2843,18 +2812,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374291991}
   m_CullTransparentMesh: 1
---- !u!114 &1374291995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374291991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8040907a2c4ff94c8bddf0825c10217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1384622808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,8 +3926,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 02:30
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
+  m_sharedMaterial: {fileID: 7678163840609230783, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -137,11 +137,5 @@ public class LevelResult : MonoBehaviour
             NextLevel.SetActive(false);
             RetryLevel.SetActive(true);
         }
-    }
-    public void RetryCurrentLevel()
-{
-    Scene sceneAtual = SceneManager.GetActiveScene();
-    SceneManager.LoadScene(sceneAtual.name);
-}
-   
+    }  
 }

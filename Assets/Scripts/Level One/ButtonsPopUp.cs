@@ -10,4 +10,9 @@ public class ButtonsPopUp : MonoBehaviour
     SceneManager.LoadScene("Levels_Menu_Scene");
   }
 
+  public void RetryCurrentLevel()
+  {
+    Scene sceneAtual = SceneManager.GetActiveScene();
+    SceneManager.LoadScene(sceneAtual.name);
+  }
 }
