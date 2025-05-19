@@ -32,7 +32,7 @@ public class LevelResult : MonoBehaviour
 
     [SerializeField] private int tempoLimiteSegundos = 150;
 
-    void Update()
+    public void Update()
     {
         if (!jogoFinalizado)
         {
