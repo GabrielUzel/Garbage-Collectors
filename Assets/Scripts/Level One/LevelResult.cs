@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.Level_One;
+using UnityEngine.SceneManagement;
 
 public class LevelResult : MonoBehaviour
 {
@@ -137,4 +138,10 @@ public class LevelResult : MonoBehaviour
             RetryLevel.SetActive(true);
         }
     }
+    public void RetryCurrentLevel()
+{
+    Scene sceneAtual = SceneManager.GetActiveScene();
+    SceneManager.LoadScene(sceneAtual.name);
+}
+   
 }

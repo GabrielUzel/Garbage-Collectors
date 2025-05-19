@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 164363558}
   - component: {fileID: 164363557}
   - component: {fileID: 164363556}
+  - component: {fileID: 164363559}
   m_Layer: 5
   m_Name: RetryLevel
   m_TagString: Untagged
@@ -611,7 +612,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 164363557}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164363559}
+        m_TargetAssemblyTypeName: LevelResult, Scripts
+        m_MethodName: RetryCurrentLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &164363557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,6 +663,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164363554}
   m_CullTransparentMesh: 1
+--- !u!114 &164363559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164363554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrashOk: {fileID: 0}
+  TrashNotOk: {fileID: 0}
+  TimeOk: {fileID: 0}
+  TimeNotOk: {fileID: 0}
+  PanelPopUp: {fileID: 0}
+  Fade: {fileID: 0}
+  TrashText: {fileID: 0}
+  TimeText: {fileID: 0}
+  ScoreText: {fileID: 0}
+  Level: {fileID: 0}
+  RestartLevel: {fileID: 0}
+  NextLevel: {fileID: 0}
+  RetryLevel: {fileID: 0}
+  Background: {fileID: 0}
+  tempoLimiteSegundos: 150
 --- !u!1 &203539994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1257,7 @@ GameObject:
   - component: {fileID: 779880021}
   - component: {fileID: 779880020}
   - component: {fileID: 779880019}
+  - component: {fileID: 779880022}
   m_Layer: 5
   m_Name: RestartLevel
   m_TagString: Untagged
@@ -1287,7 +1328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 779880020}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 779880022}
+        m_TargetAssemblyTypeName: LevelResult, Scripts
+        m_MethodName: RetryCurrentLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &779880020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,6 +1379,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779880017}
   m_CullTransparentMesh: 1
+--- !u!114 &779880022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779880017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrashOk: {fileID: 0}
+  TrashNotOk: {fileID: 0}
+  TimeOk: {fileID: 0}
+  TimeNotOk: {fileID: 0}
+  PanelPopUp: {fileID: 0}
+  Fade: {fileID: 0}
+  TrashText: {fileID: 0}
+  TimeText: {fileID: 0}
+  ScoreText: {fileID: 0}
+  Level: {fileID: 0}
+  RestartLevel: {fileID: 0}
+  NextLevel: {fileID: 0}
+  RetryLevel: {fileID: 0}
+  Background: {fileID: 0}
+  tempoLimiteSegundos: 150
 --- !u!1 &806709983
 GameObject:
   m_ObjectHideFlags: 0
