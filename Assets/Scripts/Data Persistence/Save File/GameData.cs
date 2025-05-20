@@ -7,8 +7,12 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+
+    [System.NonSerialized]
     public int PlayerCurrentLevel;
+    [System.NonSerialized]
     public int trashCount;
+    [System.NonSerialized]
     public float timeInSeconds;
     public List<LevelInfoInPhases> LevelInfosPhase;
 
