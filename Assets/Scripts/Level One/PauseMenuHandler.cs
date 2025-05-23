@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 using UnityEngine;
 
 public class PauseMenuHandler : MonoBehaviour{
@@ -12,6 +11,7 @@ public class PauseMenuHandler : MonoBehaviour{
     public GameObject continueButton;
     public GameObject restartButton;
     public GameObject homeButton;
+    public GameObject pauseBackground;
 
     public Sprite[] music = new Sprite[2];
     public Sprite[] soundEf = new Sprite[2];
@@ -21,6 +21,7 @@ public class PauseMenuHandler : MonoBehaviour{
 
     public void TogglePauseMenu(){
         Time.timeScale = 0f;
+        pauseBackground.SetActive(true);
         pauseMenu.SetActive(true);
         musicButton.SetActive(true);
         soundButton.SetActive(true);
@@ -30,15 +31,33 @@ public class PauseMenuHandler : MonoBehaviour{
     }
 
     public void ToggleMusic(){
-        //TODO musica funcinar e mudar sprites do item do menu pop up
-    } 
+        //TODO colocar música
+        if (musicIsMuted){
+            musicButton.GetComponents<Image>()[0].sprite = music[0];
+            musicIsMuted = !musicIsMuted;
+        }
+        else{
+            musicButton.GetComponents<Image>()[0].sprite = music[1];
+            musicIsMuted = !musicIsMuted;
+        }
+           
+    }
 
     public void ToggleSoundEffect(){
-        //TODO som funcionar e mudar sprites do item do menu pop up
+        //TODO colocar som
+        if (soundIsMuted){
+            soundButton.GetComponents<Image>()[0].sprite = soundEf[0];
+            soundIsMuted = !soundIsMuted;
+        }
+        else{
+            soundButton.GetComponents<Image>()[0].sprite = soundEf[1];
+            soundIsMuted = !soundIsMuted;
+        }
     }
 
     public void ContinueAction(){
         Time.timeScale = 1f;
+        pauseBackground.SetActive(false);
         pauseMenu.SetActive(false);
         musicButton.SetActive(false);
         soundButton.SetActive(false);
@@ -48,11 +67,13 @@ public class PauseMenuHandler : MonoBehaviour{
     }
 
     public void RestartAction(){
+        pauseBackground.SetActive(false);
         SceneManager.LoadScene("Level_One_Scene");
         Time.timeScale = 1f;
     }
 
     public void HomeAction(){
+        pauseBackground.SetActive(false);
         SceneManager.LoadScene("Main_Menu_Scene");
         Time.timeScale = 1f;
     }
