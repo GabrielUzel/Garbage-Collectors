@@ -3,11 +3,16 @@ using UnityEngine;
 public class Avatar : MonoBehaviour
 {
     private string tag = "Waste";
-    private int totalWaste = 30;
+    private int totalScore;
+
+    public GameObject scoreText;
     public Sprite[] sprites;
     private string selectedAvatar = "";
+    private int score;
     private bool boy;
     private SpriteRenderer sr;
+
+    private ScoreManager sm;
 
     void Awake()
     {
@@ -18,28 +23,35 @@ public class Avatar : MonoBehaviour
 
     void Start()
     {
+        sm = scoreText.GetComponent<ScoreManager>();
+        score = sm.score;
+
+        GameObject[] wastes = GameObject.FindGameObjectsWithTag(tag);
+        totalScore = wastes.Length * 200;
+        ///
         sr = GetComponent<SpriteRenderer>();
+        
         
         sr.sprite = boy ? sprites[0] : sprites[3];
     }   
 
     void Update()
     {
-        GameObject[] wastes = GameObject.FindGameObjectsWithTag(tag);
-        UpdateSprite(wastes.Length);
+        score = sm.score;
+        UpdateSprite(score);
     }
     
-    void UpdateSprite(int wasteAmount)
+    void UpdateSprite(int score)
     {
-        int wastePercentage = (100*wasteAmount) / totalWaste;
+        int scorePercentage = (100*score) / totalScore;
 
-        if (wastePercentage <= 30)
-        {
-            sr.sprite = boy ? sprites[2] : sprites[5];
-        }
-        else if (wastePercentage <= 60)
+        if (scorePercentage >= 40 && scorePercentage < 60)
         {
             sr.sprite = boy ? sprites[1] : sprites[4];
+        }
+        else if (scorePercentage >= 70)
+        {
+            sr.sprite = boy ? sprites[2] : sprites[5];
         }
     }
 }
