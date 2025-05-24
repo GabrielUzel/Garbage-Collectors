@@ -1,8 +1,6 @@
-using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.TestTools;
 
 public class ChangeAvatarTest
 {
@@ -47,7 +45,7 @@ public class ChangeAvatarTest
     [TearDown]
     public void TearDown() 
     {
-        UnityEngine.Object.DestroyImmediate(gameObject);
+        Object.DestroyImmediate(gameObject);
     }
 
     [Test]

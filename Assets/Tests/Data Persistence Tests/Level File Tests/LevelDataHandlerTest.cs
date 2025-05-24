@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class LevelDataHandlerTests
 {
     private string _testDirectory;
-    private string _testFileName = "testLevelData.json";
+    private readonly string _testFileName = "testLevelData.json";
     private LevelDataHandler _levelDataHandler;
 
     [SetUp]
@@ -21,7 +21,6 @@ public class LevelDataHandlerTests
     [TearDown]
     public void TearDown()
     {
-
         Directory.Delete(_testDirectory, true);
     }
 

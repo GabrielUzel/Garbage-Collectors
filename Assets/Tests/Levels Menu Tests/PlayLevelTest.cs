@@ -34,8 +34,8 @@ public class PlayLevelTests
         {
             levelsInitialInfo = new List<LevelInfo>
             {
-                new LevelInfo { levelId = 1, trashCount = 10, timeInSeconds = 100 },
-                new LevelInfo { levelId = 2, trashCount = 20, timeInSeconds = 200 }
+                new() { levelId = 1, trashCount = 10, timeInSeconds = 100 },
+                new() { levelId = 2, trashCount = 20, timeInSeconds = 200 }
             }
         };
 

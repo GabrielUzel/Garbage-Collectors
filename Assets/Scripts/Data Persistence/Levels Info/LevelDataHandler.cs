@@ -4,8 +4,8 @@ using System.IO;
 
 public class LevelDataHandler
 {
-    private string dataDirPath;
-    private string dataFileName;
+    private readonly string dataDirPath;
+    private readonly string dataFileName;
 
     public LevelDataHandler(string dataDirPath, string dataFileName)
     {

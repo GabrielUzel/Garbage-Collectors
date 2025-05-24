@@ -12,6 +12,7 @@ namespace Assets.Scripts.Level_One
         public TrashType wasteType;
         private Vector3 offset;
         private bool dragging = false;
+        
 
         void OnMouseDown()
         {
@@ -34,18 +35,20 @@ namespace Assets.Scripts.Level_One
                 if (hit.CompareTag("TrashBin"))
                 {
                     TrashBinHandler binType = hit.GetComponent<TrashBinHandler>();
-
+                    Debug.Log("chegou até aqui");
                     if (binType != null && binType.acceptedType == wasteType)
                     {
                         // Aqui é caso o item está jogado na lixeira correta, ai vc coloca pra somar os pontos
                         ScoreManager.Instance.AddScore();
+                        TrashCountManager.Instance.AddTrashCount();
                         Destroy(gameObject);
                         return;
                     }
                     else
                     {
-                        //Aqui é caso foi jogado na lixeira incorreta
-                        // TODO: Player perde uma vida
+                        //Aqui é caso foi jogado na lixeira incorreta          
+                        LifeQuantityManager.Instance.LoseHeart();
+                        TrashCountManager.Instance.CleanAllTrashs();
                         Destroy(gameObject);
                         return;
                     }
