@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f63af5fba655b5640915d155ae37d4f1
+guid: 37ce37417a7b3354488e2da888c96e26
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -130742467935991541
-    second: concluido_0
+      213: 3219084086770127776
+    second: bones_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: concluido_0
+      name: bones_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 1080
-        height: 1120
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b090e990b628f2ef0800000000000000
-      internalID: -130742467935991541
+      spriteID: 0a3db06ebeb7cac20800000000000000
+      internalID: 3219084086770127776
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      concluido_0: -130742467935991541
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

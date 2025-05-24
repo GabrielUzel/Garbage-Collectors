@@ -3,14 +3,14 @@ guid: 19cd0c8e31d210840a0cc645571cba37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2575262340757203794
-    second: canudo_0
+      213: 8854674405657680986
+    second: straw_0
   - first:
-      213: -320419392885504677
-    second: canudo_1
+      213: -1495314962846003550
+    second: straw_1
   - first:
-      213: -390760643344479512
-    second: canudo_2
+      213: -347967471768324075
+    second: straw_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,24 +102,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: canudo_0
+      name: straw_0
       rect:
         serializedVersion: 2
         x: 75
@@ -134,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25b2640647b2db320800000000000000
-      internalID: 2575262340757203794
+      spriteID: a5c18f6357f12ea70800000000000000
+      internalID: 8854674405657680986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: canudo_1
+      name: straw_1
       rect:
         serializedVersion: 2
         x: 219
@@ -156,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b55c9e38244ad8bf0800000000000000
-      internalID: -320419392885504677
+      spriteID: 2aecc3cb6f29f3be0800000000000000
+      internalID: -1495314962846003550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: canudo_2
+      name: straw_2
       rect:
         serializedVersion: 2
         x: 295
@@ -178,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8eacf35e34db39af0800000000000000
-      internalID: -390760643344479512
+      spriteID: 518bbd39d65cb2bf0800000000000000
+      internalID: -347967471768324075
       vertices: []
       indices: 
       edges: []
@@ -197,10 +184,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      canudo_0: 2575262340757203794
-      canudo_1: -320419392885504677
-      canudo_2: -390760643344479512
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

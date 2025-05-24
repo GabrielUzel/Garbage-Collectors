@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 
 public class LevelPersistenceManager : MonoBehaviour
 {
@@ -18,13 +17,13 @@ public class LevelPersistenceManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
 
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
-        this.levelDataHandler = new LevelDataHandler(Application.streamingAssetsPath, fileName);
+        levelDataHandler = new LevelDataHandler(Application.streamingAssetsPath, fileName);
     }
 
     public void OnEnable()
@@ -41,18 +40,18 @@ public class LevelPersistenceManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        this.levelPersistenceObjects = FindAllLevelPersistenceObjects();
+        levelPersistenceObjects = FindAllLevelPersistenceObjects();
         LoadLevelsData();
     }
 
     public void OnSceneUnloaded(Scene scene)
     {
-
+        // Empty implementation
     }
 
     public void LoadLevelsData()
     {
-        this.levelData = levelDataHandler.Load();
+        levelData = levelDataHandler.Load();
 
         foreach (ILevelPersistence levelPersistenceObject in levelPersistenceObjects)
         {

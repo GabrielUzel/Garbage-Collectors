@@ -1,11 +1,9 @@
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 public class LevelPersistenceManagerTests
@@ -13,7 +11,7 @@ public class LevelPersistenceManagerTests
     private LevelPersistenceManager _manager;
     private GameObject _managerObject;
     private string _testDirectory;
-    private string _testFileName = "test.json";
+    private readonly string _testFileName = "test.json";
 
     [SetUp]
     public void Setup()

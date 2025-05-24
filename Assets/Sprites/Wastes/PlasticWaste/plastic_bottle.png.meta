@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8494cc74d46890342b9f4a0cafd90d69
+guid: 925a3b9fe8048e743831eedb2af1fa45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1552250095395780857
-    second: esponja_0
+      213: -2783806595863735790
+    second: plastic_bottle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: esponja_0
+      name: plastic_bottle_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 13
-        width: 386
-        height: 383
+        x: 143
+        y: 0
+        width: 226
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f8b1a2dc33ba8510800000000000000
-      internalID: 1552250095395780857
+      spriteID: 212172a76aeed59d0800000000000000
+      internalID: -2783806595863735790
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      esponja_0: 1552250095395780857
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

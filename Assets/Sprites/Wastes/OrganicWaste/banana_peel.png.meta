@@ -3,8 +3,8 @@ guid: 759d5f83d0dea834bba369d7d2ac7113
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3486020971465749240
-    second: casca-de-banana_0
+      213: 531190487959408822
+    second: banana_peel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: casca-de-banana_0
+      name: banana_peel_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f237c39a95d06030800000000000000
-      internalID: 3486020971465749240
+      spriteID: 6b013e63fea2f5700800000000000000
+      internalID: 531190487959408822
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      casca-de-banana_0: 3486020971465749240
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

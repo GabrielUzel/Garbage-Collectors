@@ -1,4 +1,3 @@
-using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -8,9 +7,9 @@ public class LevelInfo
     public int trashCount;
     public int timeInSeconds;
 
-
     public LevelInfo()
     {
+
     }
 }
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 89bd444aa7b339e48926f39d0c2c91e5
+guid: 0d473823bd36f0e4583de448b59fb5d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7026294600352386817
-    second: grampo_0
+      213: 6167489436510226871
+    second: broken_plate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grampo_0
+      name: broken_plate_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 7
+        y: 7
+        width: 499
+        height: 498
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10fcf3d46b9628160800000000000000
-      internalID: 7026294600352386817
+      spriteID: 7b98a2b37f2579550800000000000000
+      internalID: 6167489436510226871
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      grampo_0: 7026294600352386817
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

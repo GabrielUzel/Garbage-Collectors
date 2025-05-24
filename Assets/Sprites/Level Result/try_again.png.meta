@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: eedd403335df8264a9a84a472d2d1c45
+guid: 1edfa2b6ec4ce9242aee3a58e256965a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -895428589882969499
-    second: residuos-organicos_0
-  - first:
-      213: 2967647259302610270
-    second: residuos-organicos_1
-  - first:
-      213: 8533111975267551287
-    second: residuos-organicos_2
-  - first:
-      213: 1471279749834562366
-    second: residuos-organicos_3
+      213: 2507114240591317906
+    second: try_again_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: residuos-organicos_0
+      name: try_again_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 15
-        width: 179
-        height: 307
+        x: 23
+        y: 24
+        width: 1018
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 562fb42117cc293f0800000000000000
-      internalID: -895428589882969499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: residuos-organicos_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 233
-        width: 287
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e55c46585733f2920800000000000000
-      internalID: 2967647259302610270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: residuos-organicos_2
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 222
-        width: 212
-        height: 275
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73844729124bb6670800000000000000
-      internalID: 8533111975267551287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: residuos-organicos_3
-      rect:
-        serializedVersion: 2
-        x: 190
-        y: 35
-        width: 315
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3b5d1623290b6410800000000000000
-      internalID: 1471279749834562366
+      spriteID: 29bc4c95e1f0bc220800000000000000
+      internalID: 2507114240591317906
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      residuos-organicos_0: -895428589882969499
-      residuos-organicos_1: 2967647259302610270
-      residuos-organicos_2: 8533111975267551287
-      residuos-organicos_3: 1471279749834562366
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

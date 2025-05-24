@@ -1,11 +1,9 @@
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 public class DataPersistenceManagerTests
@@ -46,7 +44,7 @@ public class DataPersistenceManagerTests
         _manager.LoadGame();
 
         var gameData = _manager.GetType()
-            .GetField("gameData", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+            .GetField("gameData", BindingFlags.NonPublic | BindingFlags.Instance)
             .GetValue(_manager) as GameData;
 
         Assert.IsNotNull(gameData);
@@ -75,7 +73,7 @@ public class DataPersistenceManagerTests
         yield return null;
     }
 
-        [UnityTest]
+    [UnityTest]
     public IEnumerator LoadGame_WrongPlayerLevel_Test()
     {
         var testObject = new GameObject("TestObject");

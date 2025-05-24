@@ -3,8 +3,8 @@ guid: 203e60fcdf270ae4cbe8f525cd2bcbd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3405386829925400341
-    second: copo-de-vidro_0
+      213: 2768289096615194565
+    second: glass_cup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: copo-de-vidro_0
+      name: glass_cup_0
       rect:
         serializedVersion: 2
         x: 95
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be0c08f78b2adb0d0800000000000000
-      internalID: -3405386829925400341
+      spriteID: 5cfe55f2440fa6620800000000000000
+      internalID: 2768289096615194565
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      copo-de-vidro_0: -3405386829925400341
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

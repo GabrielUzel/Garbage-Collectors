@@ -1,8 +1,4 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEngine;
-
-
 
 [System.Serializable]
 public class GameData
@@ -33,5 +29,4 @@ public class LevelInfoInPhases
     public int id;
     public int best_time;
     public int highscore;
-
 }

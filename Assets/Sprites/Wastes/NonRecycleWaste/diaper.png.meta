@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 37ce37417a7b3354488e2da888c96e26
+guid: effaba45aae4fce4588c76a372cdd05b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2300323935221723256
-    second: ossos_0
+      213: 8355534932255826566
+    second: diaper_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ossos_0
+      name: diaper_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 25
+        y: 72
+        width: 462
+        height: 368
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87038337e646cef10800000000000000
-      internalID: 2300323935221723256
+      spriteID: 682e97950c2d4f370800000000000000
+      internalID: 8355534932255826566
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ossos_0: 2300323935221723256
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

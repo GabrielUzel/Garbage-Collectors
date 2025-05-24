@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: effaba45aae4fce4588c76a372cdd05b
+guid: 31b448a31d26de148be2447cc984f558
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6710253850741418241
-    second: fralda-descartavel_0
+      213: -9085892586188298084
+    second: aluminum_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fralda-descartavel_0
+      name: aluminum_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 72
-        width: 462
-        height: 368
+        x: 0
+        y: 6
+        width: 512
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 109a326235c9f1d50800000000000000
-      internalID: 6710253850741418241
+      spriteID: c9824ecf4dc68e180800000000000000
+      internalID: -9085892586188298084
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fralda-descartavel_0: 6710253850741418241
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

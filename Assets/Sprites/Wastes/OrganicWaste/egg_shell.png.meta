@@ -3,11 +3,11 @@ guid: 339545f17e2b8ad4e93c9b720da5093d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8232025758800338150
-    second: casca-de-ovo_0
+      213: 8506611693088777731
+    second: egg_shell_0
   - first:
-      213: -1415492964799316939
-    second: casca-de-ovo_1
+      213: -2087834527372994356
+    second: egg_shell_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: casca-de-ovo_0
+      name: egg_shell_0
       rect:
         serializedVersion: 2
         x: 5
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1327d00038f1cd80800000000000000
-      internalID: -8232025758800338150
+      spriteID: 306adb0d34e8d0670800000000000000
+      internalID: 8506611693088777731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: casca-de-ovo_1
+      name: egg_shell_1
       rect:
         serializedVersion: 2
         x: 288
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53c721be5a82b5ce0800000000000000
-      internalID: -1415492964799316939
+      spriteID: cc813262f858603e0800000000000000
+      internalID: -2087834527372994356
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      casca-de-ovo_0: -8232025758800338150
-      casca-de-ovo_1: -1415492964799316939
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

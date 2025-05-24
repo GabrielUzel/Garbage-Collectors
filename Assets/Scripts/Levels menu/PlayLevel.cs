@@ -10,14 +10,14 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     public Button ReturnToHomeButton;
     public Image Background;
 
-    private Color normalColor = new Color(255, 255, 255, 1);
-    private Color fadedColor = new Color(255, 255, 255, 0.5f);
-    private List<Button> ActiveButtons = new List<Button>();
+    private Color normalColor = new(255, 255, 255, 1);
+    private Color fadedColor = new(255, 255, 255, 0.5f);
+    private readonly List<Button> ActiveButtons = new();
 
     private int LevelId;
     private int TrashCount;
     private int TimeInSeconds;
-    private InfoPanel infoPanel;
+    private readonly InfoPanel infoPanel;
     private LevelData levelData;
 
     void Start()
@@ -68,9 +68,8 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
         }
         GameSessionData.LastPlayedLevel = LevelId;
 
-        // TrashCountManager.Instance.LastPlayedLevel = LevelId;
         UpdateLevelInfo(LevelId);
-        InfoPanel.Instance.UpdatePanel(this.LevelId, this.TrashCount, this.TimeInSeconds);
+        InfoPanel.Instance.UpdatePanel(LevelId, TrashCount, TimeInSeconds);
     }
 
     public void LoadData(LevelData levelData)
@@ -81,8 +80,8 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     public void UpdateLevelInfo(int levelId)
     {
         LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == levelId);
-        this.TrashCount = currentLevelInfo.trashCount;
-        this.TimeInSeconds = currentLevelInfo.timeInSeconds;
+        TrashCount = currentLevelInfo.trashCount;
+        TimeInSeconds = currentLevelInfo.timeInSeconds;
     }
 
     public void ClosePopUp()

@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 31b448a31d26de148be2447cc984f558
+guid: fca4d8d80aee4b74ca172f7398b51523
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 308328209935297426
-    second: papel-de-aluminio_0
+      213: -1246860917570988336
+    second: broken_mirror_0
+  - first:
+      213: -4495067251554418212
+    second: broken_mirror_1
+  - first:
+      213: -8865620735797820887
+    second: broken_mirror_2
+  - first:
+      213: -2957085822223649890
+    second: broken_mirror_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: papel-de-aluminio_0
+      name: broken_mirror_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6
-        width: 512
-        height: 500
+        x: 14
+        y: 75
+        width: 58
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29bec639fd6674400800000000000000
-      internalID: 308328209935297426
+      spriteID: 0d61dd30a9242bee0800000000000000
+      internalID: -1246860917570988336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken_mirror_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 339
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd18b9d86205e91c0800000000000000
+      internalID: -4495067251554418212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken_mirror_2
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 95
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9220f61b9ecf6f480800000000000000
+      internalID: -8865620735797820887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broken_mirror_3
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 15
+        width: 49
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93f30cac1256f6d0800000000000000
+      internalID: -2957085822223649890
       vertices: []
       indices: 
       edges: []
@@ -134,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      papel-de-aluminio_0: 308328209935297426
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
