@@ -356,6 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128042534}
   - component: {fileID: 128042535}
+  - component: {fileID: 128042536}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -3983,6 +3984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128951972}
   - component: {fileID: 2128951971}
+  - component: {fileID: 2128951973}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged

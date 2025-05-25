@@ -3,6 +3,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class GameData
 {
+    [System.NonSerialized]
     public int PlayerCurrentLevel;
     public List<LevelInfoInPhases> LevelInfosPhase;
 
