@@ -2,44 +2,42 @@ using UnityEngine;
 
 public class Avatar : MonoBehaviour
 {
-    private string tag = "Waste";
-    private int totalWaste = 30;
+    private readonly string wasteTag = "Waste";
+    private readonly int totalWaste = 30;
     public Sprite[] sprites;
     private string selectedAvatar = "";
     private bool boy;
-    private SpriteRenderer sr;
+    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
-
         boy = selectedAvatar == "boy"; 
     }
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        
-        sr.sprite = boy ? sprites[0] : sprites[3];
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = boy ? sprites[0] : sprites[3];
     }   
 
     void Update()
     {
-        GameObject[] wastes = GameObject.FindGameObjectsWithTag(tag);
+        GameObject[] wastes = GameObject.FindGameObjectsWithTag(wasteTag);
         UpdateSprite(wastes.Length);
     }
     
     void UpdateSprite(int wasteAmount)
     {
-        int wastePercentage = (100*wasteAmount) / totalWaste;
+        int wastePercentage = 100 * wasteAmount / totalWaste;
 
         if (wastePercentage <= 30)
         {
-            sr.sprite = boy ? sprites[2] : sprites[5];
+            spriteRenderer.sprite = boy ? sprites[2] : sprites[5];
         }
         else if (wastePercentage <= 60)
         {
-            sr.sprite = boy ? sprites[1] : sprites[4];
+            spriteRenderer.sprite = boy ? sprites[1] : sprites[4];
         }
     }
 }

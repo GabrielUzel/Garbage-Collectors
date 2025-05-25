@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Assets.Scripts.Level_One;
-using UnityEngine.SceneManagement;
 
 public class LevelResult : MonoBehaviour
 {
@@ -16,13 +14,11 @@ public class LevelResult : MonoBehaviour
     public GameObject NextLevel;
     public GameObject RetryLevel;
     public SpriteRenderer Background;
-
     private TimeManager timeManager;
-
-    private bool vitoria = false;
-
+    private bool victory = false;
     private float timer;
-    private bool jogoFinalizado = false;
+    private bool gameFinished = false;
+    [SerializeField] private int tempoLimiteSegundos = 150;
 
     public void Start()
     {
@@ -30,11 +26,9 @@ public class LevelResult : MonoBehaviour
         timeManager = FindObjectOfType<TimeManager>();
     }
 
-    [SerializeField] private int tempoLimiteSegundos = 150;
-
     public void Update()
     {
-        if (!jogoFinalizado)
+        if (!gameFinished)
         {
             timer += Time.deltaTime;
 
@@ -47,18 +41,21 @@ public class LevelResult : MonoBehaviour
 
     public void ShowPopUp(string reason)
     {
-        int nivel = GameSessionData.LastPlayedLevel;
+        int level = GameSessionData.LastPlayedLevel;
 
-        LevelInfo nivelAtual = null;
+        LevelInfo currentLevel = null;
         if (TrashCountManager.Instance != null && TrashCountManager.Instance.levelsInitialInfo != null)
         {
-            nivelAtual = TrashCountManager.Instance.levelsInitialInfo
-                .Find(l => l.levelId == nivel);
+            currentLevel = TrashCountManager.Instance.levelsInitialInfo
+                .Find(l => l.levelId == level);
         }
 
-        if (jogoFinalizado) return;
-        jogoFinalizado = true;
+        if (gameFinished)
+        {
+            return;
+        }
 
+        gameFinished = true;
         PanelPopUp.SetActive(true);
         Fade.SetActive(true);
 
@@ -67,33 +64,31 @@ public class LevelResult : MonoBehaviour
             timeManager.timerIsRunning = false;
         }
 
-        int objetivoLixos = 0;
-        int tempoObjetivo = 0;
+        int wastesObjective = 0;
+        int timeObjective = 0;
 
-        if (nivelAtual != null)
+        if (currentLevel != null)
         {
-            objetivoLixos = nivelAtual.trashCount;
-            tempoObjetivo = nivelAtual.timeInSeconds;
+            wastesObjective = currentLevel.trashCount;
+            timeObjective = currentLevel.timeInSeconds;
         }
 
-        int lixosCorretos = TrashCountManager.Instance.TrashCount;
-        int pontuacao = lixosCorretos * 200;
+        int rightWastes = TrashCountManager.Instance.TrashCount;
+        int score = rightWastes * 200;
 
-        int tempoGasto = Mathf.FloorToInt(timer);
-        int min = tempoGasto / 60;
-        int seg = tempoGasto % 60;
+        int timeWasted = Mathf.FloorToInt(timer);
+        int minutes = timeWasted / 60;
+        int seconds = timeWasted % 60;
 
-        int minObjetivo = tempoObjetivo / 60;
-        int segObjetivo = tempoObjetivo % 60;
+        int minutesObjective = timeObjective / 60;
+        int secondsObjective = timeObjective % 60;
 
-        Level.text = $"{nivel}";
-        ScoreText.text = $"PONTUAÇÃO: {pontuacao}";
-        TrashText.text = $"{lixosCorretos}/{objetivoLixos}";
-        TimeText.text = $"{min}:{seg:00}/{minObjetivo}:{segObjetivo:00}";
+        Level.text = $"{level}";
+        ScoreText.text = $"PONTUAÇÃO: {score}";
+        TrashText.text = $"{rightWastes}/{wastesObjective}";
+        TimeText.text = $"{minutes}:{seconds:00}/{minutesObjective}:{secondsObjective:00}";
 
-        Debug.Log($"[LevelResult] Fim do jogo");
-
-        vitoria = (lixosCorretos >= objetivoLixos && tempoGasto <= tempoObjetivo);
+        victory = rightWastes >= wastesObjective && timeWasted <= timeObjective;
 
         CheckVictoryCondition();
     }
@@ -105,27 +100,35 @@ public class LevelResult : MonoBehaviour
         TimeOk.SetActive(false);
         TimeNotOk.SetActive(false);
 
-        int nivel = GameSessionData.LastPlayedLevel;
+        int level = GameSessionData.LastPlayedLevel;
 
-        LevelInfo nivelAtual = TrashCountManager.Instance.levelsInitialInfo
-            .Find(l => l.levelId == nivel);
+        LevelInfo currentLevel = TrashCountManager.Instance.levelsInitialInfo
+            .Find(l => l.levelId == level);
 
-        int objetivoLixos = nivelAtual.trashCount;
-        int tempoObjetivo = nivelAtual.timeInSeconds;
-        int lixosCorretos = TrashCountManager.Instance.TrashCount;
-        int tempoGasto = Mathf.FloorToInt(timer);
+        int wastesObjective = currentLevel.trashCount;
+        int timeObjective = currentLevel.timeInSeconds;
+        int rightWastes = TrashCountManager.Instance.TrashCount;
+        int timeWasted = Mathf.FloorToInt(timer);
 
-        if (lixosCorretos >= objetivoLixos)
+        if (rightWastes >= wastesObjective)
+        {
             TrashOk.SetActive(true);
+        }
         else
+        {
             TrashNotOk.SetActive(true);
+        }
 
-        if (tempoGasto <= tempoObjetivo)
+        if (timeWasted <= timeObjective)
+        {
             TimeOk.SetActive(true);
+        }
         else
+        {
             TimeNotOk.SetActive(true);
+        }
 
-        if (vitoria)
+        if (victory)
         {
             RestartLevel.SetActive(true);
             NextLevel.SetActive(true);

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using Assets.Scripts.Level_One;
 
 public class PlayLevel : MonoBehaviour, ILevelPersistence
 {

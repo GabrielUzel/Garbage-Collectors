@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 
     public RectTransform spawnArea1;
     public RectTransform spawnArea2;
+
     void Start()
     {
         GenerateWastes();
@@ -20,7 +21,7 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < totalTypes; i++)
         {
-            int objectsToSpawn = baseAmount + (i < extra ? 1 : 0); // distribui resto
+            int objectsToSpawn = baseAmount + (i < extra ? 1 : 0); 
             for (int j = 0; j < objectsToSpawn; j++)
             {
                 RectTransform chosenArea = Random.value < 0.7f ? spawnArea1 : spawnArea2;
