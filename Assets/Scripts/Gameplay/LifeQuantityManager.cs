@@ -16,7 +16,7 @@ public class LifeQuantityManager : MonoBehaviour
     public Sprite oneLifeFull;
     public Sprite oneLifeHalf;
     public Sprite lifeEmpty;
-    int quantityLifes = 10;
+    int quantityLifes = 10; // from file
 
     void Awake()
     {
@@ -34,6 +34,7 @@ public class LifeQuantityManager : MonoBehaviour
     {
         quantityLifes--;
 
+        // ??? 
         if (quantityLifes < 0)
         {
             quantityLifes = 0;
@@ -81,7 +82,7 @@ public class LifeQuantityManager : MonoBehaviour
 
         if (quantityLifes == 0)
         {
-            LoseGame();
+            LoseGame(); // change
         }
     }
 

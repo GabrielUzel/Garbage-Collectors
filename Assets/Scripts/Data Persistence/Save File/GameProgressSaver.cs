@@ -1,4 +1,3 @@
-using Assets.Scripts.Level_One;
 using UnityEngine;
 
 public class GameProgressSaver : MonoBehaviour, IDataPersistence
@@ -6,6 +5,7 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
     public LevelInfo levelData;
     public TimeManager timeManager;
     public float timeLevelOne = 150;
+
     public void LoadData(GameData data)
     {
 
@@ -13,8 +13,8 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        int currentLevel = 1;  //levelData.levelId;
-        float timeSpent = timeLevelOne - timeManager.timeRemaining; //levelData.timeInSeconds- timeManager.timeRemaining;
+        int currentLevel = 1;
+        float timeSpent = timeLevelOne - timeManager.timeRemaining; 
         int score = ScoreManager.Instance.score;
 
         LevelInfoInPhases levelInfo = data.LevelInfosPhase.Find(l => l.id == currentLevel);

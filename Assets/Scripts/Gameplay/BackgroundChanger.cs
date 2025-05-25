@@ -3,15 +3,15 @@ using UnityEngine;
 public class BackgroundChanger : MonoBehaviour
 {
     public Sprite[] backgrounds; 
-    private SpriteRenderer sr;
+    private SpriteRenderer spriteRenderer;
 
     private int totalWaste;
     private int collectedWaste;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        sr.sprite = backgrounds[0]; 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = backgrounds[0]; 
 
         var levelInfo = TrashCountManager.Instance.levelsInitialInfo.Find(
             l => l.levelId == TrashCountManager.Instance.PlayerCurrentLevel
@@ -23,7 +23,6 @@ public class BackgroundChanger : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Level info não encontrado!");
             totalWaste = 1; 
         }
     }
@@ -38,19 +37,19 @@ public class BackgroundChanger : MonoBehaviour
     {
         if (totalWaste <= 0) return;
 
-        int percentage = (100 * collected) / totalWaste;
+        int percentage = 100 * collected / totalWaste;
 
         if (percentage >= 100)
         {
-            sr.sprite = backgrounds[2]; 
+            spriteRenderer.sprite = backgrounds[2]; 
         }
         else if (percentage >= 60)
         {
-            sr.sprite = backgrounds[1]; 
+            spriteRenderer.sprite = backgrounds[1]; 
         }
         else
         {
-            sr.sprite = backgrounds[0]; 
+            spriteRenderer.sprite = backgrounds[0]; 
         }
     }
 }

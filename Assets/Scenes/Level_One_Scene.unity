@@ -356,7 +356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 128042534}
   - component: {fileID: 128042535}
-  - component: {fileID: 128042536}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -1071,7 +1070,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashCount: 0
   GameData:
-    PlayerCurrentLevel: 1
     LevelInfosPhase:
     - id: 1
       best_time: -1
@@ -4062,6 +4060,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128951973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128951970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f03cdd8f1ee1f84192a17cfece54352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgrounds:
+  - {fileID: 4838201469012271266, guid: 2ace4b3594fc0244db3fac6fce789bf5, type: 3}
+  - {fileID: -656086801822231432, guid: 864abe0665548534ca9a60ea3f81f81f, type: 3}
+  - {fileID: 6861310643827267881, guid: 447410e2da1f5334fb3680295d5d111b, type: 3}
 --- !u!1 &2131688035
 GameObject:
   m_ObjectHideFlags: 0
