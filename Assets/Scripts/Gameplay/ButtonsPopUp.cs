@@ -10,7 +10,6 @@ public class ButtonsPopUp : MonoBehaviour
 
     public void RetryCurrentLevel()
     {
-        Scene sceneAtual = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(sceneAtual.name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

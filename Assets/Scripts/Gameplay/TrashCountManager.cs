@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TrashCountManager : MonoBehaviour, IDataPersistence, ILevelPersistence
+public class TrashCountManager : MonoBehaviour, ILevelPersistence
 {
     public static TrashCountManager Instance;
-    public int TrashCount = 0;
+    public int CorrectTrashCount = 0;
+    public int IncorrectTrashCount = 0;
     public GameData GameData;
-    public List<LevelInfoInPhases> GameInfoPhase;
-    public int PlayerCurrentLevel;
-    public int LastPlayedLevel; 
+    public LevelData LevelData;
+    private LevelInfo currentLevelInfo;
+    private int trashes;
+    private int totalTrashes;
 
-    public LevelData LevelDatas;
-    public List<LevelInfo> levelsInitialInfo;
-
-    public int lifes = 9;
-
-    private void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
@@ -27,81 +23,59 @@ public class TrashCountManager : MonoBehaviour, IDataPersistence, ILevelPersiste
         }
     }
 
-
-    public void AddTrashCount()
+    void Start()
     {
-        TrashCount++;
-        CleanAllTrashs();
+        currentLevelInfo = LevelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
+        trashes = currentLevelInfo.trashCount;
+        totalTrashes = trashes * 100 / 70;
     }
-    
 
-    public void CleanAllTrashs()
+    void Update()
     {
-        LevelInfo level = levelsInitialInfo.Find(l => l.levelId == GameSessionData.LastPlayedLevel);
-        GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
-
-        if (level != null)
+        if (CorrectTrashCount + IncorrectTrashCount == totalTrashes)
         {
-            if (TrashCount >= (level.trashCount + lifes))
-            { 
-                FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
-                AddCurrentLevel();
-            }
-
-            if (wastes.Length - 1 == 0)
-            {
-                if (UserWon())
-                {
-                    FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
-                    AddCurrentLevel();
-                }
-            }
+            TimeManager.Instance.timerIsRunning = false;
+            LevelResult.Instance.ShowPopUp("Victory");
         }
     }
 
-    public bool UserWon()
+    public void AddCorrectTrashCount()
     {
-        LevelInfo levelAux = levelsInitialInfo.Find(l => l.levelId == PlayerCurrentLevel);
-        if (levelAux != null)
-        {
-            if (TrashCount >= levelAux.trashCount)
-            {
-                return true;
-            }
+        CorrectTrashCount++;
 
-            return false;
+        if (VerifyIfPlayerWon())
+        {
+            LevelResult.Instance.victory = true;
+        }
+    }
+
+    public void AddIncorrectTrashCount()
+    {
+        IncorrectTrashCount++;
+    }
+
+    public bool VerifyIfPlayerWon()
+    {
+        if (CorrectTrashCount == trashes * 70 / 100)
+        {
+            return true;
         }
 
         return false;
     }
 
-    public void AddCurrentLevel()
+    public void CleanAllTrashes()
     {
-        if (PlayerCurrentLevel <= GameSessionData.LastPlayedLevel)
+        GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
+
+        foreach (GameObject waste in wastes)
         {
-            PlayerCurrentLevel++;
-
-            DataPersistenceManager.Instance.SaveGame();
+            Destroy(waste);
         }
-    }
-
-    public void LoadData(GameData gameData)
-    {
-        PlayerCurrentLevel = gameData.PlayerCurrentLevel;
-        GameInfoPhase = gameData.LevelInfosPhase;
-    }
-
-    public void SaveData(ref GameData gameData)
-    {
-        gameData.PlayerCurrentLevel = PlayerCurrentLevel;
-        gameData.LevelInfosPhase = GameInfoPhase;
     }
 
     public void LoadData(LevelData levelData)
     {
-        foreach(var Data in levelData.levelsInitialInfo)
-        {
-            levelsInitialInfo.Add(Data);
-        }
+        LevelData = levelData;
     }
 }

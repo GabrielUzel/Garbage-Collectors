@@ -3,11 +3,24 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour, ILevelPersistence
 {
+    public static TimeManager Instance;
     public float timeRemaining;
     public bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI timeText;
     private LevelData levelData;
     public LevelInfo currentLevelInfo;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -40,15 +53,15 @@ public class TimeManager : MonoBehaviour, ILevelPersistence
                 timeRemaining = 0;
                 timerIsRunning = false;
 
-                var userWon = TrashCountManager.Instance.UserWon();
+                var userWon = TrashCountManager.Instance.VerifyIfPlayerWon();
+
                 if (userWon)
                 {
-                    FindObjectOfType<LevelResult>().ShowPopUp("Você venceu!");
-                    TrashCountManager.Instance.AddCurrentLevel();
+                    LevelResult.Instance.ShowPopUp("Victory");
                 }
                 else
                 {
-                    FindObjectOfType<LevelResult>().ShowPopUp("Acabou o tempo");
+                    LevelResult.Instance.ShowPopUp("Time");
                 }
             }
         }

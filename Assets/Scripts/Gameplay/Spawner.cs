@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : MonoBehaviour, ILevelPersistence
 {
+    private LevelData levelData;
+    private int amount;
     public GameObject[] Wastes;
-    public int amount;
-
     public RectTransform spawnArea1;
     public RectTransform spawnArea2;
 
     void Start()
     {
+        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
+        amount = currentLevelInfo.trashCount * 100 / 70;
         GenerateWastes();
     }
-    
+
     void GenerateWastes()
     {
         int totalTypes = Wastes.Length;
@@ -21,7 +23,7 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < totalTypes; i++)
         {
-            int objectsToSpawn = baseAmount + (i < extra ? 1 : 0); 
+            int objectsToSpawn = baseAmount + (i < extra ? 1 : 0);
             for (int j = 0; j < objectsToSpawn; j++)
             {
                 RectTransform chosenArea = Random.value < 0.7f ? spawnArea1 : spawnArea2;
@@ -45,5 +47,10 @@ public class Spawner : MonoBehaviour
         float y = Random.Range(minY, maxY);
 
         return new Vector2(x, y);
+    }
+    
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
     }
 }

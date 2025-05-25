@@ -16,7 +16,6 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     private int LevelId;
     private int TrashCount;
     private int TimeInSeconds;
-    private readonly InfoPanel infoPanel;
     private LevelData levelData;
 
     void Start()
@@ -65,6 +64,7 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
                 LevelId = 5;
                 break;
         }
+        
         GameSessionData.LastPlayedLevel = LevelId;
 
         UpdateLevelInfo(LevelId);

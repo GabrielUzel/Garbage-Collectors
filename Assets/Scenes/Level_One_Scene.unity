@@ -397,6 +397,7 @@ MonoBehaviour:
     levelId: 0
     trashCount: 0
     timeInSeconds: 0
+    lifes: 0
 --- !u!1 &129490177
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,9 +862,9 @@ RectTransform:
   - {fileID: 1921000315}
   m_Father: {fileID: 1689806681}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -80}
+  m_AnchorMin: {x: 0, y: 0.81000006}
+  m_AnchorMax: {x: 0, y: 0.81000006}
+  m_AnchoredPosition: {x: 110, y: -3}
   m_SizeDelta: {x: 108, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203877371
@@ -910,7 +911,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 898593991}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenuHandler, Scripts
         m_MethodName: TogglePauseMenu
         m_Mode: 1
@@ -1201,7 +1202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365d5ecff1286c643b9361f4a7fd85cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrashCount: 0
+  CorrectTrashCount: 0
+  IncorrectTrashCount: 0
   GameData:
     LevelInfosPhase:
     - id: 1
@@ -1219,13 +1221,9 @@ MonoBehaviour:
     - id: 5
       best_time: -1
       highscore: 0
-  GameInfoPhase: []
-  PlayerCurrentLevel: 0
-  LastPlayedLevel: 0
-  LevelDatas:
+  LevelData:
+    totalLevels: 0
     levelsInitialInfo: []
-  levelsInitialInfo: []
-  lifes: 9
 --- !u!4 &552142411
 Transform:
   m_ObjectHideFlags: 0
@@ -1502,8 +1500,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Pontua\xE7\xE3o:"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
-  m_sharedMaterial: {fileID: 7678163840609230783, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1907,7 +1905,7 @@ GameObject:
   - component: {fileID: 1080168014}
   - component: {fileID: 1080168013}
   m_Layer: 5
-  m_Name: TrashkNotOk
+  m_Name: TrashNotOk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2253,7 +2251,6 @@ MonoBehaviour:
   - {fileID: 2401834701937866557, guid: 9e6333ca8f2884743b46f2c3f9f328a3, type: 3}
   - {fileID: 2401834701937866557, guid: 4b70f7754c2e34545a338a74220d050a, type: 3}
   - {fileID: 2401834701937866557, guid: 6c66be65cf932a043a797e709d6a7655, type: 3}
-  amount: 30
   spawnArea1: {fileID: 1774101852}
   spawnArea2: {fileID: 2005665192}
 --- !u!224 &1208286816
@@ -2957,7 +2954,7 @@ MonoBehaviour:
   TrashOk: {fileID: 1607645356}
   TrashNotOk: {fileID: 1080168011}
   TimeOk: {fileID: 1721463458}
-  TimeNotOk: {fileID: 1080168011}
+  TimeNotOk: {fileID: 1150989801}
   PanelPopUp: {fileID: 1374291991}
   Fade: {fileID: 2139518988}
   TrashText: {fileID: 1050307105}
@@ -2968,7 +2965,25 @@ MonoBehaviour:
   NextLevel: {fileID: 1301524070}
   RetryLevel: {fileID: 164363554}
   Background: {fileID: 2128951971}
-  tempoLimiteSegundos: 150
+  GameData:
+    LevelInfosPhase:
+    - id: 1
+      best_time: -1
+      highscore: 0
+    - id: 2
+      best_time: -1
+      highscore: 0
+    - id: 3
+      best_time: -1
+      highscore: 0
+    - id: 4
+      best_time: -1
+      highscore: 0
+    - id: 5
+      best_time: -1
+      highscore: 0
+  PlayerCurrentLevel: 0
+  victory: 0
 --- !u!4 &1392356277
 Transform:
   m_ObjectHideFlags: 0
@@ -3091,7 +3106,7 @@ GameObject:
   - component: {fileID: 1607645359}
   - component: {fileID: 1607645358}
   m_Layer: 5
-  m_Name: TrashkOk
+  m_Name: TrashOk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3171,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53eef14b5aded9640ac9c47f05d03df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1384622808}
+  scoreText: {fileID: 806709983}
   sprites:
   - {fileID: -2923118850104278176, guid: a569f6a6152d4e345998819cbbc252eb, type: 3}
   - {fileID: 613349031253447684, guid: 5541fc05c2b46f54fb36639c9c76f77c, type: 3}
@@ -3280,6 +3295,7 @@ RectTransform:
   - {fileID: 2139518989}
   - {fileID: 1374291992}
   - {fileID: 1019961336}
+  - {fileID: 2041660440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4131,8 +4147,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 02:30
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
-  m_sharedMaterial: {fileID: 7678163840609230783, guid: 7fca4547a644d0448875a4a8a00d31b8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4243,6 +4259,50 @@ RectTransform:
   m_AnchoredPosition: {x: 56.6356, y: -27.1}
   m_SizeDelta: {x: 54.4689, y: 11.5151}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2034771354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034771356}
+  - component: {fileID: 2034771355}
+  m_Layer: 0
+  m_Name: GameProgessSaver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2034771355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034771354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab35a994aea6e54ea70d7515c9ad967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2034771356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034771354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1163.2932, y: 550.64215, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041660439
 GameObject:
   m_ObjectHideFlags: 0
@@ -4363,7 +4423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 898593991}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenuHandler, Scripts
         m_MethodName: ContinueAction
         m_Mode: 1
@@ -4479,6 +4539,9 @@ MonoBehaviour:
   - {fileID: 4838201469012271266, guid: 2ace4b3594fc0244db3fac6fce789bf5, type: 3}
   - {fileID: -656086801822231432, guid: 864abe0665548534ca9a60ea3f81f81f, type: 3}
   - {fileID: 6861310643827267881, guid: 447410e2da1f5334fb3680295d5d111b, type: 3}
+  LevelData:
+    totalLevels: 0
+    levelsInitialInfo: []
 --- !u!1 &2131688035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4777,3 +4840,4 @@ SceneRoots:
   - {fileID: 653428951}
   - {fileID: 552142411}
   - {fileID: 1392356277}
+  - {fileID: 2034771356}

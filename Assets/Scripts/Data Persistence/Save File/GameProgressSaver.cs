@@ -1,35 +1,68 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class GameProgressSaver : MonoBehaviour, IDataPersistence
+public class GameProgressSaver : MonoBehaviour, IDataPersistence, ILevelPersistence
 {
-    public LevelInfo levelData;
-    public TimeManager timeManager;
-    public float timeLevelOne = 150;
+    public static GameProgressSaver Instance;
+    private GameData gameData;
+    private int PlayerCurrentLevel;
+    private List<LevelInfoInPhases> LevelInfosPhase;
+    private LevelData levelData;
+    private int totalLevels;
 
-    public void LoadData(GameData data)
+    void Awake()
     {
-
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void SaveData(ref GameData data)
+    void Start()
     {
-        int currentLevel = 1;
-        float timeSpent = timeLevelOne - timeManager.timeRemaining; 
-        int score = ScoreManager.Instance.score;
+        PlayerCurrentLevel = gameData.PlayerCurrentLevel;
+        LevelInfosPhase = gameData.LevelInfosPhase;
+        totalLevels = levelData.totalLevels;
+    }
 
-        LevelInfoInPhases levelInfo = data.LevelInfosPhase.Find(l => l.id == currentLevel);
-
-        if (levelInfo != null)
+    public void UpdateSaveFile(int levelId, int newPlayerCurrentLevel, int newBestTime, int newHighScore)
+    {
+        if (PlayerCurrentLevel <= newPlayerCurrentLevel && PlayerCurrentLevel <= totalLevels)
         {
-            if (levelInfo.best_time == -1 || timeSpent < levelInfo.best_time)
-            {
-                levelInfo.best_time = Mathf.FloorToInt(timeSpent); 
-            }
-
-            if (score > levelInfo.highscore)
-            {
-                levelInfo.highscore = score;
-            }
+            PlayerCurrentLevel = newPlayerCurrentLevel;
         }
+
+        var levelInfo = LevelInfosPhase.Find(l => l.id == levelId);
+        if (newBestTime < levelInfo.best_time)
+        {
+            levelInfo.best_time = newBestTime;
+        }
+
+        if (newHighScore > levelInfo.highscore)
+        {
+            levelInfo.highscore = newHighScore;
+        }
+        
+        SaveData(ref gameData);
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        this.gameData = gameData;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.PlayerCurrentLevel = PlayerCurrentLevel;
+        gameData.LevelInfosPhase = LevelInfosPhase;
+    }
+    
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
     }
 }

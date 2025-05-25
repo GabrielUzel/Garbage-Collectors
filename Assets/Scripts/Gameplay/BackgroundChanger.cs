@@ -1,55 +1,54 @@
 using UnityEngine;
 
-public class BackgroundChanger : MonoBehaviour
+public class BackgroundChanger : MonoBehaviour, ILevelPersistence
 {
-    public Sprite[] backgrounds; 
+    public Sprite[] backgrounds;
     private SpriteRenderer spriteRenderer;
-
+    public LevelData LevelData;
+    private LevelInfo currentLevelInfo;
     private int totalWaste;
     private int collectedWaste;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = backgrounds[0]; 
+        spriteRenderer.sprite = backgrounds[0];
 
-        var levelInfo = TrashCountManager.Instance.levelsInitialInfo.Find(
-            l => l.levelId == TrashCountManager.Instance.PlayerCurrentLevel
-        );
-
-        if (levelInfo != null)
-        {
-            totalWaste = levelInfo.trashCount;
-        }
-        else
-        {
-            totalWaste = 1; 
-        }
+        currentLevelInfo = LevelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
+        totalWaste = currentLevelInfo.trashCount;
     }
 
     void Update()
     {
-        collectedWaste = TrashCountManager.Instance.TrashCount;
+        collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
         UpdateBackground(collectedWaste);
     }
 
     void UpdateBackground(int collected)
     {
-        if (totalWaste <= 0) return;
+        if (totalWaste <= 0)
+        {
+            return;            
+        }
 
         int percentage = 100 * collected / totalWaste;
 
         if (percentage >= 100)
         {
-            spriteRenderer.sprite = backgrounds[2]; 
+            spriteRenderer.sprite = backgrounds[2];
         }
         else if (percentage >= 60)
         {
-            spriteRenderer.sprite = backgrounds[1]; 
+            spriteRenderer.sprite = backgrounds[1];
         }
         else
         {
-            spriteRenderer.sprite = backgrounds[0]; 
+            spriteRenderer.sprite = backgrounds[0];
         }
+    }
+    
+    public void LoadData(LevelData levelData)
+    {
+        LevelData = levelData;
     }
 }

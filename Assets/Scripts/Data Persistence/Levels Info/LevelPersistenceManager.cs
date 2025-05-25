@@ -61,7 +61,7 @@ public class LevelPersistenceManager : MonoBehaviour
 
     private List<ILevelPersistence> FindAllLevelPersistenceObjects()
     {
-        IEnumerable<ILevelPersistence> levelPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
+        IEnumerable<ILevelPersistence> levelPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
             .OfType<ILevelPersistence>();
 
         return new List<ILevelPersistence>(levelPersistenceObjects);

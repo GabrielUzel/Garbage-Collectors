@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LifeQuantityManager : MonoBehaviour
+public class LifeQuantityManager : MonoBehaviour, ILevelPersistence
 {
+    private LevelData levelData;
+    private int quantityLifes;
     public static LifeQuantityManager Instance;
     public Image lifes;
     public Sprite fiveLivesFull;
@@ -16,7 +18,6 @@ public class LifeQuantityManager : MonoBehaviour
     public Sprite oneLifeFull;
     public Sprite oneLifeHalf;
     public Sprite lifeEmpty;
-    int quantityLifes = 10; // from file
 
     void Awake()
     {
@@ -30,15 +31,21 @@ public class LifeQuantityManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
+        quantityLifes = currentLevelInfo.lifes;
+    }
+
     public void LoseHeart()
     {
         quantityLifes--;
 
-        // ??? 
-        if (quantityLifes < 0)
-        {
-            quantityLifes = 0;
-        }
+        // // ??? 
+        // if (quantityLifes < 0)
+        // {
+        //     quantityLifes = 0;
+        // }
 
         switch (quantityLifes)
         {
@@ -82,12 +89,17 @@ public class LifeQuantityManager : MonoBehaviour
 
         if (quantityLifes == 0)
         {
-            LoseGame(); // change
+            LoseGame();
         }
     }
 
     public void LoseGame()
     {
-        FindObjectOfType<LevelResult>().ShowPopUp("Ficou sem vidas");
+        FindFirstObjectByType<LevelResult>().ShowPopUp("Life");
+    }
+
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
     }
 }

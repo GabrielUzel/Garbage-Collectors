@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelResult : MonoBehaviour
+public class LevelResult : MonoBehaviour, ILevelPersistence
 {
+    public static LevelResult Instance;
     public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
     public GameObject PanelPopUp;
     public GameObject Fade;
@@ -14,131 +15,106 @@ public class LevelResult : MonoBehaviour
     public GameObject NextLevel;
     public GameObject RetryLevel;
     public SpriteRenderer Background;
-    private TimeManager timeManager;
-    private bool victory = false;
-    private float timer;
-    private bool gameFinished = false;
-    [SerializeField] private int tempoLimiteSegundos = 150;
+    private LevelData levelData;
+    private int levelId;
+    private int trashes;
+    private int timeInSeconds;
+    public GameData GameData;
+    public int PlayerCurrentLevel;
+    public bool victory = false;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void Start()
     {
+        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
+        levelId = currentLevelInfo.levelId;
+        trashes = currentLevelInfo.trashCount;
+        timeInSeconds = currentLevelInfo.timeInSeconds;
+
         PanelPopUp.SetActive(false);
-        timeManager = FindObjectOfType<TimeManager>();
-    }
 
-    public void Update()
-    {
-        if (!gameFinished)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= tempoLimiteSegundos)
-            {
-                ShowPopUp("Tempo esgotado");
-            }
-        }
-    }
-
-    public void ShowPopUp(string reason)
-    {
-        int level = GameSessionData.LastPlayedLevel;
-
-        LevelInfo currentLevel = null;
-        if (TrashCountManager.Instance != null && TrashCountManager.Instance.levelsInitialInfo != null)
-        {
-            currentLevel = TrashCountManager.Instance.levelsInitialInfo
-                .Find(l => l.levelId == level);
-        }
-
-        if (gameFinished)
-        {
-            return;
-        }
-
-        gameFinished = true;
-        PanelPopUp.SetActive(true);
-        Fade.SetActive(true);
-
-        if (timeManager != null)
-        {
-            timeManager.timerIsRunning = false;
-        }
-
-        int wastesObjective = 0;
-        int timeObjective = 0;
-
-        if (currentLevel != null)
-        {
-            wastesObjective = currentLevel.trashCount;
-            timeObjective = currentLevel.timeInSeconds;
-        }
-
-        int rightWastes = TrashCountManager.Instance.TrashCount;
-        int score = rightWastes * 200;
-
-        int timeWasted = Mathf.FloorToInt(timer);
-        int minutes = timeWasted / 60;
-        int seconds = timeWasted % 60;
-
-        int minutesObjective = timeObjective / 60;
-        int secondsObjective = timeObjective % 60;
-
-        Level.text = $"{level}";
-        ScoreText.text = $"PONTUAÇÃO: {score}";
-        TrashText.text = $"{rightWastes}/{wastesObjective}";
-        TimeText.text = $"{minutes}:{seconds:00}/{minutesObjective}:{secondsObjective:00}";
-
-        victory = rightWastes >= wastesObjective && timeWasted <= timeObjective;
-
-        CheckVictoryCondition();
-    }
-
-    public void CheckVictoryCondition()
-    {
         TrashOk.SetActive(false);
         TrashNotOk.SetActive(false);
         TimeOk.SetActive(false);
         TimeNotOk.SetActive(false);
+    }
 
-        int level = GameSessionData.LastPlayedLevel;
+    public void ShowPopUp(string reason)
+    {
+        TimeManager.Instance.timerIsRunning = false;
+        PanelPopUp.SetActive(true);
+        Fade.SetActive(true);
 
-        LevelInfo currentLevel = TrashCountManager.Instance.levelsInitialInfo
-            .Find(l => l.levelId == level);
+        int correctWastes = TrashCountManager.Instance.CorrectTrashCount;
+        int score = ScoreManager.Instance.score;
 
-        int wastesObjective = currentLevel.trashCount;
-        int timeObjective = currentLevel.timeInSeconds;
-        int rightWastes = TrashCountManager.Instance.TrashCount;
-        int timeWasted = Mathf.FloorToInt(timer);
+        int timeWasted = Mathf.FloorToInt(timeInSeconds - TimeManager.Instance.timeRemaining);
+        int minutesWasted = timeWasted / 60;
+        int secondsWasted = timeWasted % 60;
 
-        if (rightWastes >= wastesObjective)
+        int minutesObjective = timeInSeconds / 60;
+        int secondsObjective = timeInSeconds % 60;
+
+        Level.text = $"{levelId}";
+        ScoreText.text = $"PONTUAÇÃO: {score}";
+        TrashText.text = $"{correctWastes}/{trashes}";
+        TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
+
+        UpdateUI(reason);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, PlayerCurrentLevel + 1, timeWasted, score);
+    }
+
+    private void UpdateUI(string reason)
+    {
+        if (reason == "Time")
         {
-            TrashOk.SetActive(true);
-        }
-        else
-        {
-            TrashNotOk.SetActive(true);
+            if (victory)
+            {
+                TimeOk.SetActive(true);
+                TrashOk.SetActive(true);
+                RestartLevel.SetActive(true);
+                NextLevel.SetActive(true);
+                RetryLevel.SetActive(false);
+            }
+            else
+            {
+                TrashNotOk.SetActive(true);
+                TimeNotOk.SetActive(true);
+                RetryLevel.SetActive(true);
+            }
+
+            return;
         }
 
-        if (timeWasted <= timeObjective)
+        if (reason == "Life")
         {
             TimeOk.SetActive(true);
-        }
-        else
-        {
-            TimeNotOk.SetActive(true);
+            TrashNotOk.SetActive(true);
+            RetryLevel.SetActive(true);
+
+            return;
         }
 
-        if (victory)
-        {
-            RestartLevel.SetActive(true);
-            NextLevel.SetActive(true);
-            RetryLevel.SetActive(false);
-        }
-        else
-        {
-            RestartLevel.SetActive(false);
-            NextLevel.SetActive(false);
-            RetryLevel.SetActive(true);
-        }
-    }  
+        TimeOk.SetActive(true);
+        TrashOk.SetActive(true);
+        RestartLevel.SetActive(true);
+        NextLevel.SetActive(true);
+        RetryLevel.SetActive(false);
+    }
+
+    public void LoadData(LevelData levelData)
+    {
+        this.levelData = levelData;
+    }
 }

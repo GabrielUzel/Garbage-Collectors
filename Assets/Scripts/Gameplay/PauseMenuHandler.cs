@@ -1,8 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine;
 
 public class PauseMenuHandler : MonoBehaviour{
     public GameObject pauseMenu;
@@ -19,7 +17,8 @@ public class PauseMenuHandler : MonoBehaviour{
     public bool musicIsMuted = false;
     public bool soundIsMuted = false;
 
-    public void TogglePauseMenu(){
+    public void TogglePauseMenu()
+    {
         Time.timeScale = 0f;
         pauseBackground.SetActive(true);
         pauseMenu.SetActive(true);
@@ -30,32 +29,37 @@ public class PauseMenuHandler : MonoBehaviour{
         homeButton.SetActive(true);
     }
 
-    public void ToggleMusic(){
-        //TODO colocar música
-        if (musicIsMuted){
+    public void ToggleMusic()
+    {
+        if (musicIsMuted)
+        {
             musicButton.GetComponents<Image>()[0].sprite = music[0];
             musicIsMuted = !musicIsMuted;
         }
-        else{
+        else
+        {
             musicButton.GetComponents<Image>()[0].sprite = music[1];
             musicIsMuted = !musicIsMuted;
         }
            
     }
 
-    public void ToggleSoundEffect(){
-        //TODO colocar som
-        if (soundIsMuted){
+    public void ToggleSoundEffect()
+    {
+        if (soundIsMuted)
+        {
             soundButton.GetComponents<Image>()[0].sprite = soundEf[0];
             soundIsMuted = !soundIsMuted;
         }
-        else{
+        else
+        {
             soundButton.GetComponents<Image>()[0].sprite = soundEf[1];
             soundIsMuted = !soundIsMuted;
         }
     }
 
-    public void ContinueAction(){
+    public void ContinueAction()
+    {
         Time.timeScale = 1f;
         pauseBackground.SetActive(false);
         pauseMenu.SetActive(false);
@@ -66,15 +70,17 @@ public class PauseMenuHandler : MonoBehaviour{
         homeButton.SetActive(false);
     }
 
-    public void RestartAction(){
-        pauseBackground.SetActive(false);
-        SceneManager.LoadScene("Level_One_Scene");
-        Time.timeScale = 1f;
-    }
+    // public void RestartAction()
+    // {
+    //     pauseBackground.SetActive(false);
+    //     SceneManager.LoadScene("Level_One_Scene");
+    //     Time.timeScale = 1f;
+    // }
 
-    public void HomeAction(){
-        pauseBackground.SetActive(false);
-        SceneManager.LoadScene("Main_Menu_Scene");
-        Time.timeScale = 1f;
-    }
+    // public void HomeAction()
+    // {
+    //     pauseBackground.SetActive(false);
+    //     SceneManager.LoadScene("Main_Menu_Scene");
+    //     Time.timeScale = 1f;
+    // }
 }

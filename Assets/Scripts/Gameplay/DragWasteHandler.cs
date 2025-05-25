@@ -19,7 +19,6 @@ public class DragWasteHandler : MonoBehaviour
     void OnMouseUp()
     {
         dragging = false;
-
         
         Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
         foreach (var hit in hits)
@@ -27,20 +26,17 @@ public class DragWasteHandler : MonoBehaviour
             if (hit.CompareTag("TrashBin"))
             {
                 TrashBinHandler binType = hit.GetComponent<TrashBinHandler>();
-                Debug.Log("chegou até aqui");
                 if (binType != null && binType.acceptedType == wasteType)
                 {
-                    // Aqui é caso o item está jogado na lixeira correta, ai vc coloca pra somar os pontos
                     ScoreManager.Instance.AddScore();
-                    TrashCountManager.Instance.AddTrashCount();
+                    TrashCountManager.Instance.AddCorrectTrashCount();
                     Destroy(gameObject);
                     return;
                 }
                 else
                 {
-                    //Aqui é caso foi jogado na lixeira incorreta          
                     LifeQuantityManager.Instance.LoseHeart();
-                    TrashCountManager.Instance.CleanAllTrashs();
+                    TrashCountManager.Instance.AddIncorrectTrashCount();
                     Destroy(gameObject);
                     return;
                 }
