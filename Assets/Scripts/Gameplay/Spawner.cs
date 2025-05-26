@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class Spawner : MonoBehaviour, ILevelPersistence
+public class Spawner : MonoBehaviour
 {
-    private LevelData levelData;
     private int amount;
     public GameObject[] Wastes;
     public RectTransform spawnArea1;
@@ -10,8 +9,9 @@ public class Spawner : MonoBehaviour, ILevelPersistence
 
     void Start()
     {
-        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        amount = currentLevelInfo.trashCount + currentLevelInfo.lifes - 1;
+        int trashes = LoadLevelsInfo.Instance.GetTotalWaste();
+        int lifes = LoadLevelsInfo.Instance.GetLifes();
+        amount = trashes + lifes - 1;
         GenerateWastes();
     }
 
@@ -47,10 +47,5 @@ public class Spawner : MonoBehaviour, ILevelPersistence
         float y = Random.Range(minY, maxY);
 
         return new Vector2(x, y);
-    }
-    
-    public void LoadData(LevelData levelData)
-    {
-        this.levelData = levelData;
     }
 }

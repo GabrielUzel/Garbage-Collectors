@@ -7,12 +7,8 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     public GameObject PopUpPanel;
     public GameObject LevelButtonsGroup;
     public Button ReturnToHomeButton;
-    public Image Background;
-
-    private Color normalColor = new(255, 255, 255, 1);
-    private Color fadedColor = new(255, 255, 255, 0.5f);
+    public GameObject FadedBackground;
     private readonly List<Button> ActiveButtons = new();
-
     private int LevelId;
     private int TrashCount;
     private int TimeInSeconds;
@@ -38,7 +34,7 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
             }
         }
 
-        Background.color = fadedColor;
+        FadedBackground.SetActive(true);
         OnClickLevelButton(clickedButton);
     }
 
@@ -95,7 +91,7 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
 
         ActiveButtons.Clear();
 
-        Background.color = normalColor;
+        FadedBackground.SetActive(false);
     }
 
     public int GetLevelId()

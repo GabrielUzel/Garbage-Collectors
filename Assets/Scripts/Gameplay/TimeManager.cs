@@ -1,14 +1,12 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour, ILevelPersistence
+public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
     public float timeRemaining;
     public bool timerIsRunning = false;
     [SerializeField] TextMeshProUGUI timeText;
-    private LevelData levelData;
-    public LevelInfo currentLevelInfo;
 
     void Awake()
     {
@@ -24,8 +22,7 @@ public class TimeManager : MonoBehaviour, ILevelPersistence
 
     private void Start()
     {
-        currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        timeRemaining = currentLevelInfo.timeInSeconds;
+        timeRemaining = LoadLevelsInfo.Instance.GetTimeInSeconds();
         timerIsRunning = true;
     }
 
@@ -65,10 +62,5 @@ public class TimeManager : MonoBehaviour, ILevelPersistence
                 }
             }
         }
-    }
-
-    public void LoadData(LevelData levelData)
-    {
-        this.levelData = levelData;
     }
 }

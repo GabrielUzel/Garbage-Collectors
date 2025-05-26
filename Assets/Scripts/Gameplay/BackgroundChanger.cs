@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class BackgroundChanger : MonoBehaviour, ILevelPersistence
+public class BackgroundChanger : MonoBehaviour
 {
     public Sprite[] backgrounds;
     private SpriteRenderer spriteRenderer;
-    public LevelData LevelData;
-    private LevelInfo currentLevelInfo;
     private int totalWaste;
     private int collectedWaste;
 
@@ -14,8 +12,7 @@ public class BackgroundChanger : MonoBehaviour, ILevelPersistence
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = backgrounds[0];
 
-        currentLevelInfo = LevelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        totalWaste = currentLevelInfo.trashCount;
+        totalWaste = LoadLevelsInfo.Instance.GetTotalWaste();
     }
 
     void Update()
@@ -45,10 +42,5 @@ public class BackgroundChanger : MonoBehaviour, ILevelPersistence
         {
             spriteRenderer.sprite = backgrounds[0];
         }
-    }
-    
-    public void LoadData(LevelData levelData)
-    {
-        LevelData = levelData;
     }
 }

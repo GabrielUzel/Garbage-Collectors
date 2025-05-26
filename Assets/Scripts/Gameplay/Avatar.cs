@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class Avatar : MonoBehaviour
 {
-    public GameObject scoreText;
+    private int totalWaste;
+    private int collectedWaste;
+
     public Sprite[] sprites;
     private string selectedAvatar = "";
-    private int totalScore;
-    private int score;
     private bool isBoy;
     public SpriteRenderer spriteRenderer;
 
     public void Awake()
     {
         selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
-        isBoy = selectedAvatar == "boy"; 
+        isBoy = selectedAvatar == "boy";
     }
 
     public void Start()
     {
-        GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
-        totalScore = wastes.Length * 200;
+        totalWaste = LoadLevelsInfo.Instance.GetTotalWaste();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = isBoy ? sprites[0] : sprites[3];
@@ -27,21 +26,26 @@ public class Avatar : MonoBehaviour
 
     public void Update()
     {
-        score = ScoreManager.Instance.score;
-        UpdateSprite(score);
+        collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
+        UpdateSprite(collectedWaste);
     }
-    
-    void UpdateSprite(int score)
-    {
-        int scorePercentage = 100 * score / totalScore;
 
-        if (scorePercentage >= 40 && scorePercentage < 60)
+    void UpdateSprite(int collected)
+    {
+        if (totalWaste <= 0)
         {
-            spriteRenderer.sprite = isBoy ? sprites[1] : sprites[4];
+            return;            
         }
-        else if (scorePercentage >= 70)
+
+        int percentage = 100 * collected / totalWaste;
+
+        if (percentage >= 100)
         {
             spriteRenderer.sprite = isBoy ? sprites[2] : sprites[5];
+        }
+        else if (percentage >= 60)
+        {
+            spriteRenderer.sprite = isBoy ? sprites[1] : sprites[4];
         }
     }
 }

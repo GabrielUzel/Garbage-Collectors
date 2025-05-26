@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 393281d4ae7080b4f9b3fde49fa3beb5
+guid: 48d2564bfec940741a7720f54521acb2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1180109681982136634
-    second: efeitosOn_0
+      213: -1328961672325442050
+    second: popup_level_result_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: efeitosOn_0
+      name: popup_level_result_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1080
-        height: 902
+        x: 15
+        y: 14
+        width: 1049
+        height: 1371
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a316b86d087906010800000000000000
-      internalID: 1180109681982136634
+      spriteID: ef5dee076649e8de0800000000000000
+      internalID: -1328961672325442050
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      efeitosOn_0: 1180109681982136634
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelResult : MonoBehaviour, ILevelPersistence
+public class LevelResult : MonoBehaviour
 {
     public static LevelResult Instance;
     public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
@@ -15,7 +15,6 @@ public class LevelResult : MonoBehaviour, ILevelPersistence
     public GameObject NextLevel;
     public GameObject RetryLevel;
     public SpriteRenderer Background;
-    private LevelData levelData;
     private int levelId;
     private int trashes;
     private int timeInSeconds;
@@ -37,10 +36,9 @@ public class LevelResult : MonoBehaviour, ILevelPersistence
 
     public void Start()
     {
-        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        levelId = currentLevelInfo.levelId;
-        trashes = currentLevelInfo.trashCount;
-        timeInSeconds = currentLevelInfo.timeInSeconds;
+        levelId = LoadLevelsInfo.Instance.GetLevelId();
+        trashes = LoadLevelsInfo.Instance.GetTotalWaste();
+        timeInSeconds = LoadLevelsInfo.Instance.GetTimeInSeconds();
 
         PanelPopUp.SetActive(false);
 
@@ -111,10 +109,5 @@ public class LevelResult : MonoBehaviour, ILevelPersistence
         RestartLevel.SetActive(true);
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
-    }
-
-    public void LoadData(LevelData levelData)
-    {
-        this.levelData = levelData;
     }
 }

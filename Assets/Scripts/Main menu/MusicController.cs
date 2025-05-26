@@ -7,25 +7,29 @@ public class MusicController : MonoBehaviour
     public Sprite musicOff;
     public Sprite musicOn;
     public Button musicButton;
-
-    private bool musicIsMuted = false;
+    private bool isMuted = false;
     private const string musicPrefKey = "MusicMuted";
+
+    public void Start()
+    {
+        getMusicState();
+    }
 
     public void getMusicState()
     {
-        musicIsMuted = PlayerPrefs.GetInt(musicPrefKey, 0) == 1;
+        isMuted = PlayerPrefs.GetInt(musicPrefKey, 0) == 1;
 
-        musicSource.mute = musicIsMuted;
-        musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
+        musicSource.mute = isMuted;
+        musicButton.image.sprite = isMuted ? musicOff : musicOn;
     }
 
     public void toggleMusic() 
     {
-        musicIsMuted = !musicIsMuted;
-        musicSource.mute = musicIsMuted;
-        musicButton.image.sprite = musicIsMuted ? musicOff : musicOn;
+        isMuted = !isMuted;
+        musicSource.mute = isMuted;
+        musicButton.image.sprite = isMuted ? musicOff : musicOn;
         
-        PlayerPrefs.SetInt(musicPrefKey, musicIsMuted ? 1 : 0);
+        PlayerPrefs.SetInt(musicPrefKey, isMuted ? 1 : 0);
         PlayerPrefs.Save();
     }
 }

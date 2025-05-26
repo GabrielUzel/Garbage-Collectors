@@ -84,7 +84,7 @@ public class DataPersistenceManagerTests
         dataPersistenceObjectsField.SetValue(_manager, new List<IDataPersistence> { dataComponent });
 
         var fileHandler = new FileDataHandler(_testDirectory, "test.json");
-        var gameData = new GameData { PlayerCurrentLevel = 4 };
+        var gameData = new GameData { PlayerCurrentLevel = 1 };
         fileHandler.Save(gameData);
 
         _manager.LoadGame();

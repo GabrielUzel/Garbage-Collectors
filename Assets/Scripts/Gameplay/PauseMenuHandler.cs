@@ -10,7 +10,7 @@ public class PauseMenuHandler : MonoBehaviour
     public GameObject continueButton;
     public GameObject restartButton;
     public GameObject homeButton;
-    public GameObject pauseBackground;
+    public GameObject fadedBackground;
 
     public Sprite[] music = new Sprite[2];
     public Sprite[] soundEf = new Sprite[2];
@@ -20,8 +20,8 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        Time.timeScale = 0f;
-        pauseBackground.SetActive(true);
+        TimeManager.Instance.timerIsRunning = false;
+        fadedBackground.SetActive(true);
         pauseMenu.SetActive(true);
         musicButton.SetActive(true);
         soundButton.SetActive(true);
@@ -64,8 +64,8 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void ContinueAction()
     {
-        Time.timeScale = 1f;
-        pauseBackground.SetActive(false);
+        TimeManager.Instance.timerIsRunning = true;
+        fadedBackground.SetActive(false);
         pauseMenu.SetActive(false);
         musicButton.SetActive(false);
         soundButton.SetActive(false);

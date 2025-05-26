@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 520e5b81096e2f741b9ea6c65b852288
+guid: 5c849c6295b25404f8dbffc6837e4b9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3866190771304943470
-    second: musicaOff_0
+      213: 802842726899993619
+    second: faded_background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: musicaOff_0
+      name: faded_background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 902
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 290b97a3af7885ac0800000000000000
-      internalID: -3866190771304943470
+      spriteID: 31c416bd435442b00800000000000000
+      internalID: 802842726899993619
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      musicaOff_0: -3866190771304943470
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

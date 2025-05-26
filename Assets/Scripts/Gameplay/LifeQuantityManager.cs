@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LifeQuantityManager : MonoBehaviour, ILevelPersistence
+public class LifeQuantityManager : MonoBehaviour
 {
-    private LevelData levelData;
     private int quantityLifes;
     public static LifeQuantityManager Instance;
     public Image lifes;
@@ -33,8 +32,7 @@ public class LifeQuantityManager : MonoBehaviour, ILevelPersistence
 
     void Start()
     {
-        LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        quantityLifes = currentLevelInfo.lifes;
+        quantityLifes = LoadLevelsInfo.Instance.GetLifes();
     }
 
     public void LoseHeart()
@@ -90,10 +88,5 @@ public class LifeQuantityManager : MonoBehaviour, ILevelPersistence
     public void LoseGame()
     {
         FindFirstObjectByType<LevelResult>().ShowPopUp("Life");
-    }
-
-    public void LoadData(LevelData levelData)
-    {
-        this.levelData = levelData;
     }
 }

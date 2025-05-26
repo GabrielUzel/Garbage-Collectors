@@ -3,20 +3,20 @@ guid: 37c9708aa9cca734488ff5d99c927f44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2899453345211706580
-    second: life4full_0
+      213: 4979850755102699677
+    second: life_4_full_0
   - first:
-      213: 6232513918208175781
-    second: life4full_1
+      213: -7930106947598804459
+    second: life_4_full_1
   - first:
-      213: -1568052041163411640
-    second: life4full_2
+      213: -5807194925666813581
+    second: life_4_full_2
   - first:
-      213: -25326932711968048
-    second: life4full_3
+      213: -5996577032725928335
+    second: life_4_full_3
   - first:
-      213: -1583950989418623637
-    second: life4full_4
+      213: 8770515978642114629
+    second: life_4_full_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: life4full_0
+      name: life_4_full_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2396d36b8213c7d0800000000000000
-      internalID: -2899453345211706580
+      spriteID: d907b5c90ebfb1540800000000000000
+      internalID: 4979850755102699677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life4full_1
+      name: life_4_full_1
       rect:
         serializedVersion: 2
         x: 316
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5aee97823665e7650800000000000000
-      internalID: 6232513918208175781
+      spriteID: 51a14852fb992f190800000000000000
+      internalID: -7930106947598804459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life4full_2
+      name: life_4_full_2
       rect:
         serializedVersion: 2
         x: 634
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84fe029f9f82d3ae0800000000000000
-      internalID: -1568052041163411640
+      spriteID: 379bd22abf2b86fa0800000000000000
+      internalID: -5807194925666813581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life4full_3
+      name: life_4_full_3
       rect:
         serializedVersion: 2
         x: 952
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d2f374f94506aff0800000000000000
-      internalID: -25326932711968048
+      spriteID: 176ea10c5f0e7cca0800000000000000
+      internalID: -5996577032725928335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life4full_4
+      name: life_4_full_4
       rect:
         serializedVersion: 2
         x: 1273
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6d031e97fca40ae0800000000000000
-      internalID: -1583950989418623637
+      spriteID: 548c9db70d127b970800000000000000
+      internalID: 8770515978642114629
       vertices: []
       indices: 
       edges: []
@@ -235,11 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      life4full_0: -2899453345211706580
-      life4full_1: 6232513918208175781
-      life4full_2: -1568052041163411640
-      life4full_3: -25326932711968048
-      life4full_4: -1583950989418623637
+      life_4_full_0: 4979850755102699677
+      life_4_full_1: -7930106947598804459
+      life_4_full_2: -5807194925666813581
+      life_4_full_3: -5996577032725928335
+      life_4_full_4: 8770515978642114629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,27 +1,42 @@
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class AvatarTest
 {
     private GameObject testObject;
     private Avatar avatar;
+    private TrashCountManager trashCountManager;
+    private LoadLevelsInfo loadLevelsInfo;
 
-    private ScoreManager scoreManager;
     [SetUp]
     public void SetUp()
     {
         PlayerPrefs.DeleteAll();
+        GameSessionData.LastPlayedLevel = 1;
 
         foreach (var waste in GameObject.FindGameObjectsWithTag("Waste"))
         {
             Object.DestroyImmediate(waste);
         }
 
-        GameObject scoreManagerGO = new GameObject("ScoreManager");
-        scoreManager = scoreManagerGO.AddComponent<ScoreManager>();
-        ScoreManager.Instance = scoreManager;
-        scoreManager.score = 0;
+        LevelData mockLevelData = new LevelData
+        {
+            levelsInitialInfo = new List<LevelInfo>
+            {
+                new LevelInfo { levelId = 1, trashCount = 5, timeInSeconds = 100 }
+            }
+        };
+
+        GameObject trashCountManagerGO = new GameObject("TrashCountManager");
+        trashCountManager = trashCountManagerGO.AddComponent<TrashCountManager>();
+        TrashCountManager.Instance = trashCountManager;
+
+        GameObject loadLevelsInfoGO = new GameObject("LoadLevelsInfo");
+        loadLevelsInfo = loadLevelsInfoGO.AddComponent<LoadLevelsInfo>();
+        loadLevelsInfo.Awake();
+        loadLevelsInfo.LoadData(mockLevelData);
+        loadLevelsInfo.Start();
 
         testObject = new GameObject("Avatar");
         avatar = testObject.AddComponent<Avatar>();
@@ -38,7 +53,10 @@ public class AvatarTest
     public void TearDown()
     {
         Object.DestroyImmediate(testObject);
-        Object.DestroyImmediate(scoreManager.gameObject);
+        Object.DestroyImmediate(trashCountManager.gameObject);
+        Object.DestroyImmediate(loadLevelsInfo.gameObject);
+        LoadLevelsInfo.Instance = null;
+        
         foreach (var waste in GameObject.FindGameObjectsWithTag("Waste"))
         {
             Object.DestroyImmediate(waste);
@@ -46,7 +64,7 @@ public class AvatarTest
     }
 
     [Test]
-    public void VerifyISBoyVariable_BoySelected_Test()
+    public void VerifyIsBoyVariable_BoySelected_Test()
     {
         PlayerPrefs.SetString("selected_avatar", "boy");
         avatar.Awake();
@@ -55,38 +73,12 @@ public class AvatarTest
     }
 
     [Test]
-    public void VerifyISBoyVariable_GirlSelected_Test()
+    public void VerifyIsBoyVariable_GirlSelected_Test()
     {
         PlayerPrefs.SetString("selected_avatar", "girl");
         avatar.Awake();
         bool isBoy = (bool)typeof(Avatar).GetField("isBoy", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(avatar);
         Assert.IsFalse(isBoy);
-    }
-
-    [Test]
-    public void VerifyScoreValue_3WastesEqualsTo600_Test()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            new GameObject("Waste").tag = "Waste";
-        }
-
-        avatar.Start();
-        int totalScore = (int)typeof(Avatar).GetField("totalScore", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(avatar);
-        Assert.AreEqual(600, totalScore);
-    }
-
-    [Test]
-    public void VerifyScoreValue_5WastesEqualsTo1000_Test()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            new GameObject("Waste").tag = "Waste";
-        }
-
-        avatar.Start();
-        int totalScore = (int)typeof(Avatar).GetField("totalScore", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(avatar);
-        Assert.AreEqual(1000, totalScore);
     }
 
     [Test]
@@ -108,7 +100,7 @@ public class AvatarTest
     }
 
     [Test]
-    public void VerifyCorrectSprite_40Percentage_BoySelected_Test()
+    public void VerifyCorrectSprite_60Percentage_BoySelected_Test()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -120,14 +112,14 @@ public class AvatarTest
         avatar.Awake();
         avatar.Start();
 
-        scoreManager.score = 400;
+        trashCountManager.CorrectTrashCount = 3;
         avatar.Update();
 
         Assert.AreEqual(avatar.sprites[1], avatar.spriteRenderer.sprite);
     }
 
     [Test]
-    public void VerifyCorrectSprite_40Percentage_GirlSelected_Test()
+    public void VerifyCorrectSprite_60Percentage_GirlSelected_Test()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -139,14 +131,14 @@ public class AvatarTest
         avatar.Awake();
         avatar.Start();
 
-        scoreManager.score = 400;
+        trashCountManager.CorrectTrashCount = 3;
         avatar.Update();
 
         Assert.AreEqual(avatar.sprites[4], avatar.spriteRenderer.sprite);
     }
 
     [Test]
-    public void VerifyCorrectSprite_70Percentage_BoySelected_Test()
+    public void VerifyCorrectSprite_100Percentage_BoySelected_Test()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -158,14 +150,14 @@ public class AvatarTest
         avatar.Awake();
         avatar.Start();
 
-        scoreManager.score = 700;
+        trashCountManager.CorrectTrashCount = 5;
         avatar.Update();
 
         Assert.AreEqual(avatar.sprites[2], avatar.spriteRenderer.sprite);
     }
 
     [Test]
-    public void VerifyCorrectSprite_70Percentage_GirlSelected_Test()
+    public void VerifyCorrectSprite_100Percentage_GirlSelected_Test()
     {
         for (int i = 0; i < 5; i++)
         {
@@ -177,7 +169,7 @@ public class AvatarTest
         avatar.Awake();
         avatar.Start();
 
-        scoreManager.score = 700;
+        trashCountManager.CorrectTrashCount = 5;
         avatar.Update();
 
         Assert.AreEqual(avatar.sprites[5], avatar.spriteRenderer.sprite);

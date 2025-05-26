@@ -1,13 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class GameProgressSaver : MonoBehaviour, IDataPersistence, ILevelPersistence
+public class GameProgressSaver : MonoBehaviour, IDataPersistence
 {
     public static GameProgressSaver Instance;
     private GameData gameData;
     private int PlayerCurrentLevel;
     private List<LevelInfoInPhases> LevelInfosPhase;
-    private LevelData levelData;
     private int totalLevels;
 
     void Awake()
@@ -26,7 +25,7 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence, ILevelPersiste
     {
         PlayerCurrentLevel = gameData.PlayerCurrentLevel;
         LevelInfosPhase = gameData.LevelInfosPhase;
-        totalLevels = levelData.totalLevels;
+        totalLevels = LoadLevelsInfo.Instance.GetTotalLevels();
     }
 
     public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore)
@@ -59,10 +58,5 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence, ILevelPersiste
     {
         gameData.PlayerCurrentLevel = PlayerCurrentLevel;
         gameData.LevelInfosPhase = LevelInfosPhase;
-    }
-    
-    public void LoadData(LevelData levelData)
-    {
-        this.levelData = levelData;
     }
 }

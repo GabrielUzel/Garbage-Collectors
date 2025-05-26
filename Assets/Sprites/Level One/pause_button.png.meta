@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc16ee411d6983941a3790bb37d62d0e
+guid: 25737b9c91bb5f941b67ab7036ce9c07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5836207485687424160
-    second: home (1)_0
+      213: 1506512001392234847
+    second: pause_button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: home (1)_0
+      name: pause_button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1080
-        height: 240
+        height: 902
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06b102c9630a10fa0800000000000000
-      internalID: -5836207485687424160
+      spriteID: f51d8d4fea438e410800000000000000
+      internalID: 1506512001392234847
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      home (1)_0: -5836207485687424160
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

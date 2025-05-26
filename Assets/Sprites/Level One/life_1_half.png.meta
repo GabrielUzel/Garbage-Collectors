@@ -3,20 +3,20 @@ guid: 3391336650790734fb4240db38cb3a42
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3710801531074928094
-    second: life1half_0
+      213: 1771803763601163215
+    second: life_1_half_0
   - first:
-      213: -2709173149867358294
-    second: life1half_1
+      213: -6540190420369813178
+    second: life_1_half_1
   - first:
-      213: 4624898058405861036
-    second: life1half_2
+      213: 8013004966742970915
+    second: life_1_half_2
   - first:
-      213: -2810289262110832797
-    second: life1half_3
+      213: 5580575933449723456
+    second: life_1_half_3
   - first:
-      213: -8007650612607168232
-    second: life1half_4
+      213: 1035742699464807059
+    second: life_1_half_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: life1half_0
+      name: life_1_half_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edd52b3f45a6f7330800000000000000
-      internalID: 3710801531074928094
+      spriteID: fc3c525b226b69810800000000000000
+      internalID: 1771803763601163215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life1half_1
+      name: life_1_half_1
       rect:
         serializedVersion: 2
         x: 316
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa7412fbf55176ad0800000000000000
-      internalID: -2709173149867358294
+      spriteID: 641d17ec6739c35a0800000000000000
+      internalID: -6540190420369813178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life1half_2
+      name: life_1_half_2
       rect:
         serializedVersion: 2
         x: 634
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca6dca5c740fe2040800000000000000
-      internalID: 4624898058405861036
+      spriteID: 322d7220099e33f60800000000000000
+      internalID: 8013004966742970915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life1half_3
+      name: life_1_half_3
       rect:
         serializedVersion: 2
         x: 952
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3670acf3ec8dff8d0800000000000000
-      internalID: -2810289262110832797
+      spriteID: 04e5d5b8e30327d40800000000000000
+      internalID: 5580575933449723456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: life1half_4
+      name: life_1_half_4
       rect:
         serializedVersion: 2
         x: 1273
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8115c16b13c1fd090800000000000000
-      internalID: -8007650612607168232
+      spriteID: 392dd406f72bf5e00800000000000000
+      internalID: 1035742699464807059
       vertices: []
       indices: 
       edges: []
@@ -235,11 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      life1half_0: 3710801531074928094
-      life1half_1: -2709173149867358294
-      life1half_2: 4624898058405861036
-      life1half_3: -2810289262110832797
-      life1half_4: -8007650612607168232
+      life_1_half_0: 1771803763601163215
+      life_1_half_1: -6540190420369813178
+      life_1_half_2: 8013004966742970915
+      life_1_half_3: 5580575933449723456
+      life_1_half_4: 1035742699464807059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

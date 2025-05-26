@@ -3,20 +3,20 @@ guid: 1b83ae632215c374ca318ff0f64ef790
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7630518280836447457
-    second: lifeEmpty_0
+      213: -8011965170982353963
+    second: life_empty_0
   - first:
-      213: -1113153322840840560
-    second: lifeEmpty_1
+      213: -5730110787396761946
+    second: life_empty_1
   - first:
-      213: -8164606674872203040
-    second: lifeEmpty_2
+      213: -7778964465638378790
+    second: life_empty_2
   - first:
-      213: 4870238570455244220
-    second: lifeEmpty_3
+      213: 4705899207892329515
+    second: life_empty_3
   - first:
-      213: 3429261514664731895
-    second: lifeEmpty_4
+      213: -1310331045354133328
+    second: life_empty_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -87,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lifeEmpty_0
+      name: life_empty_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ec716db2fb05e960800000000000000
-      internalID: 7630518280836447457
+      spriteID: 5d38bce4028cfc090800000000000000
+      internalID: -8011965170982353963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lifeEmpty_1
+      name: life_empty_1
       rect:
         serializedVersion: 2
         x: 316
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 096a68b53f84d80f0800000000000000
-      internalID: -1113153322840840560
+      spriteID: 6a60599299e8a70b0800000000000000
+      internalID: -5730110787396761946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lifeEmpty_2
+      name: life_empty_2
       rect:
         serializedVersion: 2
         x: 634
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e88575bc7d71be80800000000000000
-      internalID: -8164606674872203040
+      spriteID: ad2fc3188019b0490800000000000000
+      internalID: -7778964465638378790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lifeEmpty_3
+      name: life_empty_3
       rect:
         serializedVersion: 2
         x: 952
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbd146b1d20969340800000000000000
-      internalID: 4870238570455244220
+      spriteID: b24e63b8566be4140800000000000000
+      internalID: 4705899207892329515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lifeEmpty_4
+      name: life_empty_4
       rect:
         serializedVersion: 2
         x: 1273
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f46287bd2f279f20800000000000000
-      internalID: 3429261514664731895
+      spriteID: 0b8208f4bd4c0dde0800000000000000
+      internalID: -1310331045354133328
       vertices: []
       indices: 
       edges: []
@@ -235,11 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lifeEmpty_0: 7630518280836447457
-      lifeEmpty_1: -1113153322840840560
-      lifeEmpty_2: -8164606674872203040
-      lifeEmpty_3: 4870238570455244220
-      lifeEmpty_4: 3429261514664731895
+      life_empty_0: -8011965170982353963
+      life_empty_1: -5730110787396761946
+      life_empty_2: -7778964465638378790
+      life_empty_3: 4705899207892329515
+      life_empty_4: -1310331045354133328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
-public class TrashCountManager : MonoBehaviour, ILevelPersistence
+public class TrashCountManager : MonoBehaviour
 {
     public static TrashCountManager Instance;
     public int CorrectTrashCount = 0;
     public int IncorrectTrashCount = 0;
     public GameData GameData;
-    public LevelData LevelData;
-    private LevelInfo currentLevelInfo;
     private int trashes;
+    private int lifes;
     private int totalTrashes;
 
     void Awake()
@@ -25,9 +24,9 @@ public class TrashCountManager : MonoBehaviour, ILevelPersistence
 
     void Start()
     {
-        currentLevelInfo = LevelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        trashes = currentLevelInfo.trashCount;
-        totalTrashes = trashes * 100 / 70;
+        trashes = LoadLevelsInfo.Instance.GetTotalWaste();
+        lifes = LoadLevelsInfo.Instance.GetLifes();
+        totalTrashes = trashes + lifes - 1;
     }
 
     void Update()
@@ -56,7 +55,7 @@ public class TrashCountManager : MonoBehaviour, ILevelPersistence
 
     public bool VerifyIfPlayerWon()
     {
-        if (CorrectTrashCount == trashes * 70 / 100)
+        if (CorrectTrashCount == trashes - lifes - 1)
         {
             return true;
         }
@@ -72,10 +71,5 @@ public class TrashCountManager : MonoBehaviour, ILevelPersistence
         {
             Destroy(waste);
         }
-    }
-
-    public void LoadData(LevelData levelData)
-    {
-        LevelData = levelData;
     }
 }
