@@ -41,12 +41,6 @@ public class LifeQuantityManager : MonoBehaviour, ILevelPersistence
     {
         quantityLifes--;
 
-        // // ??? 
-        // if (quantityLifes < 0)
-        // {
-        //     quantityLifes = 0;
-        // }
-
         switch (quantityLifes)
         {
             case 0:

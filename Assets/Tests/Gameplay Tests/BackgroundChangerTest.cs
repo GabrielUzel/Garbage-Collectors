@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DragWasteHandlerTest
+public class BackgroundChangerTest
 {
     [SetUp]
     public void SetUp() 

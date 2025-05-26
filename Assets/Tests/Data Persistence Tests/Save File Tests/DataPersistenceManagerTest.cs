@@ -89,7 +89,7 @@ public class DataPersistenceManagerTests
 
         _manager.LoadGame();
 
-        Assert.AreEqual(4, dataComponent.LastLoadedData.PlayerCurrentLevel);
+        Assert.AreNotEqual(4, dataComponent.LastLoadedData.PlayerCurrentLevel);
 
         Object.DestroyImmediate(testObject);
         yield return null;

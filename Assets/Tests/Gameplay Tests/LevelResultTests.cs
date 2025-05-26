@@ -2,7 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DragWasteHandlerTest
+public class LevelResultTest
 {
     [SetUp]
     public void SetUp() 

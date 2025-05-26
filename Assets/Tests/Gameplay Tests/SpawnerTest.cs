@@ -1,27 +1,24 @@
-using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
+using UnityEngine.UI;
 
-public class Spawner
+public class SpawnerTest
 {
-    // A Test behaves as an ordinary method
-    [Test]
-    public void SpawnerSimplePasses()
+    [SetUp]
+    public void SetUp() 
     {
-        // Use the Assert class to test conditions
+
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator SpawnerWithEnumeratorPasses()
+    [TearDown]
+    public void TearDown() 
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        
     }
-    void GenerateWastesTest(){
+
+    [Test]
+    public void A_Test()
+    {
 
     }
 }

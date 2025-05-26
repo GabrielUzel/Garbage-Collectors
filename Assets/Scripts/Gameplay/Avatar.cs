@@ -8,15 +8,15 @@ public class Avatar : MonoBehaviour
     private int totalScore;
     private int score;
     private bool isBoy;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
-    void Awake()
+    public void Awake()
     {
         selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
         isBoy = selectedAvatar == "boy"; 
     }
 
-    void Start()
+    public void Start()
     {
         GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
         totalScore = wastes.Length * 200;
@@ -25,7 +25,7 @@ public class Avatar : MonoBehaviour
         spriteRenderer.sprite = isBoy ? sprites[0] : sprites[3];
     }
 
-    void Update()
+    public void Update()
     {
         score = ScoreManager.Instance.score;
         UpdateSprite(score);

@@ -1,31 +1,24 @@
-using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.TestTools;
+using UnityEngine.UI;
 
 public class PauseMenuHandlerTest
 {
-    public GameObject pauseMenu;
-    // A Test behaves as an ordinary method
+    [SetUp]
+    public void SetUp() 
+    {
+
+    }
+
+    [TearDown]
+    public void TearDown() 
+    {
+        
+    }
+
     [Test]
-    public void NewTestScriptSimplePasses()
+    public void A_Test()
     {
-        // Use the Assert class to test conditions
-    }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator NewTestScriptWithEnumeratorPasses()
-    {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
     }
-
-    public void TogglePauseMenuTest()
-    {
-        // Ativa ou desativa o menu
-    }
-
 }

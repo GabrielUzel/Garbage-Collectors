@@ -1,8 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenuHandler : MonoBehaviour{
+public class PauseMenuHandler : MonoBehaviour
+{
+    public AudioSource musicSource;
     public GameObject pauseMenu;
     public GameObject musicButton;
     public GameObject soundButton;
@@ -42,6 +43,7 @@ public class PauseMenuHandler : MonoBehaviour{
             musicIsMuted = !musicIsMuted;
         }
            
+        musicSource.mute = musicIsMuted;
     }
 
     public void ToggleSoundEffect()
@@ -56,6 +58,8 @@ public class PauseMenuHandler : MonoBehaviour{
             soundButton.GetComponents<Image>()[0].sprite = soundEf[1];
             soundIsMuted = !soundIsMuted;
         }
+
+        // TODO: Toggle sound effects
     }
 
     public void ContinueAction()
@@ -69,18 +73,4 @@ public class PauseMenuHandler : MonoBehaviour{
         restartButton.SetActive(false);
         homeButton.SetActive(false);
     }
-
-    // public void RestartAction()
-    // {
-    //     pauseBackground.SetActive(false);
-    //     SceneManager.LoadScene("Level_One_Scene");
-    //     Time.timeScale = 1f;
-    // }
-
-    // public void HomeAction()
-    // {
-    //     pauseBackground.SetActive(false);
-    //     SceneManager.LoadScene("Main_Menu_Scene");
-    //     Time.timeScale = 1f;
-    // }
 }
