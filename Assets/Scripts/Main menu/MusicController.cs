@@ -3,31 +3,28 @@ using UnityEngine.UI;
 
 public class MusicController : MonoBehaviour
 {
-    public AudioSource musicSource;
     public Sprite musicOff;
     public Sprite musicOn;
     public Button musicButton;
     private bool isMuted = false;
     private const string musicPrefKey = "MusicMuted";
 
-    public void Start()
-    {
-        getMusicState();
-    }
-
-    public void getMusicState()
+    void Start()
     {
         isMuted = PlayerPrefs.GetInt(musicPrefKey, 0) == 1;
+        updateUI(isMuted);
+    }
 
-        musicSource.mute = isMuted;
+    public void updateUI(bool isMuted)
+    {
         musicButton.image.sprite = isMuted ? musicOff : musicOn;
     }
 
     public void toggleMusic() 
     {
         isMuted = !isMuted;
-        musicSource.mute = isMuted;
-        musicButton.image.sprite = isMuted ? musicOff : musicOn;
+        BackgroundMusic.Instance.SetMusicMute(isMuted);
+        updateUI(isMuted);
         
         PlayerPrefs.SetInt(musicPrefKey, isMuted ? 1 : 0);
         PlayerPrefs.Save();
