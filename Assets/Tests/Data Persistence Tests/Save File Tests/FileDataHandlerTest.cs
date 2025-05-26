@@ -6,7 +6,7 @@ using System.IO;
 public class FileDataHandlerTests
 {
     private string _testDirectory;
-    private string _testFileName = "testSave.json";
+    private readonly string _testFileName = "testSave.json";
     private FileDataHandler _fileDataHandler;
 
     [SetUp]

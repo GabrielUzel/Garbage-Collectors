@@ -5,7 +5,7 @@ public class AvatarInitializer : MonoBehaviour
     public GameObject girlAvatar;
     public GameObject boyAvatar;
 
-    void Start()
+    public void Start()
     {
         string avatar = PlayerPrefs.GetString("selected_avatar", "girl");
 

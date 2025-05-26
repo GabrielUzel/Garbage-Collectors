@@ -7,16 +7,11 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     public GameObject PopUpPanel;
     public GameObject LevelButtonsGroup;
     public Button ReturnToHomeButton;
-    public Image Background;
-
-    private Color normalColor = new Color(255, 255, 255, 1);
-    private Color fadedColor = new Color(255, 255, 255, 0.5f);
-    private List<Button> ActiveButtons = new List<Button>();
-
+    public GameObject FadedBackground;
+    private readonly List<Button> ActiveButtons = new();
     private int LevelId;
     private int TrashCount;
     private int TimeInSeconds;
-    private InfoPanel infoPanel;
     private LevelData levelData;
 
     void Start()
@@ -39,7 +34,7 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
             }
         }
 
-        Background.color = fadedColor;
+        FadedBackground.SetActive(true);
         OnClickLevelButton(clickedButton);
     }
 
@@ -66,9 +61,10 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
                 break;
         }
         
-        UpdateLevelInfo(LevelId);
+        GameSessionData.LastPlayedLevel = LevelId;
 
-        InfoPanel.Instance.UpdatePanel(this.LevelId, this.TrashCount, this.TimeInSeconds);
+        UpdateLevelInfo(LevelId);
+        InfoPanel.Instance.UpdatePanel(LevelId, TrashCount, TimeInSeconds);
     }
 
     public void LoadData(LevelData levelData)
@@ -79,8 +75,8 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
     public void UpdateLevelInfo(int levelId)
     {
         LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == levelId);
-        this.TrashCount = currentLevelInfo.trashCount;
-        this.TimeInSeconds = currentLevelInfo.timeInSeconds;
+        TrashCount = currentLevelInfo.trashCount;
+        TimeInSeconds = currentLevelInfo.timeInSeconds;
     }
 
     public void ClosePopUp()
@@ -95,7 +91,7 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
 
         ActiveButtons.Clear();
 
-        Background.color = normalColor;
+        FadedBackground.SetActive(false);
     }
 
     public int GetLevelId()

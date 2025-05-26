@@ -12,7 +12,7 @@ public class PlayLevelTests
     private GameObject popUpPanel;
     private GameObject levelButtonsGroup;
     private Button returnToHomeButton;
-    private Image background;
+    private GameObject fadedBackground;
 
     [SetUp]
     public void Setup()
@@ -23,19 +23,19 @@ public class PlayLevelTests
         popUpPanel = new GameObject("PopUpPanel");
         levelButtonsGroup = new GameObject("LevelButtonsGroup");
         returnToHomeButton = new GameObject("ReturnToHomeButton").AddComponent<Button>();
-        background = new GameObject("Background").AddComponent<Image>();
+        fadedBackground = new GameObject("FadedBackground");
 
         playLevel.PopUpPanel = popUpPanel;
         playLevel.LevelButtonsGroup = levelButtonsGroup;
         playLevel.ReturnToHomeButton = returnToHomeButton;
-        playLevel.Background = background;
-        
+        playLevel.FadedBackground = fadedBackground;
+
         var mockLevelData = new LevelData
         {
             levelsInitialInfo = new List<LevelInfo>
             {
-                new LevelInfo { levelId = 1, trashCount = 10, timeInSeconds = 100 },
-                new LevelInfo { levelId = 2, trashCount = 20, timeInSeconds = 200 }
+                new() { levelId = 1, trashCount = 10, timeInSeconds = 100 },
+                new() { levelId = 2, trashCount = 20, timeInSeconds = 200 }
             }
         };
 
@@ -67,7 +67,7 @@ public class PlayLevelTests
 
         Assert.IsTrue(popUpPanel.activeSelf);
         Assert.IsFalse(returnToHomeButton.interactable);
-        Assert.AreEqual(new Color(255, 255, 255, 0.5f), background.color);
+        Assert.IsTrue(fadedBackground.activeSelf);
 
         yield return null;
     }
@@ -87,7 +87,7 @@ public class PlayLevelTests
         yield return null;
     }
 
-        [UnityTest]
+    [UnityTest]
     public IEnumerator OnClickLevelButton_Button2_Test()
     {
         var testButton = new GameObject("LevelTwo").AddComponent<Button>();
@@ -106,7 +106,7 @@ public class PlayLevelTests
     public IEnumerator TestClosePopUp()
     {
         var testButton = new GameObject("LevelOne").AddComponent<Button>();
-        testButton.name = "LevelOne"; 
+        testButton.name = "LevelOne";
         testButton.transform.SetParent(levelButtonsGroup.transform);
 
         playLevel.LoadPopUp(testButton);
@@ -114,7 +114,7 @@ public class PlayLevelTests
 
         Assert.IsFalse(popUpPanel.activeSelf);
         Assert.IsTrue(returnToHomeButton.interactable);
-        Assert.AreEqual(new Color(255, 255, 255, 1), background.color);
+        Assert.IsFalse(fadedBackground.activeSelf);
 
         yield return null;
     }

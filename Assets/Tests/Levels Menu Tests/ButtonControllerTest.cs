@@ -27,7 +27,7 @@ public class ButtonControllerTests
 
     private Button CreateButtonWithImage()
     {
-        GameObject buttonObject = new GameObject();
+        GameObject buttonObject = new();
         buttonObject.AddComponent<Image>();
         
         return buttonObject.AddComponent<Button>();
@@ -131,7 +131,7 @@ public class ButtonControllerTests
     [Test]
     public void LoadData_Test()
     {
-        GameData testData = new GameData { PlayerCurrentLevel = 4 };
+        GameData testData = new() { PlayerCurrentLevel = 4 };
         buttonController.LoadData(testData);
 
         Assert.AreEqual(4, buttonController.PlayerCurrentLevel);

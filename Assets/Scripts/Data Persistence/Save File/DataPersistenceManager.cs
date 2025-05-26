@@ -17,13 +17,13 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
 
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
-        this.fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        DontDestroyOnLoad(gameObject);
+        fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
     }
 
     public void OnEnable()
@@ -40,7 +40,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
 
@@ -51,12 +51,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void NewGame()
     {
-        this.gameData = new GameData();
+        gameData = new GameData();
     }
 
     public void LoadGame()
     {
-        this.gameData = fileDataHandler.Load();
+        gameData = fileDataHandler.Load();
 
         if (gameData == null)
         {
@@ -82,7 +82,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>()
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
             .OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);

@@ -3,8 +3,8 @@ guid: ace87a8ee98f689489cc5295f8dd8af0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 673617043452196552
-    second: vidro-de-azeite_0
+      213: -1165523532377044060
+    second: olive_bottle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vidro-de-azeite_0
+      name: olive_bottle_0
       rect:
         serializedVersion: 2
         x: 66
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c6fd9dc12b295900800000000000000
-      internalID: 673617043452196552
+      spriteID: 4abce43c58a33dfe0800000000000000
+      internalID: -1165523532377044060
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      vidro-de-azeite_0: 673617043452196552
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
