@@ -72,7 +72,7 @@ public class LevelResult : MonoBehaviour, ILevelPersistence
         TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
 
         UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, PlayerCurrentLevel + 1, timeWasted, score);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score);
     }
 
     private void UpdateUI(string reason)

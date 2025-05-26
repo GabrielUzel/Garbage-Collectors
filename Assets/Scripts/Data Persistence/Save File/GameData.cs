@@ -3,7 +3,6 @@ using System.Collections.Generic;
 [System.Serializable]
 public class GameData
 {
-    [System.NonSerialized]
     public int PlayerCurrentLevel;
     public List<LevelInfoInPhases> LevelInfosPhase;
 
@@ -17,7 +16,7 @@ public class GameData
             LevelInfosPhase.Add(new LevelInfoInPhases
             {
                 id = i + 1,
-                best_time = -1,
+                best_time = int.MaxValue,
                 highscore = 0
             });
         }

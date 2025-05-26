@@ -29,11 +29,11 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence, ILevelPersiste
         totalLevels = levelData.totalLevels;
     }
 
-    public void UpdateSaveFile(int levelId, int newPlayerCurrentLevel, int newBestTime, int newHighScore)
+    public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore)
     {
-        if (PlayerCurrentLevel <= newPlayerCurrentLevel && PlayerCurrentLevel <= totalLevels)
+        if (PlayerCurrentLevel <= lastPlayedLevel && PlayerCurrentLevel < totalLevels)
         {
-            PlayerCurrentLevel = newPlayerCurrentLevel;
+            PlayerCurrentLevel = lastPlayedLevel + 1;
         }
 
         var levelInfo = LevelInfosPhase.Find(l => l.id == levelId);

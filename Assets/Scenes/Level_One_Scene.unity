@@ -840,6 +840,7 @@ GameObject:
   - component: {fileID: 203877373}
   - component: {fileID: 203877372}
   - component: {fileID: 203877371}
+  - component: {fileID: 203877374}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -911,7 +912,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 203877374}
         m_TargetAssemblyTypeName: PauseMenuHandler, Scripts
         m_MethodName: TogglePauseMenu
         m_Mode: 1
@@ -961,6 +962,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203877368}
   m_CullTransparentMesh: 1
+--- !u!114 &203877374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203877368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fc310bd106f3643ba1a34ffd40905d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  musicButton: {fileID: 0}
+  soundButton: {fileID: 0}
+  continueButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  homeButton: {fileID: 0}
+  pauseBackground: {fileID: 0}
+  music:
+  - {fileID: -1871015954481326989, guid: 10895aa02d44a3142b5471262464ffe6, type: 3}
+  - {fileID: -3866190771304943470, guid: 520e5b81096e2f741b9ea6c65b852288, type: 3}
+  soundEf:
+  - {fileID: 0}
+  - {fileID: 0}
+  musicIsMuted: 0
+  soundIsMuted: 0
 --- !u!1 &286899533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3223,7 @@ MonoBehaviour:
   - {fileID: 7496430579478527828, guid: db972bb46dcf90b4896602203c6d46d0, type: 3}
   - {fileID: -2496984265990508334, guid: 95f50d91a6310064ebfb834cd7047bd2, type: 3}
   - {fileID: 7453236362669762780, guid: bc73721c03f40fd449b8c2053ecbcff1, type: 3}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1689806677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +3538,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848251189}
   m_CullTransparentMesh: 1
+--- !u!1 &1856338705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856338707}
+  - component: {fileID: 1856338706}
+  m_Layer: 0
+  m_Name: PauseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1856338706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856338705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9fc310bd106f3643ba1a34ffd40905d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  musicButton: {fileID: 0}
+  soundButton: {fileID: 0}
+  continueButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  homeButton: {fileID: 0}
+  pauseBackground: {fileID: 0}
+  music:
+  - {fileID: 0}
+  - {fileID: 0}
+  soundEf:
+  - {fileID: 0}
+  - {fileID: 0}
+  musicIsMuted: 0
+  soundIsMuted: 0
+--- !u!4 &1856338707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856338705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1163.2932, y: 550.64215, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881581149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4841,3 +4931,4 @@ SceneRoots:
   - {fileID: 552142411}
   - {fileID: 1392356277}
   - {fileID: 2034771356}
+  - {fileID: 1856338707}

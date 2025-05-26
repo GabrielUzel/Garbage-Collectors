@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour, ILevelPersistence
     void Start()
     {
         LevelInfo currentLevelInfo = levelData.levelsInitialInfo.Find(info => info.levelId == GameSessionData.LastPlayedLevel);
-        amount = currentLevelInfo.trashCount * 100 / 70;
+        amount = currentLevelInfo.trashCount + currentLevelInfo.lifes - 1;
         GenerateWastes();
     }
 
