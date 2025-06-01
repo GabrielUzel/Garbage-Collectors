@@ -4,8 +4,10 @@ using UnityEngine.UI;
 public class LifeQuantityManager : MonoBehaviour
 {
     private int quantityLifes;
+    private AudioSource audioSrc;
     public static LifeQuantityManager Instance;
     public Image lifes;
+    public AudioClip sound;           
     public Sprite fiveLivesFull;
     public Sprite fiveLivesHalf;
     public Sprite fourLivesFull;
@@ -32,13 +34,15 @@ public class LifeQuantityManager : MonoBehaviour
 
     void Start()
     {
+        if (audioSrc == null)
+            audioSrc = gameObject.AddComponent<AudioSource>();
         quantityLifes = LoadLevelsInfo.Instance.GetLifes();
     }
 
     public void LoseHeart()
     {
         quantityLifes--;
-
+        audioSrc.PlayOneShot(sound);
         switch (quantityLifes)
         {
             case 0:

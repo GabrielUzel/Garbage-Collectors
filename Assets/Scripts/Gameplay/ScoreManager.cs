@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public AudioClip som;           
+    public AudioClip sound;           
     private AudioSource audioSrc;
     public static ScoreManager Instance;
     public int score = 0;
@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += 200;
         UpdateScoreText();
-        audioSrc.PlayOneShot(som);
+        audioSrc.PlayOneShot(sound);
     }
 
     private void UpdateScoreText()

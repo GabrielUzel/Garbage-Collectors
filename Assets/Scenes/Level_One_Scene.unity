@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: {fileID: 1019961337}
+  sound: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
   fiveLivesFull: {fileID: 21300000, guid: a66714c80adc9a54082014d9312815a9, type: 3}
   fiveLivesHalf: {fileID: 21300000, guid: b3244c32cda818442a61df21fe889bdd, type: 3}
   fourLivesFull: {fileID: 21300000, guid: 37c9708aa9cca734488ff5d99c927f44, type: 3}
@@ -3499,7 +3500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49317460c0a1794588fbaf49359ae99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  som: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
+  sound: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
   score: 0
   scoreText: {fileID: 806709985}
 --- !u!1 &1392356275
