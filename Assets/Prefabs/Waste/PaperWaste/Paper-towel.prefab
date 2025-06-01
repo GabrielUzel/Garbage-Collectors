@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7923227765905213319}
   - component: {fileID: 336014868783027081}
   - component: {fileID: -3923938951105980915}
-  - component: {fileID: 1721274654711921531}
-  - component: {fileID: 5673399620171329171}
+  - component: {fileID: 7616508286698653717}
+  - component: {fileID: 68169434290616484}
   m_Layer: 5
-  m_Name: cleaning_products
+  m_Name: Paper-towel
   m_TagString: Waste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,18 +91,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 996598818623574385, guid: 5592390b79e87904e8930280eb6f9d2a, type: 3}
+  m_Sprite: {fileID: -6835413683464778208, guid: ffc635a339c307b4ab9ab6e71917192b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 4.78}
+  m_Size: {x: 4.56, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!61 &1721274654711921531
+--- !u!61 &7616508286698653717
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,15 +140,15 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 4.78}
-    newSize: {x: 5.12, y: 4.78}
+    oldSize: {x: 3.85, y: 3.64}
+    newSize: {x: 4.56, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.12, y: 4.78}
+  m_Size: {x: 4.56, y: 5.12}
   m_EdgeRadius: 0
---- !u!114 &5673399620171329171
+--- !u!114 &68169434290616484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75fbab6c65e62841bea97608894836b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wasteType: 0
+  wasteType: 2

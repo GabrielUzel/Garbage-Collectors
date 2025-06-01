@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5592390b79e87904e8930280eb6f9d2a
+guid: 49b7531f3c136d84f974e79aabbed050
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 996598818623574385
-    second: clening_products_0
+      213: 4543085275223865627
+    second: lampada_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clening_products_0
+      name: lampada_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 512
-        height: 478
+        x: 84
+        y: 18
+        width: 344
+        height: 476
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 171d1a76851a4dd00800000000000000
-      internalID: 996598818623574385
+      spriteID: b19b60eccf74c0f30800000000000000
+      internalID: 4543085275223865627
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      clening_products_0: 996598818623574385
+      lampada_0: 4543085275223865627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
