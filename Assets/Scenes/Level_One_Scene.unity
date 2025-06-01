@@ -3499,6 +3499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49317460c0a1794588fbaf49359ae99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  som: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
   score: 0
   scoreText: {fileID: 806709985}
 --- !u!1 &1392356275

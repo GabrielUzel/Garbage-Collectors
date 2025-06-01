@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      broken_lightbulb_0: -5391771832881788286
+      broken_lightbulb_1: -4876964027844869702
+      broken_lightbulb_2: -640296775741253344
+      broken_lightbulb_3: -7952732546653775659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

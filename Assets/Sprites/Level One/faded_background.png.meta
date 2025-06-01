@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      faded_background_0: 802842726899993619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
