@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class LevelResult : MonoBehaviour
 {
+    public AudioClip sound;           
+    private AudioSource audioSrc;
     public static LevelResult Instance;
     public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
     public GameObject PanelPopUp;
@@ -36,6 +38,8 @@ public class LevelResult : MonoBehaviour
 
     public void Start()
     {
+        if (audioSrc == null)
+            audioSrc = gameObject.AddComponent<AudioSource>();
         levelId = LoadLevelsInfo.Instance.GetLevelId();
         trashes = LoadLevelsInfo.Instance.GetTotalWaste();
         timeInSeconds = LoadLevelsInfo.Instance.GetTimeInSeconds();
@@ -50,6 +54,7 @@ public class LevelResult : MonoBehaviour
 
     public void ShowPopUp(string reason)
     {
+        audioSrc.PlayOneShot(sound);
         TimeManager.Instance.timerIsRunning = false;
         PanelPopUp.SetActive(true);
         Fade.SetActive(true);

@@ -3532,6 +3532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 2949390af1e1b3b4f8ad9c3112d1f646, type: 3}
   TrashOk: {fileID: 1607645356}
   TrashNotOk: {fileID: 1080168011}
   TimeOk: {fileID: 1721463458}
