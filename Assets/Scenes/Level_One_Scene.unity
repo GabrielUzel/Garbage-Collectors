@@ -1288,17 +1288,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: {fileID: 1019961337}
-  fiveLivesFull: {fileID: 21300000, guid: a66714c80adc9a54082014d9312815a9, type: 3}
-  fiveLivesHalf: {fileID: 21300000, guid: b3244c32cda818442a61df21fe889bdd, type: 3}
-  fourLivesFull: {fileID: 21300000, guid: 37c9708aa9cca734488ff5d99c927f44, type: 3}
-  fourLivesHalf: {fileID: 21300000, guid: 23fd79be186e8e44b8356fd4d517c265, type: 3}
-  threeLivesFull: {fileID: 21300000, guid: d47df47b9b204594fb7b5295409db58c, type: 3}
-  threeLivesHalf: {fileID: 21300000, guid: 81df614671562554eb163486eba342e3, type: 3}
-  twoLivesFull: {fileID: 21300000, guid: dc9cac2a62a5a6c42b5030727e39e700, type: 3}
-  twoLivesHalf: {fileID: 21300000, guid: 035e8a3ef8d57a44e93610a0c09dfa5a, type: 3}
-  oneLifeFull: {fileID: 21300000, guid: a2c33a080b74c5646bb541a8fcce0acb, type: 3}
-  oneLifeHalf: {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
-  lifeEmpty: {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
+  lifeSpritesTen:
+  - {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
+  - {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
+  - {fileID: 21300000, guid: a2c33a080b74c5646bb541a8fcce0acb, type: 3}
+  - {fileID: 21300000, guid: 035e8a3ef8d57a44e93610a0c09dfa5a, type: 3}
+  - {fileID: 21300000, guid: dc9cac2a62a5a6c42b5030727e39e700, type: 3}
+  - {fileID: 21300000, guid: 81df614671562554eb163486eba342e3, type: 3}
+  - {fileID: 21300000, guid: d47df47b9b204594fb7b5295409db58c, type: 3}
+  - {fileID: 21300000, guid: 23fd79be186e8e44b8356fd4d517c265, type: 3}
+  - {fileID: 21300000, guid: 37c9708aa9cca734488ff5d99c927f44, type: 3}
+  - {fileID: 21300000, guid: b3244c32cda818442a61df21fe889bdd, type: 3}
+  - {fileID: 21300000, guid: a66714c80adc9a54082014d9312815a9, type: 3}
+  lifeSpritesSix:
+  - {fileID: 21300000, guid: 6f18c7ce537ebff45b192c34cec8a416, type: 3}
+  - {fileID: 21300000, guid: 9fe745d089f2c4442a8d40df86e28088, type: 3}
+  - {fileID: 21300000, guid: f5f3b7c0433ea7643b92813ba0958d75, type: 3}
+  - {fileID: 21300000, guid: 1aa7b3b5a741e204292cda67ef1156c7, type: 3}
+  - {fileID: 21300000, guid: 4c8c146fbcf1d0c4ca69fe8099a4ee54, type: 3}
+  - {fileID: 21300000, guid: fa58101e18455f44cad11e153065b88e, type: 3}
+  - {fileID: 21300000, guid: bc1b3d6d4932bed4bbbd8cf3d9af65b0, type: 3}
 --- !u!4 &653428951
 Transform:
   m_ObjectHideFlags: 0
