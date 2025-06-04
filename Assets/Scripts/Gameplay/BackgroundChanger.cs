@@ -162,6 +162,7 @@ public class BackgroundChanger : MonoBehaviour
                 plasticBin.transform.position = positions[4];
                 paperBin.transform.position = positions[5];
 
+                // O nivel 5 eh o unico que precisei mudar a escala, por isso essas linhas de codigos aqui
                 metalBin.transform.localScale = new Vector3(2.8f, 2.8f, 0f);
                 nonRecyclableBin.transform.localScale = new Vector3(2.8f, 2.8f, 0f);
                 organicBin.transform.localScale = new Vector3(2.8f, 2.8f, 0f);

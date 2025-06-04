@@ -36,7 +36,7 @@ public class LifeQuantityManager : MonoBehaviour
 
     public void LoseHeart()
     {
-        quantityLifes = Mathf.Max(0, quantityLifes - 1); // Evita valores negativos
+        quantityLifes = Mathf.Max(0, quantityLifes - 1); 
         Debug.Log(quantityLifes);
         Debug.Log("qtd inicial " + initialQuantitiyLifes);
 
@@ -46,7 +46,7 @@ public class LifeQuantityManager : MonoBehaviour
         if (quantityLifes >= 0 && quantityLifes <= maxIndex)
             lifes.sprite = selectedArray[quantityLifes];
         else
-            lifes.sprite = selectedArray[0]; // Empty
+            lifes.sprite = selectedArray[0]; 
 
         if (quantityLifes == 0)
             LoseGame();
