@@ -3774,6 +3774,7 @@ MonoBehaviour:
   - {fileID: -2496984265990508334, guid: 95f50d91a6310064ebfb834cd7047bd2, type: 3}
   - {fileID: 7453236362669762780, guid: bc73721c03f40fd449b8c2053ecbcff1, type: 3}
   spriteRenderer: {fileID: 0}
+  avatar: {fileID: 1640901815}
 --- !u!1 &1689806677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5430,6 +5431,25 @@ MonoBehaviour:
   - {fileID: 4838201469012271266, guid: 2ace4b3594fc0244db3fac6fce789bf5, type: 3}
   - {fileID: -656086801822231432, guid: 864abe0665548534ca9a60ea3f81f81f, type: 3}
   - {fileID: 6861310643827267881, guid: 447410e2da1f5334fb3680295d5d111b, type: 3}
+  - {fileID: -6808682707866672838, guid: 2334eadeabd39e341be4685e07357aed, type: 3}
+  - {fileID: 2364150405232699233, guid: 8ca1accd371ddb849bb66b6e6de46e90, type: 3}
+  - {fileID: 4803845212283256366, guid: e7d169eb371cb04479e93cd14844e0a7, type: 3}
+  - {fileID: -270215828013251696, guid: e9cf69feaa23a7b4c9b0076a2261f9b1, type: 3}
+  - {fileID: -9029417385893539671, guid: 1109a6533ae0ebc41aaf09bef665599d, type: 3}
+  - {fileID: 7239226359406273127, guid: 619ea15931a50974cb94c7f0445e0281, type: 3}
+  - {fileID: -8968639856794781576, guid: b166d743ae6b3cb4892c22c33cc6d607, type: 3}
+  - {fileID: -6557719290776376514, guid: febe073a0e216de4d93c73b1ac094b45, type: 3}
+  - {fileID: -4487844448509126335, guid: b4c3cadd2e587b94e85d36ddb803fe4b, type: 3}
+  - {fileID: 3803649514461159547, guid: d29ce9297a916764dbaea741559e17c0, type: 3}
+  - {fileID: -4479437258532327839, guid: b12c3b230c2c3044cb504ca6501f5013, type: 3}
+  - {fileID: -1761356042853860901, guid: b64dbdf9f23e3a94da065eb0bcd9c5e4, type: 3}
+  levelId: 0
+  plasticBin: {fileID: 1943845874}
+  glassBin: {fileID: 1916125013}
+  paperBin: {fileID: 1881581149}
+  metalBin: {fileID: 109300471}
+  organicBin: {fileID: 1119382035}
+  nonRecyclableBin: {fileID: 203539994}
 --- !u!1 &2131688035
 GameObject:
   m_ObjectHideFlags: 0
