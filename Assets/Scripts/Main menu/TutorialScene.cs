@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class TutorialScener : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject videoPanel; // O RawImage ou um pai com CanvasGroup
+    public GameObject videoPanel; 
 
     public void PlayTutorial()
     {
@@ -16,5 +17,7 @@ public class TutorialScener : MonoBehaviour
     {
         videoPlayer.Stop();
         videoPanel.SetActive(false);
+            SceneManager.LoadScene("Main_Menu_Scene");
+
     }
 }
