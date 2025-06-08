@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      diaper_0: 8355534932255826566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

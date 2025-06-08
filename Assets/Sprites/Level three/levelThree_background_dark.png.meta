@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      levelThree_background_dark_0: -270215828013251696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,9 +5,11 @@ public class LifeQuantityManager : MonoBehaviour
 {
     private int quantityLifes;
     private int initialQuantitiyLifes;
+    private AudioSource audioSrc;
     public static LifeQuantityManager Instance;
     public Image lifes;
-  
+    public AudioClip sound;           
+   
 
     [Header("Sprites - 10 vidas")]
     public Sprite[] lifeSpritesTen; 
@@ -29,6 +31,8 @@ public class LifeQuantityManager : MonoBehaviour
 
     void Start()
     {
+        if (audioSrc == null)
+            audioSrc = gameObject.AddComponent<AudioSource>();
         quantityLifes = LoadLevelsInfo.Instance.GetLifes();
         initialQuantitiyLifes = quantityLifes;
         DefineLifeQuantity(initialQuantitiyLifes);
@@ -36,6 +40,8 @@ public class LifeQuantityManager : MonoBehaviour
 
     public void LoseHeart()
     {
+        
+        audioSrc.PlayOneShot(sound);
         quantityLifes = Mathf.Max(0, quantityLifes - 1); 
         Debug.Log(quantityLifes);
         Debug.Log("qtd inicial " + initialQuantitiyLifes);
