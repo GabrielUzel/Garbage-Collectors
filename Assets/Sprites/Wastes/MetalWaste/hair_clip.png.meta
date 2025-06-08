@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hair_clip_0: 1455780139118606125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

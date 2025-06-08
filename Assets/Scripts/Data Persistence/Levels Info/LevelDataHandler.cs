@@ -13,32 +13,26 @@ public class LevelDataHandler
         this.dataFileName = dataFileName;
     }
 
-    public LevelData Load() 
+    public LevelData Load()
     {
-        string fullPath = Path.Combine(dataDirPath, dataFileName);
+        string fullPath = Path.Combine(Application.streamingAssetsPath, "levels_data.enc");
         LevelData loadedData = null;
 
-        if (File.Exists(fullPath)) 
+        if (File.Exists(fullPath))
         {
-            try 
+            try
             {
-                string dataToLoad = "";
-
-                using (FileStream stream = new FileStream(fullPath, FileMode.Open)) 
-                {
-                    using (StreamReader reader = new StreamReader(stream)) 
-                    {
-                        dataToLoad = reader.ReadToEnd();
-                        loadedData = JsonUtility.FromJson<LevelData>(dataToLoad);
-                    }
-                }
-            } 
-            catch (Exception e) 
-            {
-                Debug.LogError($"Failed to load level data: {e.Message}");
+                string encryptedData = File.ReadAllText(fullPath);
+                string decryptedJson = Encryption.Decrypt(encryptedData);
+                loadedData = JsonUtility.FromJson<LevelData>(decryptedJson);
             }
-        } 
+            catch (Exception e)
+            {
+                Debug.LogError("Erro ao descriptografar LevelData: " + e.Message);
+            }
+        }
 
         return loadedData;
     }
+
 }

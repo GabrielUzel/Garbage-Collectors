@@ -5,7 +5,7 @@ using System.Text;
 
 public static class Encryption
 {
-    private static readonly string key = "mwpjgld9y46aeswp"; 
+    private static readonly string key = "mwpjgld9y46aeswp";
 
     public static string Encrypt(string plainText)
     {
@@ -41,16 +41,11 @@ public static class Encryption
             Array.Copy(fullData, 0, iv, 0, iv.Length);
             aes.IV = iv;
 
-            using (MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new MemoryStream(fullData, iv.Length, fullData.Length - iv.Length))
+            using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read))
+            using (StreamReader sr = new StreamReader(cs))
             {
-                ms.Write(fullData, iv.Length, fullData.Length - iv.Length);
-                ms.Position = 0;
-
-                using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read))
-                using (StreamReader sr = new StreamReader(cs))
-                {
-                    return sr.ReadToEnd();
-                }
+                return sr.ReadToEnd();
             }
         }
     }
