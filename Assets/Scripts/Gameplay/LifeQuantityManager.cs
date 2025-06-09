@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class LifeQuantityManager : MonoBehaviour
 {
     private int quantityLifes;
-    private AudioSource audioSrc;
+    public AudioSource audioSrc;
     public static LifeQuantityManager Instance;
     public Image lifes;
-    public AudioClip sound;           
+    public AudioClip sound;
     public Sprite fiveLivesFull;
     public Sprite fiveLivesHalf;
     public Sprite fourLivesFull;
@@ -92,5 +92,10 @@ public class LifeQuantityManager : MonoBehaviour
     public void LoseGame()
     {
         FindFirstObjectByType<LevelResult>().ShowPopUp("Life");
+    }
+
+    public void toggleSoundEffect(bool mute)
+    {
+        audioSrc.mute = mute;
     }
 }

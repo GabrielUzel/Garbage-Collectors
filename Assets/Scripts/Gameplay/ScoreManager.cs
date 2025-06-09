@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public AudioClip sound;           
-    private AudioSource audioSrc;
+    public AudioClip sound;
+    public AudioSource audioSrc;
     public static ScoreManager Instance;
     public int score = 0;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -43,5 +43,10 @@ public class ScoreManager : MonoBehaviour
         {
             scoreText.text = $"Pontuação: {score}";
         }
+    }
+
+    public void toggleSoundEffect(bool mute)
+    {
+        audioSrc.mute = mute;
     }
 }
