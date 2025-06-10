@@ -2479,7 +2479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102.19995, y: -76}
+  m_AnchoredPosition: {x: -120, y: -82}
   m_SizeDelta: {x: 108, y: 92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881687828
@@ -2600,8 +2600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d570b03ced297c4582f4ac06f15c1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
-  videoPanel: {fileID: 0}
+  videoPlayer: {fileID: 867918006}
+  videoPanel: {fileID: 543386994}
 --- !u!1 &1885090515
 GameObject:
   m_ObjectHideFlags: 0
