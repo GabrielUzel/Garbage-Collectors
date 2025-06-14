@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c0e3a1840b4571442a8115c34d3c51ef
+guid: 1c90e9010c404d642b89566cd5f1af6e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3531168494600248182
-    second: girl_waving_0
+      213: -5264420026233044711
+    second: meninaAcenando_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,14 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: girl_waving_0
+      name: meninaAcenando_0
       rect:
         serializedVersion: 2
-        x: 91
+        x: 93
         y: 0
         width: 825
         height: 1563
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a842d4d86f4cefec0800000000000000
-      internalID: -3531168494600248182
+      spriteID: 9114de3d0e501f6b0800000000000000
+      internalID: -5264420026233044711
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      girl_waving_0: -3531168494600248182
+      meninaAcenando_0: -5264420026233044711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

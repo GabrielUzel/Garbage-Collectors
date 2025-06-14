@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class LevelResult : MonoBehaviour
 {
+    public AudioClip sound;           
+    private AudioSource audioSrc;
     public static LevelResult Instance;
     public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
     public GameObject PanelPopUp;
@@ -22,6 +24,8 @@ public class LevelResult : MonoBehaviour
     public int PlayerCurrentLevel;
     public bool victory = false;
 
+    public bool userWon = false;
+
     void Awake()
     {
         if (Instance == null)
@@ -36,6 +40,8 @@ public class LevelResult : MonoBehaviour
 
     public void Start()
     {
+        if (audioSrc == null)
+            audioSrc = gameObject.AddComponent<AudioSource>();
         levelId = LoadLevelsInfo.Instance.GetLevelId();
         trashes = LoadLevelsInfo.Instance.GetTotalWaste();
         timeInSeconds = LoadLevelsInfo.Instance.GetTimeInSeconds();
@@ -50,6 +56,7 @@ public class LevelResult : MonoBehaviour
 
     public void ShowPopUp(string reason)
     {
+        audioSrc.PlayOneShot(sound);
         TimeManager.Instance.timerIsRunning = false;
         PanelPopUp.SetActive(true);
         Fade.SetActive(true);
@@ -70,7 +77,7 @@ public class LevelResult : MonoBehaviour
         TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
 
         UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
     }
 
     private void UpdateUI(string reason)
@@ -84,12 +91,14 @@ public class LevelResult : MonoBehaviour
                 RestartLevel.SetActive(true);
                 NextLevel.SetActive(true);
                 RetryLevel.SetActive(false);
+                userWon = true;
             }
             else
             {
                 TrashNotOk.SetActive(true);
                 TimeNotOk.SetActive(true);
                 RetryLevel.SetActive(true);
+                userWon = false;
             }
 
             return;
@@ -100,7 +109,7 @@ public class LevelResult : MonoBehaviour
             TimeOk.SetActive(true);
             TrashNotOk.SetActive(true);
             RetryLevel.SetActive(true);
-
+            userWon = false;
             return;
         }
 
@@ -109,5 +118,6 @@ public class LevelResult : MonoBehaviour
         RestartLevel.SetActive(true);
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
+        userWon = true;
     }
 }

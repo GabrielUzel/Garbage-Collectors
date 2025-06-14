@@ -21,4 +21,10 @@ public class LifeQuantityManagerTest
     {
 
     }
-}
+    public void LoseHeart() { }
+    
+    public void DefineLifeQuantity(int quantityLifes) { }
+
+    public void LoseGame() { }
+    
+    }

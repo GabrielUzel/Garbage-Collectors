@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      aluminum_0: -9085892586188298084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

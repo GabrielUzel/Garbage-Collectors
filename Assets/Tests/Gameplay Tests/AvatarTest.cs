@@ -56,7 +56,7 @@ public class AvatarTest
         Object.DestroyImmediate(trashCountManager.gameObject);
         Object.DestroyImmediate(loadLevelsInfo.gameObject);
         LoadLevelsInfo.Instance = null;
-        
+
         foreach (var waste in GameObject.FindGameObjectsWithTag("Waste"))
         {
             Object.DestroyImmediate(waste);
@@ -174,4 +174,11 @@ public class AvatarTest
 
         Assert.AreEqual(avatar.sprites[5], avatar.spriteRenderer.sprite);
     }
+
+    void DefineAvatarPosition(int levelId)
+    {
+
+    }
+
+
 }

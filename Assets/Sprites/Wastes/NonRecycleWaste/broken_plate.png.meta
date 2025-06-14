@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      broken_plate_0: 6167489436510226871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

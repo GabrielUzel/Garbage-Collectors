@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5592390b79e87904e8930280eb6f9d2a
+guid: 2334eadeabd39e341be4685e07357aed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 996598818623574385
-    second: clening_products_0
+      213: -6808682707866672838
+    second: levelTwo_background_dark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clening_products_0
+      name: levelTwo_background_dark_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
-        width: 512
-        height: 478
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 171d1a76851a4dd00800000000000000
-      internalID: 996598818623574385
+      spriteID: a312341b623b281a0800000000000000
+      internalID: -6808682707866672838
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      levelTwo_background_dark_0: -6808682707866672838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

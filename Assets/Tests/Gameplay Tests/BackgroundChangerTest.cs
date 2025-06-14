@@ -21,4 +21,5 @@ public class BackgroundChangerTest
     {
 
     }
+    void DefineTrashPositions(int levelId) { }
 }
