@@ -15,8 +15,8 @@ public class TutorialScener : MonoBehaviour
 
     public void StopTutorial()
     {
-        videoPlayer.Stop();
-        videoPanel.SetActive(false);
+      //  videoPlayer.Stop();
+       // videoPanel.SetActive(false);
             SceneManager.LoadScene("Main_Menu_Scene");
 
     }
