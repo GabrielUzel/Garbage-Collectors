@@ -4,21 +4,18 @@ using UnityEngine.UI;
 public class LifeQuantityManager : MonoBehaviour
 {
     private int quantityLifes;
+    private int initialQuantitiyLifes;
     public AudioSource audioSrc;
     public static LifeQuantityManager Instance;
     public Image lifes;
-    public AudioClip sound;
-    public Sprite fiveLivesFull;
-    public Sprite fiveLivesHalf;
-    public Sprite fourLivesFull;
-    public Sprite fourLivesHalf;
-    public Sprite threeLivesFull;
-    public Sprite threeLivesHalf;
-    public Sprite twoLivesFull;
-    public Sprite twoLivesHalf;
-    public Sprite oneLifeFull;
-    public Sprite oneLifeHalf;
-    public Sprite lifeEmpty;
+    public AudioClip sound;           
+   
+
+    [Header("Sprites - 10 vidas")]
+    public Sprite[] lifeSpritesTen; 
+
+    [Header("Sprites - 6 vidas")]
+    public Sprite[] lifeSpritesSix; 
 
     void Awake()
     {
@@ -37,61 +34,42 @@ public class LifeQuantityManager : MonoBehaviour
         if (audioSrc == null)
             audioSrc = gameObject.AddComponent<AudioSource>();
         quantityLifes = LoadLevelsInfo.Instance.GetLifes();
+        initialQuantitiyLifes = quantityLifes;
+        DefineLifeQuantity(initialQuantitiyLifes);
     }
 
     public void LoseHeart()
     {
-        quantityLifes--;
+        
         audioSrc.PlayOneShot(sound);
-        switch (quantityLifes)
-        {
-            case 0:
-                lifes.sprite = lifeEmpty;
-                break;
-            case 1:
-                lifes.sprite = oneLifeHalf;
-                break;
-            case 2:
-                lifes.sprite = oneLifeFull;
-                break;
-            case 3:
-                lifes.sprite = twoLivesHalf;
-                break;
-            case 4:
-                lifes.sprite = twoLivesFull;
-                break;
-            case 5:
-                lifes.sprite = threeLivesHalf;
-                break;
-            case 6:
-                lifes.sprite = threeLivesFull;
-                break;
-            case 7:
-                lifes.sprite = fourLivesHalf;
-                break;
-            case 8:
-                lifes.sprite = fourLivesFull;
-                break;
-            case 9:
-                lifes.sprite = fiveLivesHalf;
-                break;
-            case 10:
-                lifes.sprite = fiveLivesFull;
-                break;
-            default:
-                lifes.sprite = lifeEmpty;
-                break;
-        }
+        quantityLifes = Mathf.Max(0, quantityLifes - 1); 
+        Debug.Log(quantityLifes);
+        Debug.Log("qtd inicial " + initialQuantitiyLifes);
+
+        Sprite[] selectedArray = initialQuantitiyLifes == 10 ? lifeSpritesTen : lifeSpritesSix;
+        int maxIndex = selectedArray.Length - 1;
+
+        if (quantityLifes >= 0 && quantityLifes <= maxIndex)
+            lifes.sprite = selectedArray[quantityLifes];
+        else
+            lifes.sprite = selectedArray[0]; 
 
         if (quantityLifes == 0)
-        {
             LoseGame();
-        }
     }
 
     public void LoseGame()
     {
         FindFirstObjectByType<LevelResult>().ShowPopUp("Life");
+    }
+
+    public void DefineLifeQuantity(int quantityLifes)
+    {
+        Debug.Log(quantityLifes);
+        if (quantityLifes == 10)
+            lifes.sprite = lifeSpritesTen[10];
+        else
+            lifes.sprite = lifeSpritesSix[6];
     }
 
     public void toggleSoundEffect(bool mute)

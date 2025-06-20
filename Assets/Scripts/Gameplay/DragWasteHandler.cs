@@ -12,7 +12,9 @@ public class DragWasteHandler : MonoBehaviour
         if (hit != null && hit.gameObject == gameObject)
         {
             offset = transform.position - GetMouseWorldPos();
-            dragging = true;
+            if(TimeManager.Instance.timerIsRunning == true){
+                dragging = true;
+            }
         }
     }
 
