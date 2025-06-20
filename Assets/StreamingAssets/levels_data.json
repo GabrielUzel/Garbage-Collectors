@@ -9,27 +9,27 @@
         },
         {
             "levelId": 2,
-            "trashCount": 25,
-            "timeInSeconds": 170,
+            "trashCount": 17,
+            "timeInSeconds": 110,
             "lifes": 10
         },
         {
             "levelId": 3,
-            "trashCount": 35,
-            "timeInSeconds": 200,
-            "lifes": 10
+            "trashCount": 19,
+            "timeInSeconds": 110,
+            "lifes": 6
         },
         {
             "levelId": 4,
-            "trashCount": 45,
-            "timeInSeconds": 240,
-            "lifes": 10
+            "trashCount": 21,
+            "timeInSeconds": 100,
+            "lifes": 6
         },
         {
             "levelId": 5,
-            "trashCount": 55,
-            "timeInSeconds": 300,
-            "lifes": 10
+            "trashCount": 23,
+            "timeInSeconds": 80,
+            "lifes": 6
         }
     ]
 }

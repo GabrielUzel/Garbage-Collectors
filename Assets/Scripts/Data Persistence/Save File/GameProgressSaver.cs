@@ -28,9 +28,9 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
         totalLevels = LoadLevelsInfo.Instance.GetTotalLevels();
     }
 
-    public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore)
+    public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore, bool userWon)
     {
-        if (PlayerCurrentLevel <= lastPlayedLevel && PlayerCurrentLevel < totalLevels)
+        if (PlayerCurrentLevel <= lastPlayedLevel && PlayerCurrentLevel < totalLevels && userWon)
         {
             PlayerCurrentLevel = lastPlayedLevel + 1;
         }
