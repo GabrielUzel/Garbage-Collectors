@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 706a744b164362342a394b3c552e51be
+guid: 2334eadeabd39e341be4685e07357aed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5391771832881788286
-    second: broken_lightbulb_0
-  - first:
-      213: -4876964027844869702
-    second: broken_lightbulb_1
-  - first:
-      213: -640296775741253344
-    second: broken_lightbulb_2
-  - first:
-      213: -7952732546653775659
-    second: broken_lightbulb_3
+      213: -6808682707866672838
+    second: levelTwo_background_dark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: broken_lightbulb_0
+      name: levelTwo_background_dark_0
       rect:
         serializedVersion: 2
-        x: 103
-        y: 439
-        width: 34
-        height: 58
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28acf17b5149c25b0800000000000000
-      internalID: -5391771832881788286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broken_lightbulb_1
-      rect:
-        serializedVersion: 2
-        x: 118
-        y: 15
-        width: 355
-        height: 483
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab1c2f15e0b815cb0800000000000000
-      internalID: -4876964027844869702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broken_lightbulb_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 383
-        width: 58
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0295d1399753d17f0800000000000000
-      internalID: -640296775741253344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broken_lightbulb_3
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 327
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d8930b52e732a190800000000000000
-      internalID: -7952732546653775659
+      spriteID: a312341b623b281a0800000000000000
+      internalID: -6808682707866672838
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      broken_lightbulb_0: -5391771832881788286
-      broken_lightbulb_1: -4876964027844869702
-      broken_lightbulb_2: -640296775741253344
-      broken_lightbulb_3: -7952732546653775659
+      levelTwo_background_dark_0: -6808682707866672838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
