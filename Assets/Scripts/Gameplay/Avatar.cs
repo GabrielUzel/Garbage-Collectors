@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Avatar : MonoBehaviour
 {
+    public static Avatar Instance;
     private int totalWaste;
     private int collectedWaste;
     private int levelId;
@@ -17,6 +18,7 @@ public class Avatar : MonoBehaviour
 
     public void Awake()
     {
+        Instance = this;
         selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
         isBoy = selectedAvatar == "boy";
     }
@@ -34,11 +36,12 @@ public class Avatar : MonoBehaviour
     public void Update()
     {
         collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
-        UpdateSprite(collectedWaste);
+        UpdateSprite(collectedWaste, isBoy, spriteRenderer);
     }
 
-    void UpdateSprite(int collected)
+   public void UpdateSprite(int collected, bool isBoy, SpriteRenderer spriteRenderer)
     {
+
         if (totalWaste <= 0)
         {
             return;            
@@ -67,7 +70,7 @@ public class Avatar : MonoBehaviour
 
         levelPositions[4] = new Vector3(-115.1f, -45.9f, 0);
 
-        levelPositions[5] = new Vector3(-111.8f, -43.7f, 0);
+        levelPositions[5] = new Vector3(-123.6f, -43.7f, 0);
 
         Vector3 position = levelPositions[levelId];
         avatar.transform.position = position;

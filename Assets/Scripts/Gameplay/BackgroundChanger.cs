@@ -16,6 +16,12 @@ public class BackgroundChanger : MonoBehaviour
     public GameObject organicBin;
     public GameObject nonRecyclableBin;
 
+    public GameObject extraCharacter;
+    public Sprite[] sprites;
+    public SpriteRenderer spriteRendererExtra;
+    private string selectedAvatar = "";
+    private bool isABoy;
+
     private Dictionary<int, Vector3[]> levelPositions = new Dictionary<int, Vector3[]>();
 
     void Start()
@@ -25,26 +31,33 @@ public class BackgroundChanger : MonoBehaviour
 
         totalWaste = LoadLevelsInfo.Instance.GetTotalWaste();
 
-        levelId = LoadLevelsInfo.Instance.GetLevelId(); 
+        levelId = LoadLevelsInfo.Instance.GetLevelId();
         UpdateBackground(0);
         DefineTrashPositions(levelId);
+
+        selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
+        isABoy = selectedAvatar == "boy" ? false : true;
+        DefineExtraCharacter();
     }
 
     void Update()
     {
         collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
         UpdateBackground(collectedWaste);
+        if(levelId == 5)
+        Avatar.Instance.UpdateSprite(collectedWaste, isABoy, spriteRendererExtra);
+       
     }
 
     void UpdateBackground(int collected)
     {
         if (totalWaste <= 0)
         {
-            return;            
+            return;
         }
 
         int percentage = 100 * collected / totalWaste;
-        int indexOffset = (levelId - 1) * 3; 
+        int indexOffset = (levelId - 1) * 3;
 
 
         if (percentage >= 100)
@@ -64,7 +77,7 @@ public class BackgroundChanger : MonoBehaviour
 
     void DefineTrashPositions(int levelId)
     {
-        
+
         levelPositions[1] = new Vector3[]
         {
             new Vector3(-120f, -35f, 1), //plastic
@@ -111,12 +124,12 @@ public class BackgroundChanger : MonoBehaviour
        // new Vector3(29.9f, -57.2f, 1),
         //new Vector3(52.9f, -57.2f, 1)
 
-         new Vector3(-76.6f, -51, 1),
-         new Vector3(-40.6f, -51, 1),
-         new Vector3(-4.6f,  -51, 1),
-         new Vector3(31.4f,  -51, 1),
-         new Vector3(67.4f, -51, 1),
-         new Vector3(103.4f, -51, 1),
+         new Vector3(-88.9f, -51, 1),
+         new Vector3(-52.9f, -51, 1),
+         new Vector3(-16.9f,  -51, 1),
+         new Vector3(19.1f,  -51, 1),
+         new Vector3(55.1f, -51, 1),
+         new Vector3(91.09f, -51, 1),
         };
 
         Vector3[] positions = levelPositions[levelId];
@@ -124,7 +137,7 @@ public class BackgroundChanger : MonoBehaviour
         switch (levelId)
         {
             case 2:
-              
+
                 organicBin.transform.position = positions[0];
                 metalBin.transform.position = positions[1];
                 plasticBin.transform.position = positions[2];
@@ -134,7 +147,7 @@ public class BackgroundChanger : MonoBehaviour
                 break;
 
             case 3:
-               
+
                 nonRecyclableBin.transform.position = positions[0];
                 paperBin.transform.position = positions[1];
                 glassBin.transform.position = positions[2];
@@ -144,7 +157,7 @@ public class BackgroundChanger : MonoBehaviour
                 break;
 
             case 4:
-                
+
                 paperBin.transform.position = positions[0];
                 nonRecyclableBin.transform.position = positions[1];
                 metalBin.transform.position = positions[2];
@@ -154,7 +167,7 @@ public class BackgroundChanger : MonoBehaviour
                 break;
 
             case 5:
-                
+
                 metalBin.transform.position = positions[0];
                 nonRecyclableBin.transform.position = positions[1];
                 organicBin.transform.position = positions[2];
@@ -173,7 +186,7 @@ public class BackgroundChanger : MonoBehaviour
                 break;
 
             default:
-                
+
                 plasticBin.transform.position = positions[0];
                 glassBin.transform.position = positions[1];
                 paperBin.transform.position = positions[2];
@@ -183,5 +196,16 @@ public class BackgroundChanger : MonoBehaviour
                 break;
         }
     }
-}
+
+    void DefineExtraCharacter()
+    {
+        if (levelId == 5)
+        {
+
+            spriteRendererExtra.sprite = isABoy ? sprites[0] : sprites[1];
+            Vector3 position = new Vector3(126.7f, -43.7f, 0);
+            extraCharacter.transform.position = position;
+        }
+    }
+    }
 
