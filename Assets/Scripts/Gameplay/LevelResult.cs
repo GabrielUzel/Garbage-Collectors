@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelResult : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class LevelResult : MonoBehaviour
         TrashNotOk.SetActive(false);
         TimeOk.SetActive(false);
         TimeNotOk.SetActive(false);
+
+        NextLevel.GetComponent<Button>().onClick.AddListener(OnNextLevelClicked);
     }
 
     public void ShowPopUp(string reason)
@@ -79,6 +82,19 @@ public class LevelResult : MonoBehaviour
         UpdateUI(reason);
         GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
     }
+
+    private void OnNextLevelClicked()
+{
+    if (levelId == 5 && userWon)
+    {
+        SceneManager.LoadScene("End_Game_Scene");
+    }
+    else
+    {
+        SceneManager.LoadScene("Levels_Menu_Scene");
+    }
+}
+
 
     private void UpdateUI(string reason)
     {
