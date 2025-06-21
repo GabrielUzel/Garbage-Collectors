@@ -55,7 +55,8 @@ public class TrashCountManager : MonoBehaviour
 
     public bool VerifyIfPlayerWon()
     {
-        if (CorrectTrashCount == trashes - lifes - 1)
+        
+        if (CorrectTrashCount >= trashes)
         {
             return true;
         }
