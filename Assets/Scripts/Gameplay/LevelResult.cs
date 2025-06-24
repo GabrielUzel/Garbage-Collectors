@@ -78,6 +78,9 @@ public class LevelResult : MonoBehaviour
 
         UpdateUI(reason);
         GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
+
+        int errors = trashes - correctWastes;
+        BestStatsManager.Instance.RegisterResult(score, timeInSeconds, correctWastes, errors);
     }
 
     private void UpdateUI(string reason)
@@ -119,5 +122,7 @@ public class LevelResult : MonoBehaviour
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
         userWon = true;
+
+
     }
 }

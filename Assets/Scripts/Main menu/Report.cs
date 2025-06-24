@@ -9,6 +9,7 @@ public class Report : MonoBehaviour
     public void ShowReport()
     {
         ReportPopUp.SetActive(true);
+        BestStatsManager.Instance.UpdateLabels();
     }
 
     public void CloseReport()
