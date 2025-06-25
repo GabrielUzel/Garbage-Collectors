@@ -55,6 +55,12 @@ public class ChangeAvatar : MonoBehaviour
         PlayerPrefs.Save();
 
         ApplySelectGirl();
+
+        Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+        if (mouseCursor != null)
+        {
+            Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
+        }
     }
 
     public void SelectBoy()
@@ -64,6 +70,12 @@ public class ChangeAvatar : MonoBehaviour
         PlayerPrefs.Save();
 
         ApplySelectBoy();
+
+        Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+        if (mouseCursor != null)
+        {
+            Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
+        }
     }
 
     private void ApplySelectGirl()

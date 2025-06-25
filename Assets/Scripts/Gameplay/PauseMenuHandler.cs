@@ -36,5 +36,11 @@ public class PauseMenuHandler : MonoBehaviour
         continueButton.SetActive(false);
         restartButton.SetActive(false);
         homeButton.SetActive(false);
+
+        Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+        if (mouseCursor != null)
+        {
+            Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
+        }
     }
 }

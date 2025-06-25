@@ -92,6 +92,12 @@ public class PlayLevel : MonoBehaviour, ILevelPersistence
         ActiveButtons.Clear();
 
         FadedBackground.SetActive(false);
+
+        Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+        if (mouseCursor != null)
+        {
+            Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
+        }
     }
 
     public int GetLevelId()

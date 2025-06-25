@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 164363557}
   - component: {fileID: 164363556}
   - component: {fileID: 164363559}
+  - component: {fileID: 164363560}
   m_Layer: 5
   m_Name: RetryLevel
   m_TagString: Untagged
@@ -673,6 +674,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &164363560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164363554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &203539994
@@ -836,6 +849,7 @@ GameObject:
   - component: {fileID: 203877372}
   - component: {fileID: 203877371}
   - component: {fileID: 203877374}
+  - component: {fileID: 203877375}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -982,6 +996,18 @@ MonoBehaviour:
   soundEf:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &203877375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203877368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &286899533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1363,7 @@ GameObject:
   - component: {fileID: 779880020}
   - component: {fileID: 779880019}
   - component: {fileID: 779880022}
+  - component: {fileID: 779880023}
   m_Layer: 5
   m_Name: RestartLevel
   m_TagString: Untagged
@@ -1468,6 +1495,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &779880023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779880017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &806709983
@@ -1619,6 +1658,7 @@ GameObject:
   - component: {fileID: 911168345}
   - component: {fileID: 911168344}
   - component: {fileID: 911168347}
+  - component: {fileID: 911168348}
   m_Layer: 5
   m_Name: ClosePopupButton
   m_TagString: Untagged
@@ -1750,6 +1790,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &911168348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911168342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &968436227
@@ -2442,6 +2494,7 @@ GameObject:
   - component: {fileID: 1152575780}
   - component: {fileID: 1152575784}
   - component: {fileID: 1152575785}
+  - component: {fileID: 1152575786}
   m_Layer: 0
   m_Name: MusicToggleButton
   m_TagString: Untagged
@@ -2577,6 +2630,18 @@ MonoBehaviour:
   musicOff: {fileID: 6115511775485580977, guid: 3b200594e9ec38648919dc7161a2b099, type: 3}
   musicOn: {fileID: 4894364501582888087, guid: 15672edec9bbe8c459268e2345fb7dd0, type: 3}
   musicButton: {fileID: 1152575784}
+--- !u!114 &1152575786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152575778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1208286814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,6 +2874,7 @@ GameObject:
   - component: {fileID: 1225416717}
   - component: {fileID: 1225416719}
   - component: {fileID: 1225416720}
+  - component: {fileID: 1225416721}
   m_Layer: 0
   m_Name: RestartButton
   m_TagString: Untagged
@@ -2939,6 +3005,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1225416721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225416715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1250237868
@@ -3092,6 +3170,7 @@ GameObject:
   - component: {fileID: 1301524073}
   - component: {fileID: 1301524072}
   - component: {fileID: 1301524075}
+  - component: {fileID: 1301524076}
   m_Layer: 5
   m_Name: NextLevel
   m_TagString: Untagged
@@ -3225,6 +3304,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bfcb5d56f7e09449f221a67d40fbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1301524076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301524070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316387650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3424,7 @@ GameObject:
   - component: {fileID: 1347717424}
   - component: {fileID: 1347717427}
   - component: {fileID: 1347717426}
+  - component: {fileID: 1347717428}
   m_Layer: 0
   m_Name: HomeButton
   m_TagString: Untagged
@@ -3463,6 +3555,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8b33c76ae3d2aac3bef26b2b28063db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1347717428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347717422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1374291991
@@ -3774,6 +3878,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464636452}
   m_CullTransparentMesh: 1
+--- !u!1 &1504943036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504943037}
+  - component: {fileID: 1504943038}
+  m_Layer: 5
+  m_Name: ResetCursor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1504943037
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504943036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1689806681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1504943038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504943036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2528e475ec71f5242b4ec7dd109fdc91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607645356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3982,6 +4134,7 @@ RectTransform:
   - {fileID: 1225416716}
   - {fileID: 1347717423}
   - {fileID: 1937337526}
+  - {fileID: 1504943037}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4771,6 +4924,7 @@ GameObject:
   - component: {fileID: 1937337527}
   - component: {fileID: 1937337530}
   - component: {fileID: 1937337531}
+  - component: {fileID: 1937337532}
   m_Layer: 0
   m_Name: SoundToggleButton
   m_TagString: Untagged
@@ -4906,6 +5060,18 @@ MonoBehaviour:
   soundEffectsOff: {fileID: -2028552309428718345, guid: e89ad5cbf14718341a15587ee6b74f4a, type: 3}
   soundEffectsOn: {fileID: 1503890340760107126, guid: 8595e0a634866884e85bf260b453d0ec, type: 3}
   soundEffectsButton: {fileID: 1937337530}
+--- !u!114 &1937337532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937337525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943845874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,6 +5369,7 @@ GameObject:
   - component: {fileID: 2000064207}
   - component: {fileID: 2000064211}
   - component: {fileID: 2000064210}
+  - component: {fileID: 2000064212}
   m_Layer: 0
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -5348,6 +5515,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2000064212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000064206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005665191
 GameObject:
   m_ObjectHideFlags: 0
