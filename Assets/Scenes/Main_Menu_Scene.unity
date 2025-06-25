@@ -3962,7 +3962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2589722, y: -0.08898926}
+  m_AnchoredPosition: {x: 1.2590332, y: -0.08898926}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514297208
@@ -4152,7 +4152,6 @@ GameObject:
   - component: {fileID: 1577960354}
   - component: {fileID: 1577960353}
   - component: {fileID: 1577960356}
-  - component: {fileID: 1577960357}
   m_Layer: 5
   m_Name: ReportButton
   m_TagString: Untagged
@@ -4287,33 +4286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReportPopUp: {fileID: 1938661816}
---- !u!114 &1577960357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577960350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f351503dba26be943be6d5a8413387b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreLabels:
-  - {fileID: 496757936}
-  - {fileID: 138379405}
-  - {fileID: 1427138197}
-  - {fileID: 1087453695}
-  - {fileID: 1508086695}
-  timeLabels:
-  - {fileID: 1235337591}
-  - {fileID: 653173248}
-  - {fileID: 1386301691}
-  - {fileID: 72581664}
-  - {fileID: 1292129428}
-  totalHitsLabel: {fileID: 1526084846}
-  totalErrorsLabel: {fileID: 155489645}
-  percentageLabel: {fileID: 1375398191}
 --- !u!1 &1599678220
 GameObject:
   m_ObjectHideFlags: 0

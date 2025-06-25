@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using System.Linq;
 
-public class BestStatsManager : MonoBehaviour
+public class BestStatsManager : MonoBehaviour, IDataPersistence
 {
     public static BestStatsManager Instance;
 
@@ -32,68 +32,53 @@ public class BestStatsManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Registra os dados de uma partida (chamado no final de um nível).
+    /// <summary>
+    /// Registra os dados de uma partida (chamado no final de um nível).
+    /// </summary>
     public void RegisterResult(int score, int timeInSeconds, int hits, int errors)
     {
         Debug.Log("Resultado registrado");
-        Debug.Log("\nscore =" + score);
-        Debug.Log("\ntimeInSeconds = " + timeInSeconds);
-        Debug.Log("\nhits= " + hits);
-        Debug.Log("\nerrors = " + errors);
+        Debug.Log($"score = {score}, tempo = {timeInSeconds}, acertos = {hits}, erros = {errors}");
 
-        // Adiciona e organiza os scores
+        // Atualiza listas locais
         highScores.Add(score);
         highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
 
-        // Adiciona e organiza os tempos
         if (timeInSeconds > 0)
         {
             bestTimes.Add(timeInSeconds);
             bestTimes = bestTimes.OrderBy(t => t).Take(5).ToList();
         }
 
-        // Soma os totais
+        // Atualiza totais
         totalHits += hits;
         totalErrors += errors;
-
-        // 🔐 Salva os últimos resultados no PlayerPrefs
-        PlayerPrefs.SetInt("UltimaPontuacao", score);
-        PlayerPrefs.SetInt("UltimoTempo", timeInSeconds);
-        PlayerPrefs.SetInt("UltimosAcertos", hits);
-        PlayerPrefs.SetInt("UltimosErros", errors);
-        PlayerPrefs.Save();
     }
 
-    /// Atualiza as labels da tela de estatísticas.
+    /// Atualiza os textos na interface do popup.
     public void UpdateLabels()
     {
-        // Pontuações
         for (int i = 0; i < scoreLabels.Length; i++)
         {
             scoreLabels[i].text = i < highScores.Count ? highScores[i].ToString() : "-";
         }
 
-        // Tempos formatados
         for (int i = 0; i < timeLabels.Length; i++)
         {
             timeLabels[i].text = i < bestTimes.Count ? FormatTime(bestTimes[i]) : "--:--";
         }
 
-        // Totais e porcentagem
         totalHitsLabel.text = totalHits.ToString();
         totalErrorsLabel.text = totalErrors.ToString();
 
         int total = totalHits + totalErrors;
         float percent = total > 0 ? (100f * totalHits) / total : 0f;
         percentageLabel.text = $"{percent:F1}%";
-
-        CarregarUltimosDados();
     }
 
-    /// Exibe o painel de relatório (se você quiser fazer isso aqui).
+    /// Exibe o popup de relatório.
     public void ShowReport(GameObject reportPopup)
     {
-        CarregarUltimosDados();
         UpdateLabels();
         reportPopup.SetActive(true);
     }
@@ -103,28 +88,41 @@ public class BestStatsManager : MonoBehaviour
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         return $"{minutes:00}:{seconds:00}";
-
     }
-    
-    public void CarregarUltimosDados()
-{
-    if (PlayerPrefs.HasKey("UltimaPontuacao"))
+
+    // ========== Integração com JSON ==========
+    public void LoadData(GameData gameData)
     {
-        int score = PlayerPrefs.GetInt("UltimaPontuacao");
-        int tempo = PlayerPrefs.GetInt("UltimoTempo");
-        int acertos = PlayerPrefs.GetInt("UltimosAcertos");
-        int erros = PlayerPrefs.GetInt("UltimosErros");
+        highScores.Clear();
+        bestTimes.Clear();
 
-        // Reinsere nos dados internos
-        highScores.Add(score);
+        // Carrega os melhores scores e tempos por fase
+        foreach (var level in gameData.LevelInfosPhase)
+        {
+            if (level.highscore > 0)
+                highScores.Add(level.highscore);
+
+            if (level.best_time > 0 && level.best_time != int.MaxValue)
+                bestTimes.Add(level.best_time);
+        }
+
         highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
-
-        bestTimes.Add(tempo);
         bestTimes = bestTimes.OrderBy(t => t).Take(5).ToList();
 
-        totalHits += acertos;
-        totalErrors += erros;
+        // Agora carrega os totais do JSON
+        totalHits = gameData.TotalHits;
+        totalErrors = gameData.TotalErrors;
     }
-}
 
+    public void SetTotals(int hits, int errors)
+    {
+        totalHits += hits;
+        totalErrors += errors;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.TotalHits = totalHits;
+        gameData.TotalErrors = totalErrors;
+    }
 }

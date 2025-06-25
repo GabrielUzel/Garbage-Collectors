@@ -76,12 +76,10 @@ public class LevelResult : MonoBehaviour
         ScoreText.text = $"PONTUAÇÃO: {score}";
         TrashText.text = $"{correctWastes}/{trashes}";
         TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
+        int errors = LifeQuantityManager.Instance.GetErros();
 
         UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
-
-        int errors = LifeQuantityManager.Instance.GetErros();
-        BestStatsManager.Instance.RegisterResult(score, timeWasted, correctWastes, errors);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score,correctWastes, errors, userWon);
     }
 
     private void UpdateUI(string reason)
