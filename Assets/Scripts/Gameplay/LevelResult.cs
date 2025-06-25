@@ -23,6 +23,7 @@ public class LevelResult : MonoBehaviour
     public GameData GameData;
     public int PlayerCurrentLevel;
     public bool victory = false;
+    TrashCountManager trashCountManager = new TrashCountManager();
 
     public bool userWon = false;
 
@@ -79,8 +80,8 @@ public class LevelResult : MonoBehaviour
         UpdateUI(reason);
         GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
 
-        int errors = trashes - correctWastes;
-        BestStatsManager.Instance.RegisterResult(score, timeInSeconds, correctWastes, errors);
+        int errors = LifeQuantityManager.Instance.GetErros();
+        BestStatsManager.Instance.RegisterResult(score, timeWasted, correctWastes, errors);
     }
 
     private void UpdateUI(string reason)

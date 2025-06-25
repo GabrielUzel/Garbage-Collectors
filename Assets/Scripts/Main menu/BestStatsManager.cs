@@ -40,6 +40,7 @@ public class BestStatsManager : MonoBehaviour
         Debug.Log("\ntimeInSeconds = " + timeInSeconds);
         Debug.Log("\nhits= " + hits);
         Debug.Log("\nerrors = " + errors);
+
         // Adiciona e organiza os scores
         highScores.Add(score);
         highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
@@ -54,6 +55,13 @@ public class BestStatsManager : MonoBehaviour
         // Soma os totais
         totalHits += hits;
         totalErrors += errors;
+
+        // 🔐 Salva os últimos resultados no PlayerPrefs
+        PlayerPrefs.SetInt("UltimaPontuacao", score);
+        PlayerPrefs.SetInt("UltimoTempo", timeInSeconds);
+        PlayerPrefs.SetInt("UltimosAcertos", hits);
+        PlayerPrefs.SetInt("UltimosErros", errors);
+        PlayerPrefs.Save();
     }
 
     /// Atualiza as labels da tela de estatísticas.
@@ -78,11 +86,14 @@ public class BestStatsManager : MonoBehaviour
         int total = totalHits + totalErrors;
         float percent = total > 0 ? (100f * totalHits) / total : 0f;
         percentageLabel.text = $"{percent:F1}%";
+
+        CarregarUltimosDados();
     }
 
     /// Exibe o painel de relatório (se você quiser fazer isso aqui).
     public void ShowReport(GameObject reportPopup)
     {
+        CarregarUltimosDados();
         UpdateLabels();
         reportPopup.SetActive(true);
     }
@@ -92,6 +103,28 @@ public class BestStatsManager : MonoBehaviour
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         return $"{minutes:00}:{seconds:00}";
+
     }
+    
+    public void CarregarUltimosDados()
+{
+    if (PlayerPrefs.HasKey("UltimaPontuacao"))
+    {
+        int score = PlayerPrefs.GetInt("UltimaPontuacao");
+        int tempo = PlayerPrefs.GetInt("UltimoTempo");
+        int acertos = PlayerPrefs.GetInt("UltimosAcertos");
+        int erros = PlayerPrefs.GetInt("UltimosErros");
+
+        // Reinsere nos dados internos
+        highScores.Add(score);
+        highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
+
+        bestTimes.Add(tempo);
+        bestTimes = bestTimes.OrderBy(t => t).Take(5).ToList();
+
+        totalHits += acertos;
+        totalErrors += erros;
+    }
+}
 
 }
