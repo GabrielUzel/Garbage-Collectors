@@ -5,40 +5,27 @@ using UnityEngine.UI;
 
 public class SoundEffectsController : MonoBehaviour 
 {
-
     public Sprite soundEffectsOff;
     public Sprite soundEffectsOn;
     public Button soundEffectsButton;
     private bool isMuted = false;
     private const string soundEffectsPrefKey = "SoundEffectsMuted";
 
-    public void Start()
+    public void updateUI(bool isMuted)
     {
-        getSoundEffectsState();
-    }
-
-    public void getSoundEffectsState()
-    {
-        isMuted = PlayerPrefs.GetInt(soundEffectsPrefKey, 0) == 1;
-
         soundEffectsButton.image.sprite = isMuted ? soundEffectsOff : soundEffectsOn;
     }
 
     public void toggleSoundEffects()
     {
         isMuted = !isMuted;
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.setSFXMute(isMuted);
+        if (LifeQuantityManager.Instance != null)
+            LifeQuantityManager.Instance.setSFXMute(isMuted);
+        updateUI(isMuted);
 
-        soundEffectsButton.image.sprite = isMuted ? soundEffectsOff : soundEffectsOn;
-        try
-        {
-            LifeQuantityManager.Instance.toggleSoundEffect(isMuted);
-            ScoreManager.Instance.toggleSoundEffect(isMuted);
-        }
-        catch (NullReferenceException exception)
-        {
-            //Está aqui por que dá erro desativar sons pelo menu
-            //não está salvando nas preferencias para outras cenas
-        }
-        
+        //PlayerPrefs.SetInt(soundEffectsPrefKey, isMuted ? 1 : 0);
+        //PlayerPrefs.Save();
     }
 }

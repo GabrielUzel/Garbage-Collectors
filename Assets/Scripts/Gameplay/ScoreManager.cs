@@ -4,7 +4,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public AudioClip sound;
-    public AudioSource audioSrc;
+    private AudioSource audioSrc;
     public static ScoreManager Instance;
     public int score = 0;
     [SerializeField] TextMeshProUGUI scoreText;
@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void toggleSoundEffect(bool mute)
+    public void setSFXMute(bool mute)
     {
         audioSrc.mute = mute;
     }
