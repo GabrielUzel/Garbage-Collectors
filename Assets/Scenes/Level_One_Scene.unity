@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: {fileID: 1019961337}
+  sound: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
   lifeSpritesTen:
   - {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
   - {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
@@ -1308,18 +1309,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4c8c146fbcf1d0c4ca69fe8099a4ee54, type: 3}
   - {fileID: 21300000, guid: fa58101e18455f44cad11e153065b88e, type: 3}
   - {fileID: 21300000, guid: bc1b3d6d4932bed4bbbd8cf3d9af65b0, type: 3}
-  sound: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
-  fiveLivesFull: {fileID: 21300000, guid: a66714c80adc9a54082014d9312815a9, type: 3}
-  fiveLivesHalf: {fileID: 21300000, guid: b3244c32cda818442a61df21fe889bdd, type: 3}
-  fourLivesFull: {fileID: 21300000, guid: 37c9708aa9cca734488ff5d99c927f44, type: 3}
-  fourLivesHalf: {fileID: 21300000, guid: 23fd79be186e8e44b8356fd4d517c265, type: 3}
-  threeLivesFull: {fileID: 21300000, guid: d47df47b9b204594fb7b5295409db58c, type: 3}
-  threeLivesHalf: {fileID: 21300000, guid: 81df614671562554eb163486eba342e3, type: 3}
-  twoLivesFull: {fileID: 21300000, guid: dc9cac2a62a5a6c42b5030727e39e700, type: 3}
-  twoLivesHalf: {fileID: 21300000, guid: 035e8a3ef8d57a44e93610a0c09dfa5a, type: 3}
-  oneLifeFull: {fileID: 21300000, guid: a2c33a080b74c5646bb541a8fcce0acb, type: 3}
-  oneLifeHalf: {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
-  lifeEmpty: {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
 --- !u!4 &653428951
 Transform:
   m_ObjectHideFlags: 0
@@ -1547,8 +1536,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2563,6 +2552,8 @@ MonoBehaviour:
   - {fileID: 2401834701937866557, guid: 6c66be65cf932a043a797e709d6a7655, type: 3}
   spawnArea1: {fileID: 1774101852}
   spawnArea2: {fileID: 2005665192}
+  spawnAreas: []
+  levelId: 0
 --- !u!224 &1208286816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3587,6 +3578,7 @@ MonoBehaviour:
       highscore: 0
   PlayerCurrentLevel: 0
   victory: 0
+  userWon: 0
 --- !u!4 &1392356277
 Transform:
   m_ObjectHideFlags: 0
@@ -5043,8 +5035,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
