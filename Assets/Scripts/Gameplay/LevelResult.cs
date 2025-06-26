@@ -23,6 +23,7 @@ public class LevelResult : MonoBehaviour
     public GameData GameData;
     public int PlayerCurrentLevel;
     public bool victory = false;
+    TrashCountManager trashCountManager = new TrashCountManager();
 
     public bool userWon = false;
 
@@ -75,9 +76,10 @@ public class LevelResult : MonoBehaviour
         ScoreText.text = $"PONTUAÇÃO: {score}";
         TrashText.text = $"{correctWastes}/{trashes}";
         TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
+        int errors = LifeQuantityManager.Instance.GetErros();
 
         UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score,correctWastes, errors, userWon);
     }
 
     private void UpdateUI(string reason)
@@ -119,5 +121,7 @@ public class LevelResult : MonoBehaviour
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
         userWon = true;
+
+
     }
 }
