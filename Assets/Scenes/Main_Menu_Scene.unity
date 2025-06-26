@@ -167,7 +167,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 1263931709}
   m_Layer: 5
   m_Name: SoundEffectsButton
-  m_TagString: Untagged
+  m_TagString: SoundEffectsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1747,8 +1747,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1263931709}
-        m_TargetAssemblyTypeName: SoundEffectsController, Assembly-CSharp
+      - m_Target: {fileID: 1482280364}
+        m_TargetAssemblyTypeName: SoundEffectsController, Scripts
         m_MethodName: toggleSoundEffects
         m_Mode: 1
         m_Arguments:
@@ -1806,12 +1806,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263931704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecfe8b93837ca84590562cebe0df3f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b2cd0f1047fea4583ad8075c3d1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectsOff: {fileID: -2028552309428718345, guid: e89ad5cbf14718341a15587ee6b74f4a, type: 3}
-  soundEffectsOn: {fileID: 1503890340760107126, guid: 8595e0a634866884e85bf260b453d0ec, type: 3}
-  soundEffectsButton: {fileID: 1263931706}
 --- !u!1 &1295426581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2227,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400357856}
   m_CullTransparentMesh: 1
+--- !u!1 &1482280363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482280365}
+  - component: {fileID: 1482280364}
+  m_Layer: 0
+  m_Name: SoundEffectsController
+  m_TagString: SoundEffectsButton
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1482280364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482280363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecfe8b93837ca84590562cebe0df3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectsOff: {fileID: -2028552309428718345, guid: e89ad5cbf14718341a15587ee6b74f4a, type: 3}
+  soundEffectsOn: {fileID: 1503890340760107126, guid: 8595e0a634866884e85bf260b453d0ec, type: 3}
+  audioList:
+  - name: addScore
+    soundEffect: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
+  - name: wrongWaste
+    soundEffect: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
+  - name: levelResult
+    soundEffect: {fileID: 8300000, guid: 2949390af1e1b3b4f8ad9c3112d1f646, type: 3}
+--- !u!4 &1482280365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482280363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1069.2733, y: 469.59116, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514297206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3328,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 151940532}
+  - {fileID: 1482280365}
   - {fileID: 880161946}
   - {fileID: 4750363917213816412}
   - {fileID: 7313906774923103195}

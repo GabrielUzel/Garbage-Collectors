@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TrashBin
   - Waste
+  - SoundEffectsButton
   layers:
   - Default
   - TransparentFX

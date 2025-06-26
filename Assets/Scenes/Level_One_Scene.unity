@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifes: {fileID: 1019961337}
+  sound: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
   lifeSpritesTen:
   - {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
   - {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
@@ -1308,18 +1309,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4c8c146fbcf1d0c4ca69fe8099a4ee54, type: 3}
   - {fileID: 21300000, guid: fa58101e18455f44cad11e153065b88e, type: 3}
   - {fileID: 21300000, guid: bc1b3d6d4932bed4bbbd8cf3d9af65b0, type: 3}
-  sound: {fileID: 8300000, guid: c16ec43f507643f4d9f9547c77f33fdc, type: 3}
-  fiveLivesFull: {fileID: 21300000, guid: a66714c80adc9a54082014d9312815a9, type: 3}
-  fiveLivesHalf: {fileID: 21300000, guid: b3244c32cda818442a61df21fe889bdd, type: 3}
-  fourLivesFull: {fileID: 21300000, guid: 37c9708aa9cca734488ff5d99c927f44, type: 3}
-  fourLivesHalf: {fileID: 21300000, guid: 23fd79be186e8e44b8356fd4d517c265, type: 3}
-  threeLivesFull: {fileID: 21300000, guid: d47df47b9b204594fb7b5295409db58c, type: 3}
-  threeLivesHalf: {fileID: 21300000, guid: 81df614671562554eb163486eba342e3, type: 3}
-  twoLivesFull: {fileID: 21300000, guid: dc9cac2a62a5a6c42b5030727e39e700, type: 3}
-  twoLivesHalf: {fileID: 21300000, guid: 035e8a3ef8d57a44e93610a0c09dfa5a, type: 3}
-  oneLifeFull: {fileID: 21300000, guid: a2c33a080b74c5646bb541a8fcce0acb, type: 3}
-  oneLifeHalf: {fileID: 21300000, guid: 3391336650790734fb4240db38cb3a42, type: 3}
-  lifeEmpty: {fileID: 21300000, guid: 1b83ae632215c374ca318ff0f64ef790, type: 3}
 --- !u!4 &653428951
 Transform:
   m_ObjectHideFlags: 0
@@ -3520,7 +3509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49317460c0a1794588fbaf49359ae99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
   score: 0
   scoreText: {fileID: 806709985}
 --- !u!1 &1392356275
@@ -3552,7 +3540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 2949390af1e1b3b4f8ad9c3112d1f646, type: 3}
   TrashOk: {fileID: 1607645356}
   TrashNotOk: {fileID: 1080168011}
   TimeOk: {fileID: 1721463458}
@@ -3587,6 +3574,7 @@ MonoBehaviour:
       highscore: 0
   PlayerCurrentLevel: 0
   victory: 0
+  userWon: 0
 --- !u!4 &1392356277
 Transform:
   m_ObjectHideFlags: 0
@@ -4696,7 +4684,7 @@ GameObject:
   - component: {fileID: 1937337531}
   m_Layer: 0
   m_Name: SoundToggleButton
-  m_TagString: Untagged
+  m_TagString: SoundEffectsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4802,7 +4790,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1937337531}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundEffectsController, Scripts
         m_MethodName: toggleSoundEffects
         m_Mode: 1
@@ -4823,11 +4811,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937337525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecfe8b93837ca84590562cebe0df3f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b2cd0f1047fea4583ad8075c3d1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectsOff: {fileID: -2028552309428718345, guid: e89ad5cbf14718341a15587ee6b74f4a, type: 3}
-  soundEffectsOn: {fileID: 1503890340760107126, guid: 8595e0a634866884e85bf260b453d0ec, type: 3}
   soundEffectsButton: {fileID: 1937337530}
 --- !u!1 &1943845874
 GameObject:

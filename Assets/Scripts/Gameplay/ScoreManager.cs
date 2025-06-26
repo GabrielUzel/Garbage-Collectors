@@ -3,50 +3,34 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public AudioClip sound;
-    private AudioSource audioSrc;
-    public static ScoreManager Instance;
-    public int score = 0;
-    [SerializeField] TextMeshProUGUI scoreText;
+  public static ScoreManager Instance;
+  public int score = 0;
+  [SerializeField] TextMeshProUGUI scoreText;
 
-    void Awake()
+  void Awake()
+  {
+    if (Instance == null)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+      Instance = this;
     }
-
-    void Start()
+    else
     {
-        audioSrc = GetComponent<AudioSource>();
-
-        if (audioSrc == null)
-            audioSrc = gameObject.AddComponent<AudioSource>();
-        UpdateScoreText();
+      Destroy(gameObject);
     }
+  }
 
-    public void AddScore()
+  public void AddScore()
+  {
+    score += 200;
+    UpdateScoreText();
+    SoundEffectsController.Instance.playSoundEffect("addScore");
+  }
+
+  private void UpdateScoreText()
+  {
+    if (scoreText != null)
     {
-        score += 200;
-        UpdateScoreText();
-        audioSrc.PlayOneShot(sound);
+      scoreText.text = $"Pontuação: {score}";
     }
-
-    private void UpdateScoreText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = $"Pontuação: {score}";
-        }
-    }
-
-    public void setSFXMute(bool mute)
-    {
-        audioSrc.mute = mute;
-    }
+  }
 }
