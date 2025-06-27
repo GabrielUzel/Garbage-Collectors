@@ -8,10 +8,10 @@ public class BestStatsManager : MonoBehaviour, IDataPersistence
     public static BestStatsManager Instance;
 
     [Header("Pontuações")]
-    public TextMeshProUGUI[] scoreLabels; // arraste os 5 textos no Inspector
+    public TextMeshProUGUI[] scoreLabels; 
 
     [Header("Tempos")]
-    public TextMeshProUGUI[] timeLabels; // arraste os 5 textos no Inspector
+    public TextMeshProUGUI[] timeLabels; 
 
     [Header("Totais")]
     public TextMeshProUGUI totalHitsLabel;
@@ -32,40 +32,23 @@ public class BestStatsManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
     }
 
-    /// <summary>
-    /// Registra os dados de uma partida (chamado no final de um nível).
-    /// </summary>
-    public void RegisterResult(int score, int timeInSeconds, int hits, int errors)
-    {
-        Debug.Log("Resultado registrado");
-        Debug.Log($"score = {score}, tempo = {timeInSeconds}, acertos = {hits}, erros = {errors}");
-
-        // Atualiza listas locais
-        highScores.Add(score);
-        highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
-
-        if (timeInSeconds > 0)
-        {
-            bestTimes.Add(timeInSeconds);
-            bestTimes = bestTimes.OrderBy(t => t).Take(5).ToList();
-        }
-
-        // Atualiza totais
-        totalHits += hits;
-        totalErrors += errors;
-    }
-
-    /// Atualiza os textos na interface do popup.
     public void UpdateLabels()
     {
         for (int i = 0; i < scoreLabels.Length; i++)
         {
-            scoreLabels[i].text = i < highScores.Count ? highScores[i].ToString() : "-";
+            scoreLabels[i].text = i < highScores.Count && highScores[i] > 0 ? highScores[i].ToString() : "-";
         }
 
         for (int i = 0; i < timeLabels.Length; i++)
         {
-            timeLabels[i].text = i < bestTimes.Count ? FormatTime(bestTimes[i]) : "--:--";
+            if (i < bestTimes.Count && bestTimes[i] != int.MaxValue)
+            {
+                timeLabels[i].text = FormatTime(bestTimes[i]);
+            }
+            else
+            {
+                timeLabels[i].text = "--:--";
+            }
         }
 
         totalHitsLabel.text = totalHits.ToString();
@@ -76,13 +59,6 @@ public class BestStatsManager : MonoBehaviour, IDataPersistence
         percentageLabel.text = $"{percent:F1}%";
     }
 
-    /// Exibe o popup de relatório.
-    public void ShowReport(GameObject reportPopup)
-    {
-        UpdateLabels();
-        reportPopup.SetActive(true);
-    }
-
     private string FormatTime(int totalSeconds)
     {
         int minutes = totalSeconds / 60;
@@ -90,34 +66,24 @@ public class BestStatsManager : MonoBehaviour, IDataPersistence
         return $"{minutes:00}:{seconds:00}";
     }
 
-    // ========== Integração com JSON ==========
     public void LoadData(GameData gameData)
     {
-        highScores.Clear();
-        bestTimes.Clear();
+        highScores = Enumerable.Repeat(0, 5).ToList();
+        bestTimes = Enumerable.Repeat(int.MaxValue, 5).ToList();
 
-        // Carrega os melhores scores e tempos por fase
         foreach (var level in gameData.LevelInfosPhase)
         {
-            if (level.highscore > 0)
-                highScores.Add(level.highscore);
+            int index = level.id - 1; 
 
-            if (level.best_time > 0 && level.best_time != int.MaxValue)
-                bestTimes.Add(level.best_time);
+            if (index >= 0 && index < 5)
+            {
+                highScores[index] = level.highscore;
+                bestTimes[index] = level.best_time;
+            }
         }
 
-        highScores = highScores.OrderByDescending(s => s).Take(5).ToList();
-        bestTimes = bestTimes.OrderBy(t => t).Take(5).ToList();
-
-        // Agora carrega os totais do JSON
         totalHits = gameData.TotalHits;
         totalErrors = gameData.TotalErrors;
-    }
-
-    public void SetTotals(int hits, int errors)
-    {
-        totalHits += hits;
-        totalErrors += errors;
     }
 
     public void SaveData(ref GameData gameData)

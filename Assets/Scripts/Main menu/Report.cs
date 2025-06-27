@@ -8,8 +8,8 @@ public class Report : MonoBehaviour
     public GameObject fadedBackground;
 
     public void ShowReport()
-    {                fadedBackground.SetActive(true);
-
+    {
+        fadedBackground.SetActive(true);
         BestStatsManager.Instance.UpdateLabels();
         ReportPopUp.SetActive(true);
 
@@ -17,8 +17,7 @@ public class Report : MonoBehaviour
 
     public void CloseReport()
     {
-                        fadedBackground.SetActive(false);
-
+        fadedBackground.SetActive(false);
         ReportPopUp.SetActive(false);
 
     }

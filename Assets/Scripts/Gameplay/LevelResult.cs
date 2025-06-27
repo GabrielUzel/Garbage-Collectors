@@ -79,7 +79,6 @@ public class LevelResult : MonoBehaviour
         int errors = LifeQuantityManager.Instance.GetErros(); 
 
         UpdateUI(reason);
-
         GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, correctWastes, errors, userWon);
 
 
