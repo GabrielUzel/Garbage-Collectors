@@ -22,22 +22,22 @@ public class FileDataHandler
         {
             try 
             {
-                string dataToLoad = "";
+                string encryptedData = "";
 
                 using (FileStream stream = new FileStream(fullPath, FileMode.Open)) 
+                using (StreamReader reader = new StreamReader(stream)) 
                 {
-                    using (StreamReader reader = new StreamReader(stream)) 
-                    {
-                        dataToLoad = reader.ReadToEnd();
-                        loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
-                    }
+                    encryptedData = reader.ReadToEnd();
                 }
+
+                string decryptedJson = Encryption.Decrypt(encryptedData);
+                loadedData = JsonUtility.FromJson<GameData>(decryptedJson);
             } 
             catch (Exception e) 
             {
-                Debug.LogError($"Failed to load game data: {e.Message}");
+                Debug.LogError($" Failed to load game data: {e.Message}");
             }
-        } 
+        }
 
         return loadedData;
     }
@@ -45,24 +45,23 @@ public class FileDataHandler
     public void Save(GameData gameData)
     {
         string fullPath = Path.Combine(dataDirPath, dataFileName);
-        string json = JsonUtility.ToJson(gameData, true);
 
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
-            string dataToStore = JsonUtility.ToJson(gameData, true);
+
+            string json = JsonUtility.ToJson(gameData, true);
+            string encryptedData = Encryption.Encrypt(json);
 
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            using (StreamWriter writer = new StreamWriter(stream))
             {
-                using (StreamWriter writer = new StreamWriter(stream))
-                {
-                    writer.Write(dataToStore);
-                }
+                writer.Write(encryptedData);
             }
         }
         catch (Exception e)
         {
-            Debug.LogError($"Failed to save game data: {e.Message}");
+            Debug.LogError($" Failed to save game data: {e.Message}");
         }
     }
 }
