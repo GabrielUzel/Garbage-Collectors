@@ -76,8 +76,13 @@ public class LevelResult : MonoBehaviour
         TrashText.text = $"{correctWastes}/{trashes}";
         TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
 
+        int errors = LifeQuantityManager.Instance.GetErros(); 
+
         UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, userWon);
+        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, correctWastes, errors, userWon);
+
+
+       
     }
 
     private void UpdateUI(string reason)
@@ -119,5 +124,7 @@ public class LevelResult : MonoBehaviour
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
         userWon = true;
+
+
     }
 }

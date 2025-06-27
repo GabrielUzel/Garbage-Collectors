@@ -8,6 +8,9 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
     private int PlayerCurrentLevel;
     private List<LevelInfoInPhases> LevelInfosPhase;
     private int totalLevels;
+    private int totalHits = 0;
+    private int totalErrors = 0;
+    private HashSet<int> levelsAlreadyUpdated = new HashSet<int>();
 
     void Awake()
     {
@@ -26,9 +29,12 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
         PlayerCurrentLevel = gameData.PlayerCurrentLevel;
         LevelInfosPhase = gameData.LevelInfosPhase;
         totalLevels = LoadLevelsInfo.Instance.GetTotalLevels();
+        totalHits = gameData.TotalHits;
+        totalErrors = gameData.TotalErrors;
+        levelsAlreadyUpdated.Clear();
     }
 
-    public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore, bool userWon)
+    public void UpdateSaveFile(int levelId, int lastPlayedLevel, int newBestTime, int newHighScore, int hits, int errors, bool userWon)
     {
         if (PlayerCurrentLevel <= lastPlayedLevel && PlayerCurrentLevel < totalLevels && userWon)
         {
@@ -45,6 +51,13 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
         {
             levelInfo.highscore = newHighScore;
         }
+
+        if (!levelsAlreadyUpdated.Contains(levelId))
+        {
+            totalHits += hits;
+            totalErrors += errors;
+            levelsAlreadyUpdated.Add(levelId);
+        }
         
         SaveData(ref gameData);
     }
@@ -58,5 +71,7 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
     {
         gameData.PlayerCurrentLevel = PlayerCurrentLevel;
         gameData.LevelInfosPhase = LevelInfosPhase;
+        gameData.TotalHits = totalHits;
+        gameData.TotalErrors = totalErrors;
     }
 }

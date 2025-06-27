@@ -6,7 +6,10 @@ public class GameData
     public int PlayerCurrentLevel;
     public List<LevelInfoInPhases> LevelInfosPhase;
 
-    public GameData() 
+    public int TotalHits;
+    public int TotalErrors;
+
+    public GameData()
     {
         PlayerCurrentLevel = 1;
         LevelInfosPhase = new List<LevelInfoInPhases>();
@@ -20,6 +23,10 @@ public class GameData
                 highscore = 0
             });
         }
+
+        TotalHits = 0;
+        TotalErrors = 0;
+
     }
 }
 
