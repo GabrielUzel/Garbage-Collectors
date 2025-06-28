@@ -60,6 +60,6 @@ public class TutorialVideoHandler : MonoBehaviour
             countdownText.gameObject.SetActive(false);
         }
 
-        SceneManager.LoadScene("Level_One_Scene");
+        SceneManager.LoadScene("Gameplay_Scene");
     }
 }

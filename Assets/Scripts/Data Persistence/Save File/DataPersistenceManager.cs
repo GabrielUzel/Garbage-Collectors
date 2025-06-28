@@ -5,86 +5,86 @@ using UnityEngine.SceneManagement;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [Header("File Storage Configuration")]
-    [SerializeField] private string fileName;
+  [Header("File Storage Configuration")]
+  [SerializeField] private string fileName;
 
-    private GameData gameData;
-    private List<IDataPersistence> dataPersistenceObjects;
-    private FileDataHandler fileDataHandler;
-    public static DataPersistenceManager Instance { get; private set; }
+  private GameData gameData;
+  private List<IDataPersistence> dataPersistenceObjects;
+  private FileDataHandler fileDataHandler;
+  public static DataPersistenceManager Instance { get; private set; }
 
-    private void Awake()
+  private void Awake()
+  {
+    if (Instance != null)
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+      Destroy(gameObject);
+      return;
     }
 
-    public void OnEnable()
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+    fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+  }
+
+  public void OnEnable()
+  {
+    SceneManager.sceneLoaded += OnSceneLoaded;
+    SceneManager.sceneUnloaded += OnSceneUnloaded;
+  }
+
+  public void OnDisable()
+  {
+    SceneManager.sceneLoaded -= OnSceneLoaded;
+    SceneManager.sceneUnloaded -= OnSceneUnloaded;
+  }
+
+  public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+  {
+    dataPersistenceObjects = FindAllDataPersistenceObjects();
+    LoadGame();
+  }
+
+  public void OnSceneUnloaded(Scene scene)
+  {
+    SaveGame();
+  }
+
+  public void NewGame()
+  {
+    gameData = new GameData();
+  }
+
+  public void LoadGame()
+  {
+    gameData = fileDataHandler.Load();
+
+    if (gameData == null)
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+      NewGame();
+      SaveGame();
     }
 
-    public void OnDisable()
+    foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+      dataPersistenceObject.LoadData(gameData);
+    }
+  }
+
+  public void SaveGame()
+  {
+    foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
+    {
+      dataPersistenceObject.SaveData(ref gameData);
     }
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
-    }
+    fileDataHandler.Save(gameData);
+  }
 
-    public void OnSceneUnloaded(Scene scene)
-    {
-        SaveGame();
-    }
+  private List<IDataPersistence> FindAllDataPersistenceObjects()
+  {
+    IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+        .OfType<IDataPersistence>();
 
-    public void NewGame()
-    {
-        gameData = new GameData();
-    }
-
-    public void LoadGame()
-    {
-        gameData = fileDataHandler.Load();
-
-        if (gameData == null)
-        {
-            NewGame();
-            SaveGame();
-        }
-
-        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
-        {
-            dataPersistenceObject.LoadData(gameData);
-        }
-    }
-
-    public void SaveGame()
-    {
-        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
-        {
-            dataPersistenceObject.SaveData(ref gameData);
-        }
-
-        fileDataHandler.Save(gameData);
-    }
-
-    private List<IDataPersistence> FindAllDataPersistenceObjects()
-    {
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
-            .OfType<IDataPersistence>();
-
-        return new List<IDataPersistence>(dataPersistenceObjects);
-    }
+    return new List<IDataPersistence>(dataPersistenceObjects);
+  }
 }

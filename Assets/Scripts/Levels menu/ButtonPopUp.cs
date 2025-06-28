@@ -20,7 +20,6 @@ public class ButtonPopUp : MonoBehaviour
             }
         }
 
-        Debug.Log(LevelText.text);
-        SceneManager.LoadScene("Level_One_Scene");
+        SceneManager.LoadScene("Gameplay_Scene");
     }
 }
