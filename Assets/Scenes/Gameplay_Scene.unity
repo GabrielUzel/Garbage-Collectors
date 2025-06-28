@@ -2654,7 +2654,7 @@ GameObject:
   - component: {fileID: 1152575781}
   - component: {fileID: 1152575780}
   - component: {fileID: 1152575784}
-  - component: {fileID: 1152575785}
+  - component: {fileID: 1152575787}
   - component: {fileID: 1152575786}
   m_Layer: 0
   m_Name: MusicToggleButton
@@ -2764,9 +2764,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1152575785}
-        m_TargetAssemblyTypeName: MusicController, Scripts
-        m_MethodName: toggleMusic
+      - m_Target: {fileID: 1152575787}
+        m_TargetAssemblyTypeName: MusicControllerUI, Scripts
+        m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2776,21 +2776,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1152575785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152575778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd19d7584cc86fd4692a33bc30a00d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicOff: {fileID: 6115511775485580977, guid: 3b200594e9ec38648919dc7161a2b099, type: 3}
-  musicOn: {fileID: 4894364501582888087, guid: 15672edec9bbe8c459268e2345fb7dd0, type: 3}
-  musicButton: {fileID: 1152575784}
 --- !u!114 &1152575786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,6 +2788,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1152575787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152575778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36f14599ff564844a49dc7b39d5479d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicOff: {fileID: 6115511775485580977, guid: 3b200594e9ec38648919dc7161a2b099, type: 3}
+  musicOn: {fileID: 4894364501582888087, guid: 15672edec9bbe8c459268e2345fb7dd0, type: 3}
+  musicButton: {fileID: 1152575784}
+  isMuted: 0
 --- !u!1 &1208286814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6063,6 +6064,7 @@ MonoBehaviour:
   - {fileID: 3803649514461159547, guid: d29ce9297a916764dbaea741559e17c0, type: 3}
   - {fileID: -4479437258532327839, guid: b12c3b230c2c3044cb504ca6501f5013, type: 3}
   - {fileID: -1761356042853860901, guid: b64dbdf9f23e3a94da065eb0bcd9c5e4, type: 3}
+  spriteRenderer: {fileID: 0}
   levelId: 0
   plasticBin: {fileID: 1943845874}
   glassBin: {fileID: 1916125013}

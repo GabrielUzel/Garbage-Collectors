@@ -5018,6 +5018,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853377402}
   m_CullTransparentMesh: 1
+--- !u!1 &1858683509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858683511}
+  - component: {fileID: 1858683510}
+  m_Layer: 0
+  m_Name: MusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1858683510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858683509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd19d7584cc86fd4692a33bc30a00d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1858683511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858683509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881687826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5202,8 +5246,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1885090516}
   - component: {fileID: 1885090519}
+  - component: {fileID: 1885090522}
   - component: {fileID: 1885090518}
-  - component: {fileID: 1885090520}
   - component: {fileID: 1885090517}
   - component: {fileID: 1885090521}
   m_Layer: 5
@@ -5277,9 +5321,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1885090520}
-        m_TargetAssemblyTypeName: ChangeMainMenuButtonsImage, Assembly-CSharp
-        m_MethodName: toggleMusic
+      - m_Target: {fileID: 1885090522}
+        m_TargetAssemblyTypeName: MusicControllerUI, Scripts
+        m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5327,21 +5371,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885090515}
   m_CullTransparentMesh: 1
---- !u!114 &1885090520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885090515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd19d7584cc86fd4692a33bc30a00d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicOff: {fileID: 6115511775485580977, guid: 3b200594e9ec38648919dc7161a2b099, type: 3}
-  musicOn: {fileID: 4894364501582888087, guid: 15672edec9bbe8c459268e2345fb7dd0, type: 3}
-  musicButton: {fileID: 1885090517}
 --- !u!114 &1885090521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5354,6 +5383,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1885090522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885090515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36f14599ff564844a49dc7b39d5479d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicOff: {fileID: 6115511775485580977, guid: 3b200594e9ec38648919dc7161a2b099, type: 3}
+  musicOn: {fileID: 4894364501582888087, guid: 15672edec9bbe8c459268e2345fb7dd0, type: 3}
+  musicButton: {fileID: 1885090517}
+  isMuted: 0
 --- !u!1 &1938661816
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,3 +6023,4 @@ SceneRoots:
   - {fileID: 844028117}
   - {fileID: 867918007}
   - {fileID: 1312120712}
+  - {fileID: 1858683511}
