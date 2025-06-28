@@ -4,50 +4,45 @@ using UnityEngine.SceneManagement;
 
 public class LevelResult : MonoBehaviour
 {
-    public AudioClip sound;           
-    private AudioSource audioSrc;
-    public static LevelResult Instance;
-    public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
-    public GameObject PanelPopUp;
-    public GameObject Fade;
-    public Text TrashText;
-    public Text TimeText;
-    public Text ScoreText;
-    public Text Level;
-    public GameObject RestartLevel;
-    public GameObject NextLevel;
-    public GameObject RetryLevel;
-    public SpriteRenderer Background;
-    private int levelId;
-    private int trashes;
-    private int timeInSeconds;
-    public GameData GameData;
-    public int PlayerCurrentLevel;
-    public bool victory = false;
+  public static LevelResult Instance;
+  public GameObject TrashOk, TrashNotOk, TimeOk, TimeNotOk;
+  public GameObject PanelPopUp;
+  public GameObject Fade;
+  public Text TrashText;
+  public Text TimeText;
+  public Text ScoreText;
+  public Text Level;
+  public GameObject RestartLevel;
+  public GameObject NextLevel;
+  public GameObject RetryLevel;
+  public SpriteRenderer Background;
+  private int levelId;
+  private int trashes;
+  private int timeInSeconds;
+  public GameData GameData;
+  public int PlayerCurrentLevel;
+  public bool victory = false;
+  public bool userWon = false;
 
-    public bool userWon = false;
-
-    void Awake()
+  void Awake()
+  {
+    if (Instance == null)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+      Instance = this;
     }
-
-    public void Start()
+    else
     {
-        if (audioSrc == null)
-            audioSrc = gameObject.AddComponent<AudioSource>();
-        levelId = LoadLevelsInfo.Instance.GetLevelId();
-        trashes = LoadLevelsInfo.Instance.GetTotalWaste();
-        timeInSeconds = LoadLevelsInfo.Instance.GetTimeInSeconds();
+      Destroy(gameObject);
+    }
+  }
 
-        PanelPopUp.SetActive(false);
+  public void Start()
+  {
+    levelId = LoadLevelsInfo.Instance.GetLevelId();
+    trashes = LoadLevelsInfo.Instance.GetTotalWaste();
+    timeInSeconds = LoadLevelsInfo.Instance.GetTimeInSeconds();
+
+    PanelPopUp.SetActive(false);
 
         TrashOk.SetActive(false);
         TrashNotOk.SetActive(false);
@@ -57,22 +52,22 @@ public class LevelResult : MonoBehaviour
         NextLevel.GetComponent<Button>().onClick.AddListener(OnNextLevelClicked);
     }
 
-    public void ShowPopUp(string reason)
-    {
-        audioSrc.PlayOneShot(sound);
-        TimeManager.Instance.timerIsRunning = false;
-        PanelPopUp.SetActive(true);
-        Fade.SetActive(true);
+  public void ShowPopUp(string reason)
+  {
+    SoundEffectsController.Instance.playSoundEffect("leveResult");
+    TimeManager.Instance.timerIsRunning = false;
+    PanelPopUp.SetActive(true);
+    Fade.SetActive(true);
 
-        int correctWastes = TrashCountManager.Instance.CorrectTrashCount;
-        int score = ScoreManager.Instance.score;
+    int correctWastes = TrashCountManager.Instance.CorrectTrashCount;
+    int score = ScoreManager.Instance.score;
 
-        int timeWasted = Mathf.FloorToInt(timeInSeconds - TimeManager.Instance.timeRemaining);
-        int minutesWasted = timeWasted / 60;
-        int secondsWasted = timeWasted % 60;
+    int timeWasted = Mathf.FloorToInt(timeInSeconds - TimeManager.Instance.timeRemaining);
+    int minutesWasted = timeWasted / 60;
+    int secondsWasted = timeWasted % 60;
 
-        int minutesObjective = timeInSeconds / 60;
-        int secondsObjective = timeInSeconds % 60;
+    int minutesObjective = timeInSeconds / 60;
+    int secondsObjective = timeInSeconds % 60;
 
         Level.text = $"{levelId}";
         ScoreText.text = $"PONTUAÇÃO: {score}";
@@ -101,46 +96,44 @@ public class LevelResult : MonoBehaviour
 }
 
 
-    private void UpdateUI(string reason)
+  private void UpdateUI(string reason)
+  {
+    if (reason == "Time")
     {
-        if (reason == "Time")
-        {
-            if (victory)
-            {
-                TimeOk.SetActive(true);
-                TrashOk.SetActive(true);
-                RestartLevel.SetActive(true);
-                NextLevel.SetActive(true);
-                RetryLevel.SetActive(false);
-                userWon = true;
-            }
-            else
-            {
-                TrashNotOk.SetActive(true);
-                TimeNotOk.SetActive(true);
-                RetryLevel.SetActive(true);
-                userWon = false;
-            }
-
-            return;
-        }
-
-        if (reason == "Life")
-        {
-            TimeOk.SetActive(true);
-            TrashNotOk.SetActive(true);
-            RetryLevel.SetActive(true);
-            userWon = false;
-            return;
-        }
-
+      if (victory)
+      {
         TimeOk.SetActive(true);
         TrashOk.SetActive(true);
         RestartLevel.SetActive(true);
         NextLevel.SetActive(true);
         RetryLevel.SetActive(false);
         userWon = true;
+      }
+      else
+      {
+        TrashNotOk.SetActive(true);
+        TimeNotOk.SetActive(true);
+        RetryLevel.SetActive(true);
+        userWon = false;
+      }
 
-
+      return;
     }
+
+    if (reason == "Life")
+    {
+      TimeOk.SetActive(true);
+      TrashNotOk.SetActive(true);
+      RetryLevel.SetActive(true);
+      userWon = false;
+      return;
+    }
+
+    TimeOk.SetActive(true);
+    TrashOk.SetActive(true);
+    RestartLevel.SetActive(true);
+    NextLevel.SetActive(true);
+    RetryLevel.SetActive(false);
+    userWon = true;
+  }
 }

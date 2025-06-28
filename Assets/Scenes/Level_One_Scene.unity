@@ -3997,7 +3997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49317460c0a1794588fbaf49359ae99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: a2b580cf0de9ea44b9ff985163d58f70, type: 3}
   score: 0
   scoreText: {fileID: 806709985}
 --- !u!1 &1392356275
@@ -4029,7 +4028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8996767dc53014d9a6b77b887e0b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 2949390af1e1b3b4f8ad9c3112d1f646, type: 3}
   TrashOk: {fileID: 1607645356}
   TrashNotOk: {fileID: 1080168011}
   TimeOk: {fileID: 1721463458}
@@ -5224,7 +5222,7 @@ GameObject:
   - component: {fileID: 1937337532}
   m_Layer: 0
   m_Name: SoundToggleButton
-  m_TagString: Untagged
+  m_TagString: SoundEffectsButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5330,7 +5328,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1937337531}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundEffectsController, Scripts
         m_MethodName: toggleSoundEffects
         m_Mode: 1
@@ -5351,11 +5349,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937337525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecfe8b93837ca84590562cebe0df3f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 93b2cd0f1047fea4583ad8075c3d1a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectsOff: {fileID: -2028552309428718345, guid: e89ad5cbf14718341a15587ee6b74f4a, type: 3}
-  soundEffectsOn: {fileID: 1503890340760107126, guid: 8595e0a634866884e85bf260b453d0ec, type: 3}
   soundEffectsButton: {fileID: 1937337530}
 --- !u!114 &1937337532
 MonoBehaviour:

@@ -8,13 +8,13 @@ public class Avatar : MonoBehaviour
     private int collectedWaste;
     private int levelId;
 
-    public Sprite[] sprites;
-    private string selectedAvatar = "";
-    private bool isBoy;
-    public SpriteRenderer spriteRenderer;
+  public Sprite[] sprites;
+  private string selectedAvatar = "";
+  private bool isBoy;
+  public SpriteRenderer spriteRenderer;
 
-    public GameObject avatar;
-    private Dictionary<int, Vector3> levelPositions = new Dictionary<int, Vector3>();
+  public GameObject avatar;
+  private Dictionary<int, Vector3> levelPositions = new Dictionary<int, Vector3>();
 
     public void Awake()
     {
@@ -23,15 +23,15 @@ public class Avatar : MonoBehaviour
         isBoy = selectedAvatar == "boy";
     }
 
-    public void Start()
-    {
-        totalWaste = LoadLevelsInfo.Instance.GetTotalWaste();
-        levelId = LoadLevelsInfo.Instance.GetLevelId();
+  public void Start()
+  {
+    totalWaste = LoadLevelsInfo.Instance.GetTotalWaste();
+    levelId = LoadLevelsInfo.Instance.GetLevelId();
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = isBoy ? sprites[0] : sprites[3];
-        DefineAvatarPosition(levelId);
-    }
+    spriteRenderer = GetComponent<SpriteRenderer>();
+    spriteRenderer.sprite = isBoy ? sprites[0] : sprites[3];
+    DefineAvatarPosition(levelId);
+  }
 
     public void Update()
     {
@@ -47,17 +47,17 @@ public class Avatar : MonoBehaviour
             return;            
         }
 
-        int percentage = 100 * collected / totalWaste;
+    int percentage = 100 * collected / totalWaste;
 
-        if (percentage >= 100)
-        {
-            spriteRenderer.sprite = isBoy ? sprites[2] : sprites[5];
-        }
-        else if (percentage >= 60)
-        {
-            spriteRenderer.sprite = isBoy ? sprites[1] : sprites[4];
-        }
+    if (percentage >= 100)
+    {
+      spriteRenderer.sprite = isBoy ? sprites[2] : sprites[5];
     }
+    else if (percentage >= 60)
+    {
+      spriteRenderer.sprite = isBoy ? sprites[1] : sprites[4];
+    }
+  }
 
     void DefineAvatarPosition(int levelId)
     {
