@@ -1,4 +1,4 @@
 public interface ILevelPersistence
 {
-    void LoadData(LevelData levelData);
+  void LoadData(LevelData levelData);
 }
