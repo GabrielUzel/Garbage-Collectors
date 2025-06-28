@@ -12,7 +12,7 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
   private int totalErrors = 0;
   private readonly HashSet<int> levelsAlreadyUpdated = new HashSet<int>();
 
-  void Awake()
+  public void Awake()
   {
     if (Instance == null)
     {
@@ -24,7 +24,7 @@ public class GameProgressSaver : MonoBehaviour, IDataPersistence
     }
   }
 
-  void Start()
+  public void Start()
   {
     PlayerCurrentLevel = gameData.PlayerCurrentLevel;
     LevelInfosPhase = gameData.LevelInfosPhase;

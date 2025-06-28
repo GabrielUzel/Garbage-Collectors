@@ -1,10 +1,11 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Reflection;
 
 public class GameProgessSaverTests
 {
-  private GameObject testObject;
+  private GameObject saverObject;
   private GameProgressSaver saver;
   private GameData gameData;
   private LevelInfoInPhases levelInfo;
@@ -12,8 +13,8 @@ public class GameProgessSaverTests
   [SetUp]
   public void Setup()
   {
-    testObject = new GameObject();
-    saver = testObject.AddComponent<GameProgressSaver>();
+    saverObject = new GameObject();
+    saver = saverObject.AddComponent<GameProgressSaver>();
 
     levelInfo = new LevelInfoInPhases
     {
@@ -30,17 +31,27 @@ public class GameProgessSaverTests
       TotalErrors = 2
     };
 
-    var mockLoader = new GameObject().AddComponent<LoadLevelsInfo>();
-    LoadLevelsInfo.Instance = mockLoader;
+    var loadLevelsInfoObject = new GameObject();
+    var loadLevelsInfo = loadLevelsInfoObject.AddComponent<LoadLevelsInfo>();
+
+    loadLevelsInfo.LevelData = new LevelData
+    {
+      totalLevels = 5
+    };
+    typeof(LoadLevelsInfo)
+      .GetField("totalLevels", BindingFlags.NonPublic | BindingFlags.Instance)
+      .SetValue(loadLevelsInfo, 5);
+
+    LoadLevelsInfo.Instance = loadLevelsInfo;
 
     saver.LoadData(gameData);
-    saver.Invoke("Start", 0);
+    saver.Start();
   }
 
   [TearDown]
   public void Teardown()
   {
-    Object.DestroyImmediate(testObject);
+    Object.DestroyImmediate(saverObject);
   }
 
   [Test]

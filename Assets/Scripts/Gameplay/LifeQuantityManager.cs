@@ -3,19 +3,19 @@ using UnityEngine.UI;
 
 public class LifeQuantityManager : MonoBehaviour
 {
-    private int quantityLifes;
-    private int initialQuantitiyLifes;
-    private AudioSource audioSrc;
-    public static LifeQuantityManager Instance;
-    public Image lifes;
-    public AudioClip sound;
+  private int quantityLifes;
+  private int initialQuantitiyLifes;
+  private AudioSource audioSrc;
+  public static LifeQuantityManager Instance;
+  public Image lifes;
+  public AudioClip sound;
 
 
-    [Header("Sprites - 10 vidas")]
-    public Sprite[] lifeSpritesTen;
+  [Header("Sprites - 10 vidas")]
+  public Sprite[] lifeSpritesTen;
 
-    [Header("Sprites - 6 vidas")]
-    public Sprite[] lifeSpritesSix;
+  [Header("Sprites - 6 vidas")]
+  public Sprite[] lifeSpritesSix;
 
   void Awake()
   {
@@ -55,7 +55,7 @@ public class LifeQuantityManager : MonoBehaviour
 
     if (quantityLifes == 0)
     {
-        LoseGame();
+      LoseGame();
     }
   }
 
@@ -76,8 +76,8 @@ public class LifeQuantityManager : MonoBehaviour
     }
   }
 
-    public int GetErros()
-    {
-        return initialQuantitiyLifes - quantityLifes;
-    }
+  public int GetErros()
+  {
+    return initialQuantitiyLifes - quantityLifes;
+  }
 }

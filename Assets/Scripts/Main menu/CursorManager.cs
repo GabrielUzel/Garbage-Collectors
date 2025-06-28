@@ -1,46 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Main_menu
+public class CursorManager : MonoBehaviour
 {
-    using UnityEditor;
-    using UnityEngine;
+  public static CursorManager Instance;
+  public Texture2D defaultCursor;
 
-    public class CursorManager : MonoBehaviour
+  void Awake()
+  {      
+    if (Instance == null)
     {
-        public static CursorManager Instance;
-        public Texture2D defaultCursor;
-
-        void Awake()
-        {
-           
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                ApplyCursor();
-            }
-            else
-            {
-                Destroy(gameObject); 
-            }
-        }
-
-        public void ApplyCursor()
-        {
-            if (defaultCursor != null)
-            {
-                Cursor.SetCursor(defaultCursor, new Vector2(5, 5), CursorMode.Auto);
-            }
-        }
-
-        public void ResetCursor()
-        {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        }
+      Instance = this;
+      DontDestroyOnLoad(gameObject);
+      ApplyCursor();
     }
+    else
+    {
+      Destroy(gameObject); 
+    }
+  }
 
+  public void ApplyCursor()
+  {
+    if (defaultCursor != null)
+    {
+      Cursor.SetCursor(defaultCursor, new Vector2(5, 5), CursorMode.Auto);
+    }
+  }
+
+  public void ResetCursor()
+  {
+    Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+  }
 }

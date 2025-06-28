@@ -1,5 +1,5 @@
+using System;
 using NUnit.Framework;
-using System.Security.Cryptography;
 
 public class EncryptionTests
 {
@@ -31,7 +31,7 @@ public class EncryptionTests
     string encrypted = Encryption.Encrypt(plainText);
     string corrupted = encrypted[..(encrypted.Length / 2)];
 
-    Assert.Throws<CryptographicException>(() =>
+    Assert.Throws<ArgumentException>(() =>
     {
       Encryption.Decrypt(corrupted);
     });

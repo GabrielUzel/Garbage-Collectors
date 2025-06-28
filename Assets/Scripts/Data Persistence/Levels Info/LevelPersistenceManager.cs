@@ -6,7 +6,7 @@ using System.Linq;
 public class LevelPersistenceManager : MonoBehaviour
 {
   [Header("Level Storage Configuration")]
-  private string fileName = "levels_data.json";
+  private string fileName = "levels_data.enc";
 
   private LevelData levelData;
   private List<ILevelPersistence> levelPersistenceObjects;

@@ -15,7 +15,7 @@ public class LevelDataHandler
 
   public LevelData Load()
   {
-    string fullPath = Path.Combine(Application.streamingAssetsPath, "levels_data.enc");
+    string fullPath = Path.Combine(dataDirPath, dataFileName);
     LevelData loadedData = null;
 
     if (File.Exists(fullPath))

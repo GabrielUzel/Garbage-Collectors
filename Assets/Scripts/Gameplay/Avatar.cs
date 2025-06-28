@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Avatar : MonoBehaviour
 {
-    public static Avatar Instance;
-    private int totalWaste;
-    private int collectedWaste;
-    private int levelId;
+  public static Avatar Instance;
+  private int totalWaste;
+  private int collectedWaste;
+  private int levelId;
 
   public Sprite[] sprites;
   private string selectedAvatar = "";
@@ -16,12 +16,12 @@ public class Avatar : MonoBehaviour
   public GameObject avatar;
   private Dictionary<int, Vector3> levelPositions = new Dictionary<int, Vector3>();
 
-    public void Awake()
-    {
-        Instance = this;
-        selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
-        isBoy = selectedAvatar == "boy";
-    }
+  public void Awake()
+  {
+    Instance = this;
+    selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
+    isBoy = selectedAvatar == "boy";
+  }
 
   public void Start()
   {
@@ -33,19 +33,18 @@ public class Avatar : MonoBehaviour
     DefineAvatarPosition(levelId);
   }
 
-    public void Update()
+  public void Update()
+  {
+    collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
+    UpdateSprite(collectedWaste, isBoy, spriteRenderer);
+  }
+
+  public void UpdateSprite(int collected, bool isBoy, SpriteRenderer spriteRenderer)
+  {
+    if (totalWaste <= 0)
     {
-        collectedWaste = TrashCountManager.Instance.CorrectTrashCount;
-        UpdateSprite(collectedWaste, isBoy, spriteRenderer);
+      return;            
     }
-
-   public void UpdateSprite(int collected, bool isBoy, SpriteRenderer spriteRenderer)
-    {
-
-        if (totalWaste <= 0)
-        {
-            return;            
-        }
 
     int percentage = 100 * collected / totalWaste;
 
@@ -59,21 +58,15 @@ public class Avatar : MonoBehaviour
     }
   }
 
-    void DefineAvatarPosition(int levelId)
-    {
+  void DefineAvatarPosition(int levelId)
+  {
+    levelPositions[1] = new Vector3(124f, -22.3f, 0);
+    levelPositions[2] = new Vector3(-86f, -29.3f, 0);
+    levelPositions[3] = new Vector3(69.5f, 0.1f, 0);
+    levelPositions[4] = new Vector3(-115.1f, -45.9f, 0);
+    levelPositions[5] = new Vector3(-123.6f, -43.7f, 0);
 
-        levelPositions[1] = new Vector3(124f, -22.3f, 0);
-
-        levelPositions[2] = new Vector3(-86f, -29.3f, 0);
-
-        levelPositions[3] = new Vector3(69.5f, 0.1f, 0);
-
-        levelPositions[4] = new Vector3(-115.1f, -45.9f, 0);
-
-        levelPositions[5] = new Vector3(-123.6f, -43.7f, 0);
-
-        Vector3 position = levelPositions[levelId];
-        avatar.transform.position = position;
-
-    }
+    Vector3 position = levelPositions[levelId];
+    avatar.transform.position = position;
+  }
 }

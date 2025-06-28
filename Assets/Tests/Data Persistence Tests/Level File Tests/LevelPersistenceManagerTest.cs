@@ -21,7 +21,8 @@ public class LevelPersistenceManagerTests
 
     var mockLevelData = new LevelData {levelsInitialInfo = new List<LevelInfo> { new LevelInfo { levelId = 1, trashCount = 15, timeInSeconds = 120 }}};
     string json = JsonUtility.ToJson(mockLevelData);
-    File.WriteAllText(Path.Combine(_testDirectory, _testFileName), json);
+    string encryptedJson = Encryption.Encrypt(json);
+    File.WriteAllText(Path.Combine(_testDirectory, _testFileName), encryptedJson);
 
     _managerObject = new GameObject("LevelPersistenceManager");
     _manager = _managerObject.AddComponent<LevelPersistenceManager>();

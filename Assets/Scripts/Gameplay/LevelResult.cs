@@ -44,13 +44,13 @@ public class LevelResult : MonoBehaviour
 
     PanelPopUp.SetActive(false);
 
-        TrashOk.SetActive(false);
-        TrashNotOk.SetActive(false);
-        TimeOk.SetActive(false);
-        TimeNotOk.SetActive(false);
+    TrashOk.SetActive(false);
+    TrashNotOk.SetActive(false);
+    TimeOk.SetActive(false);
+    TimeNotOk.SetActive(false);
 
-        NextLevel.GetComponent<Button>().onClick.AddListener(OnNextLevelClicked);
-    }
+    NextLevel.GetComponent<Button>().onClick.AddListener(OnNextLevelClicked);
+  }
 
   public void ShowPopUp(string reason)
   {
@@ -69,31 +69,28 @@ public class LevelResult : MonoBehaviour
     int minutesObjective = timeInSeconds / 60;
     int secondsObjective = timeInSeconds % 60;
 
-        Level.text = $"{levelId}";
-        ScoreText.text = $"PONTUAÇÃO: {score}";
-        TrashText.text = $"{correctWastes}/{trashes}";
-        TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
+    Level.text = $"{levelId}";
+    ScoreText.text = $"PONTUAÇÃO: {score}";
+    TrashText.text = $"{correctWastes}/{trashes}";
+    TimeText.text = $"{minutesWasted}:{secondsWasted:00}/{minutesObjective}:{secondsObjective:00}";
 
-        int errors = LifeQuantityManager.Instance.GetErros(); 
+    int errors = LifeQuantityManager.Instance.GetErros(); 
 
-        UpdateUI(reason);
-        GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, correctWastes, errors, userWon);
+    UpdateUI(reason);
+    GameProgressSaver.Instance.UpdateSaveFile(levelId, GameSessionData.LastPlayedLevel, timeWasted, score, correctWastes, errors, userWon);
+  }
 
-
-       
-    }
-
-    private void OnNextLevelClicked()
-{
+  private void OnNextLevelClicked()
+  {
     if (levelId == 5 && userWon)
     {
-        SceneManager.LoadScene("End_Game_Scene");
+      SceneManager.LoadScene("End_Game_Scene");
     }
     else
     {
-        SceneManager.LoadScene("Levels_Menu_Scene");
+      SceneManager.LoadScene("Levels_Menu_Scene");
     }
-}
+  }
 
 
   private void UpdateUI(string reason)

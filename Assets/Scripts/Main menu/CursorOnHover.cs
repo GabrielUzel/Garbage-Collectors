@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Assets.Scripts.Levels_menu
+public class CursorOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+  private static Texture2D handCursor;
+  private static Texture2D mouseCursor;
 
-    public class CursorOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+  void Start()
+  {
+    if (handCursor == null)
     {
-        private static Texture2D handCursor;
-        private static Texture2D mouseCursor;
-
-        void Start()
-        {
-          
-            if (handCursor == null)
-            {
-                handCursor = Resources.Load<Texture2D>("cursor_hand");
-            }
-            if(mouseCursor == null)
-            {
-                mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
-            }
-        }
-
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            if (handCursor != null && gameObject.activeInHierarchy)
-            {
-                Cursor.SetCursor(handCursor, new Vector2(16, 4), CursorMode.Auto);
-            }
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto); 
-        }
+      handCursor = Resources.Load<Texture2D>("cursor_hand");
     }
+    if(mouseCursor == null)
+    {
+      mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+    }
+  }
 
+  public void OnPointerEnter(PointerEventData eventData)
+  {
+    if (handCursor != null && gameObject.activeInHierarchy)
+    {
+      Cursor.SetCursor(handCursor, new Vector2(16, 4), CursorMode.Auto);
+    }
+  }
+
+  public void OnPointerExit(PointerEventData eventData)
+  {
+    Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto); 
+  }
 }

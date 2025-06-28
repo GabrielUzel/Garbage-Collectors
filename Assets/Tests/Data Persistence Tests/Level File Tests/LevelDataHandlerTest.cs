@@ -30,7 +30,9 @@ public class LevelDataHandlerTests
     LevelData testData = new LevelData {levelsInitialInfo = new List<LevelInfo> {new LevelInfo { levelId = 1, trashCount = 15, timeInSeconds = 120 }}}; 
 
     string fullPath = Path.Combine(_testDirectory, _testFileName);
-    File.WriteAllText(fullPath, JsonUtility.ToJson(testData));
+    string json = JsonUtility.ToJson(testData);
+    string encrypted = Encryption.Encrypt(json);
+    File.WriteAllText(fullPath, encrypted);
 
     LevelData loadedData = _levelDataHandler.Load();
 
@@ -46,7 +48,9 @@ public class LevelDataHandlerTests
     LevelData testData = new LevelData {levelsInitialInfo = new List<LevelInfo> {new LevelInfo { levelId = 2, trashCount = 25, timeInSeconds = 170 }}}; 
 
     string fullPath = Path.Combine(_testDirectory, _testFileName);
-    File.WriteAllText(fullPath, JsonUtility.ToJson(testData));
+    string json = JsonUtility.ToJson(testData);
+    string encrypted = Encryption.Encrypt(json);
+    File.WriteAllText(fullPath, encrypted);
 
     LevelData loadedData = _levelDataHandler.Load();
 
