@@ -94,8 +94,8 @@ public class Spawner : MonoBehaviour
             default:
                 spawnArea1.sizeDelta = new Vector2(270.097f, 24.8308f);  // largura x altura
                 spawnArea1.anchoredPosition = new Vector2(-0.0515f, -62.9618f);  // posição relativa ao pai
-                spawnArea2.sizeDelta = new Vector2(54.4689f, 11.5151f);  // largura x altura
-                spawnArea2.anchoredPosition = new Vector2(56.6356f, -27.1f);  // posição relativa ao pai
+                spawnArea2.sizeDelta = new Vector2(57.8787f, -16.6258f);  // largura x altura
+                spawnArea2.anchoredPosition = new Vector2(84.28558f, -18f);  // posição relativa ao pai
                 break;
 
         }

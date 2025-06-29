@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      paper-towel_0: -3075876550258569330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
