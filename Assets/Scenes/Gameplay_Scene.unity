@@ -2859,7 +2859,6 @@ MonoBehaviour:
   - {fileID: 2401834701937866557, guid: 5a1978c5a8bf0b94d919b788926620d5, type: 3}
   - {fileID: 2401834701937866557, guid: c3d91e75b34297f48a9aab24f1090f6b, type: 3}
   - {fileID: 2401834701937866557, guid: 4b70f7754c2e34545a338a74220d050a, type: 3}
-  - {fileID: 0}
   spawnArea1: {fileID: 1774101852}
   spawnArea2: {fileID: 2005665192}
   spawnAreas: []
