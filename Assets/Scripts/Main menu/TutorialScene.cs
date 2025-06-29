@@ -10,7 +10,7 @@ public class TutorialScener : MonoBehaviour
   public void PlayTutorial()
   {
     PlayerPrefs.DeleteKey("PlayingLevel1AfterTutorial");
-    SceneManager.LoadScene("Tutorial_Scene");
+    SceneLoader.LoadScene("Tutorial_Scene");
 
     Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
       

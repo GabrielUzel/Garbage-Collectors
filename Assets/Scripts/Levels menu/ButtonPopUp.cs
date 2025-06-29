@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class ButtonPopUp : MonoBehaviour
 {
@@ -15,11 +14,11 @@ public class ButtonPopUp : MonoBehaviour
         PlayerPrefs.SetInt("TutorialShown_Level1", 1);
         PlayerPrefs.SetInt("PlayingLevel1AfterTutorial", 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Tutorial_Scene");
+        SceneLoader.LoadScene("Tutorial_Scene");
         return;
       }
     }
 
-    SceneManager.LoadScene("Gameplay_Scene");
+    SceneLoader.LoadScene("Gameplay_Scene");
   }
 }

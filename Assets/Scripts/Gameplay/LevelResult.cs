@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class LevelResult : MonoBehaviour
 {
@@ -84,11 +83,11 @@ public class LevelResult : MonoBehaviour
   {
     if (levelId == 5 && userWon)
     {
-      SceneManager.LoadScene("End_Game_Scene");
+      SceneLoader.LoadScene("End_Game_Scene");
     }
     else
     {
-      SceneManager.LoadScene("Levels_Menu_Scene");
+      SceneLoader.LoadScene("Levels_Menu_Scene");
     }
   }
 

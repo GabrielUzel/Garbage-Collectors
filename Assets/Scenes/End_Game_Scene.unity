@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 556863867}
   - component: {fileID: 556863866}
   - component: {fileID: 556863865}
-  - component: {fileID: 556863868}
+  - component: {fileID: 556863870}
   - component: {fileID: 556863869}
   m_Layer: 5
   m_Name: HomeButton
@@ -1018,16 +1018,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556863868}
-        m_TargetAssemblyTypeName: BackToMenuButton, Scripts
-        m_MethodName: OnBackToMainMenu
-        m_Mode: 1
+      - m_Target: {fileID: 556863870}
+        m_TargetAssemblyTypeName: SceneLoader, Scripts
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Main_Menu_Scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &556863866
@@ -1068,18 +1068,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556863863}
   m_CullTransparentMesh: 1
---- !u!114 &556863868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556863863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b33c76ae3d2aac3bef26b2b28063db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &556863869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1078,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fce68a975f84804081f1a8cbd3c1873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &556863870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556863863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec32ddf11869dee4599c641244a6f4fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &624631943

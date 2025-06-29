@@ -6,11 +6,11 @@ public class ButtonsPopUp : MonoBehaviour
   public void LoadLevelsMenuScene()
   {
     MusicController.Instance.IncreaseMusicVolume();
-    SceneManager.LoadScene("Levels_Menu_Scene");
+    SceneLoader.LoadScene("Levels_Menu_Scene");
   }
 
   public void RetryCurrentLevel()
   {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    SceneLoader.LoadScene(SceneManager.GetActiveScene().name);
   }
 }
