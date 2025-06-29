@@ -3,8 +3,8 @@ guid: ffc635a339c307b4ab9ab6e71917192b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6835413683464778208
-    second: papel-toalhaA-removebg-preview_0
+      213: -3075876550258569330
+    second: paper-towel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: papel-toalhaA-removebg-preview_0
+      name: paper-towel_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 22
-        width: 385
-        height: 364
+        x: 3
+        y: 33
+        width: 379
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02ecc30787bb321a0800000000000000
-      internalID: -6835413683464778208
+      spriteID: e8f42e0039a4055d0800000000000000
+      internalID: -3075876550258569330
       vertices: []
       indices: 
       edges: []
@@ -134,13 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      papel-toalhaA-removebg-preview_0: -6835413683464778208
-    nameFileIdTable:
-      broken_lightbulb_0: -5391771832881788286
-      broken_lightbulb_1: -4876964027844869702
-      broken_lightbulb_2: -640296775741253344
-      broken_lightbulb_3: -7952732546653775659
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
