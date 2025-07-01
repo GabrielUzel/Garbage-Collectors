@@ -5,65 +5,65 @@ using System.Linq;
 
 public class LevelPersistenceManager : MonoBehaviour
 {
-    [Header("Level Storage Configuration")]
-    private string fileName = "levels_data.json";
+  [Header("Level Storage Configuration")]
+  private string fileName = "levels_data.enc";
 
-    private LevelData levelData;
-    private List<ILevelPersistence> levelPersistenceObjects;
-    private LevelDataHandler levelDataHandler;
-    public static LevelPersistenceManager Instance { get; private set; }
+  private LevelData levelData;
+  private List<ILevelPersistence> levelPersistenceObjects;
+  private LevelDataHandler levelDataHandler;
+  public static LevelPersistenceManager Instance { get; private set; }
 
-    private void Awake()
+  private void Awake()
+  {
+    if (Instance != null)
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-        DontDestroyOnLoad(this.gameObject);
-        levelDataHandler = new LevelDataHandler(Application.streamingAssetsPath, fileName);
+      Destroy(gameObject);
+      return;
     }
 
-    public void OnEnable()
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+    levelDataHandler = new LevelDataHandler(Application.streamingAssetsPath, fileName);
+  }
+
+  public void OnEnable()
+  {
+    SceneManager.sceneLoaded += OnSceneLoaded;
+    SceneManager.sceneUnloaded += OnSceneUnloaded;
+  }
+
+  public void OnDisable()
+  {
+    SceneManager.sceneLoaded -= OnSceneLoaded;
+    SceneManager.sceneUnloaded -= OnSceneUnloaded;
+  }
+
+  public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+  {
+    levelPersistenceObjects = FindAllLevelPersistenceObjects();
+    LoadLevelsData();
+  }
+
+  public void OnSceneUnloaded(Scene scene)
+  {
+    // Empty implementation
+  }
+
+  public void LoadLevelsData()
+  {
+    levelData = levelDataHandler.Load();
+
+    foreach (ILevelPersistence levelPersistenceObject in levelPersistenceObjects)
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+      levelPersistenceObject.LoadData(levelData);
     }
+  }
 
-    public void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
+  private List<ILevelPersistence> FindAllLevelPersistenceObjects()
+  {
+    IEnumerable<ILevelPersistence> levelPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+      .OfType<ILevelPersistence>();
 
-    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        levelPersistenceObjects = FindAllLevelPersistenceObjects();
-        LoadLevelsData();
-    }
-
-    public void OnSceneUnloaded(Scene scene)
-    {
-        // Empty implementation
-    }
-
-    public void LoadLevelsData()
-    {
-        levelData = levelDataHandler.Load();
-
-        foreach (ILevelPersistence levelPersistenceObject in levelPersistenceObjects)
-        {
-            levelPersistenceObject.LoadData(levelData);
-        }
-    }
-
-    private List<ILevelPersistence> FindAllLevelPersistenceObjects()
-    {
-        IEnumerable<ILevelPersistence> levelPersistenceObjects = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
-            .OfType<ILevelPersistence>();
-
-        return new List<ILevelPersistence>(levelPersistenceObjects);
-    }
+    return new List<ILevelPersistence>(levelPersistenceObjects);
+  }
 }

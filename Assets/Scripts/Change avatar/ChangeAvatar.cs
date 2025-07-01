@@ -3,106 +3,116 @@ using UnityEngine.UI;
 
 public class ChangeAvatar : MonoBehaviour
 {
-    public Image girlWaving;
-    public Image boyWaving;
-    public Image selectBoyImage;
-    public Image selectGirlImage;
+  public Image girlWaving;
+  public Image boyWaving;
+  public Image selectBoyImage;
+  public Image selectGirlImage;
 
-    public GameObject selectBoyBtn;
-    public GameObject selectedBoyBtn;
-    public GameObject selectGirlBtn;
-    public GameObject selectedGirlBtn;
+  public GameObject selectBoyBtn;
+  public GameObject selectedBoyBtn;
+  public GameObject selectGirlBtn;
+  public GameObject selectedGirlBtn;
 
-    private float fadedOpacity = 0.8f;
-    private float fullOpacity = 1f;
+  private float fadedOpacity = 0.8f;
+  private float fullOpacity = 1f;
 
-    private string selectedAvatar = "";
+  private string selectedAvatar = "";
 
-    public void Start()
+  public void Start()
+  {
+    selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
+
+    if (selectedAvatar == "boy")
     {
-        // Pegamos o avatar salvo, se existir
-        selectedAvatar = PlayerPrefs.GetString("selected_avatar", "");
-
-        if (selectedAvatar == "boy")
-        {
-            ApplySelectBoy();
-        }
-        else if (selectedAvatar == "girl")
-        {
-            ApplySelectGirl();
-        }
-        else
-        {
-            // Nenhum avatar selecionado: mostrar estado neutro
-            SetImageOpacity(boyWaving, fullOpacity);
-            SetImageOpacity(girlWaving, fullOpacity);
-
-            selectedBoyBtn.SetActive(false);
-            selectBoyBtn.SetActive(true);
-
-            selectedGirlBtn.SetActive(false);
-            selectGirlBtn.SetActive(true);
-
-            SetImageOpacity(selectBoyImage, fullOpacity);
-            SetImageOpacity(selectGirlImage, fullOpacity);
-        }
+      ApplySelectBoy();
     }
-
-    public void SelectGirl()
+    else if (selectedAvatar == "girl")
     {
-        selectedAvatar = "girl";
-        PlayerPrefs.SetString("selected_avatar", selectedAvatar);
-        PlayerPrefs.Save();
-
-        ApplySelectGirl();
+      ApplySelectGirl();
     }
-
-    public void SelectBoy()
+    else
     {
-        selectedAvatar = "boy";
-        PlayerPrefs.SetString("selected_avatar", selectedAvatar);
-        PlayerPrefs.Save();
+      SetImageOpacity(boyWaving, fullOpacity);
+      SetImageOpacity(girlWaving, fullOpacity);
 
-        ApplySelectBoy();
+      selectedBoyBtn.SetActive(false);
+      selectBoyBtn.SetActive(true);
+
+      selectedGirlBtn.SetActive(false);
+      selectGirlBtn.SetActive(true);
+
+      SetImageOpacity(selectBoyImage, fullOpacity);
+      SetImageOpacity(selectGirlImage, fullOpacity);
     }
+  }
 
-    private void ApplySelectGirl()
+  public void SelectGirl()
+  {
+    selectedAvatar = "girl";
+    PlayerPrefs.SetString("selected_avatar", selectedAvatar);
+    PlayerPrefs.Save();
+
+    ApplySelectGirl();
+
+    Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+    if (mouseCursor != null)
     {
-        SetImageOpacity(selectBoyImage, fadedOpacity);
-        SetImageOpacity(selectGirlImage, fullOpacity);
-
-        SetImageOpacity(boyWaving, fadedOpacity);
-        SetImageOpacity(girlWaving, fullOpacity);
-
-        selectedBoyBtn.SetActive(false);
-        selectBoyBtn.SetActive(true);
-
-        selectedGirlBtn.SetActive(true);
-        selectGirlBtn.SetActive(false);
+      Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
     }
+  }
 
-    private void ApplySelectBoy()
+  public void SelectBoy()
+  {
+    selectedAvatar = "boy";
+    PlayerPrefs.SetString("selected_avatar", selectedAvatar);
+    PlayerPrefs.Save();
+
+    ApplySelectBoy();
+
+    Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+    if (mouseCursor != null)
     {
-        SetImageOpacity(selectBoyImage, fullOpacity);
-        SetImageOpacity(selectGirlImage, fadedOpacity);
-
-        SetImageOpacity(boyWaving, fullOpacity);
-        SetImageOpacity(girlWaving, fadedOpacity);
-
-        selectedBoyBtn.SetActive(true);
-        selectBoyBtn.SetActive(false);
-
-        selectedGirlBtn.SetActive(false);
-        selectGirlBtn.SetActive(true);
+      Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
     }
+  }
 
-    void SetImageOpacity(Image img, float alpha)
+  private void ApplySelectGirl()
+  {
+    SetImageOpacity(selectBoyImage, fadedOpacity);
+    SetImageOpacity(selectGirlImage, fullOpacity);
+
+    SetImageOpacity(boyWaving, fadedOpacity);
+    SetImageOpacity(girlWaving, fullOpacity);
+
+    selectedBoyBtn.SetActive(false);
+    selectBoyBtn.SetActive(true);
+
+    selectedGirlBtn.SetActive(true);
+    selectGirlBtn.SetActive(false);
+  }
+
+  private void ApplySelectBoy()
+  {
+    SetImageOpacity(selectBoyImage, fullOpacity);
+    SetImageOpacity(selectGirlImage, fadedOpacity);
+
+    SetImageOpacity(boyWaving, fullOpacity);
+    SetImageOpacity(girlWaving, fadedOpacity);
+
+    selectedBoyBtn.SetActive(true);
+    selectBoyBtn.SetActive(false);
+
+    selectedGirlBtn.SetActive(false);
+    selectGirlBtn.SetActive(true);
+  }
+
+  void SetImageOpacity(Image img, float alpha)
+  {
+    if (img != null)
     {
-        if (img != null)
-        {
-            Color color = img.color;
-            color.a = alpha;
-            img.color = color;
-        }
+      Color color = img.color;
+      color.a = alpha;
+      img.color = color;
     }
+  }
 }

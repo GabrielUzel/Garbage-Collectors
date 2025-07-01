@@ -5,135 +5,135 @@ using UnityEngine.UI;
 [TestFixture]
 public class ButtonControllerTests
 {
-    private ButtonController buttonController;
+  private ButtonController buttonController;
 
-    [SetUp]
-    public void Setup()
-    {
-        GameObject buttonControllerObject = new GameObject();
-        buttonController = buttonControllerObject.AddComponent<ButtonController>();
+  [SetUp]
+  public void Setup()
+  {
+    GameObject buttonControllerObject = new GameObject();
+    buttonController = buttonControllerObject.AddComponent<ButtonController>();
 
-        buttonController.LevelOne = CreateButtonWithImage();
-        buttonController.LevelTwo = CreateButtonWithImage();
-        buttonController.LevelThree = CreateButtonWithImage();
-        buttonController.LevelFour = CreateButtonWithImage();
-        buttonController.LevelFive = CreateButtonWithImage();
+    buttonController.LevelOne = CreateButtonWithImage();
+    buttonController.LevelTwo = CreateButtonWithImage();
+    buttonController.LevelThree = CreateButtonWithImage();
+    buttonController.LevelFour = CreateButtonWithImage();
+    buttonController.LevelFive = CreateButtonWithImage();
 
-        buttonController.ImageButtonTwo = buttonController.LevelTwo.GetComponent<Image>();
-        buttonController.ImageButtonThree = buttonController.LevelThree.GetComponent<Image>();
-        buttonController.ImageButtonFour = buttonController.LevelFour.GetComponent<Image>();
-        buttonController.ImageButtonFive = buttonController.LevelFive.GetComponent<Image>();
-    }
+    buttonController.ImageButtonTwo = buttonController.LevelTwo.GetComponent<Image>();
+    buttonController.ImageButtonThree = buttonController.LevelThree.GetComponent<Image>();
+    buttonController.ImageButtonFour = buttonController.LevelFour.GetComponent<Image>();
+    buttonController.ImageButtonFive = buttonController.LevelFive.GetComponent<Image>();
+  }
 
-    private Button CreateButtonWithImage()
-    {
-        GameObject buttonObject = new();
-        buttonObject.AddComponent<Image>();
-        
-        return buttonObject.AddComponent<Button>();
-    }
- 
-    [Test]
-    public void PlayerCurrentLevel1_Test()
-    {
-        buttonController.PlayerCurrentLevel = 1;
+  private Button CreateButtonWithImage()
+  {
+    GameObject buttonObject = new();
+    buttonObject.AddComponent<Image>();
+    
+    return buttonObject.AddComponent<Button>();
+  }
 
-        buttonController.Start();
+  [Test]
+  public void PlayerCurrentLevel1_Test()
+  {
+    buttonController.PlayerCurrentLevel = 1;
 
-        Assert.IsTrue(buttonController.LevelOne.interactable);
-        Assert.IsFalse(buttonController.LevelTwo.interactable);
-        Assert.IsFalse(buttonController.LevelThree.interactable);
-        Assert.IsFalse(buttonController.LevelFour.interactable);
-        Assert.IsFalse(buttonController.LevelFive.interactable);
+    buttonController.Start();
 
-        Assert.AreEqual(1f, buttonController.ImageButtonTwo.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonThree.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);
-    }
+    Assert.IsTrue(buttonController.LevelOne.interactable);
+    Assert.IsFalse(buttonController.LevelTwo.interactable);
+    Assert.IsFalse(buttonController.LevelThree.interactable);
+    Assert.IsFalse(buttonController.LevelFour.interactable);
+    Assert.IsFalse(buttonController.LevelFive.interactable);
 
-    [Test]
-    public void PlayerCurrentLevel2_Test()
-    {
-        buttonController.PlayerCurrentLevel = 2;
+    Assert.AreEqual(1f, buttonController.ImageButtonTwo.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonThree.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);
+  }
 
-        buttonController.Start();
+  [Test]
+  public void PlayerCurrentLevel2_Test()
+  {
+    buttonController.PlayerCurrentLevel = 2;
 
-        Assert.IsTrue(buttonController.LevelOne.interactable);
-        Assert.IsTrue(buttonController.LevelTwo.interactable);
-        Assert.IsFalse(buttonController.LevelThree.interactable);
-        Assert.IsFalse(buttonController.LevelFour.interactable);
-        Assert.IsFalse(buttonController.LevelFive.interactable);
+    buttonController.Start();
 
-        Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonThree.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
-    }
+    Assert.IsTrue(buttonController.LevelOne.interactable);
+    Assert.IsTrue(buttonController.LevelTwo.interactable);
+    Assert.IsFalse(buttonController.LevelThree.interactable);
+    Assert.IsFalse(buttonController.LevelFour.interactable);
+    Assert.IsFalse(buttonController.LevelFive.interactable);
 
-    [Test]
-    public void PlayerCurrentLevel3_Test()
-    {
-        buttonController.PlayerCurrentLevel = 3;
+    Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonThree.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
+  }
 
-        buttonController.Start();
+  [Test]
+  public void PlayerCurrentLevel3_Test()
+  {
+    buttonController.PlayerCurrentLevel = 3;
 
-        Assert.IsTrue(buttonController.LevelOne.interactable);
-        Assert.IsTrue(buttonController.LevelTwo.interactable);
-        Assert.IsTrue(buttonController.LevelThree.interactable);
-        Assert.IsFalse(buttonController.LevelFour.interactable);
-        Assert.IsFalse(buttonController.LevelFive.interactable);
+    buttonController.Start();
 
-        Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
-    }
+    Assert.IsTrue(buttonController.LevelOne.interactable);
+    Assert.IsTrue(buttonController.LevelTwo.interactable);
+    Assert.IsTrue(buttonController.LevelThree.interactable);
+    Assert.IsFalse(buttonController.LevelFour.interactable);
+    Assert.IsFalse(buttonController.LevelFive.interactable);
 
-    [Test]
-    public void PlayerCurrentLevel4_Test()
-    {
-        buttonController.PlayerCurrentLevel = 4;
+    Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFour.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
+  }
 
-        buttonController.Start();
+  [Test]
+  public void PlayerCurrentLevel4_Test()
+  {
+    buttonController.PlayerCurrentLevel = 4;
 
-        Assert.IsTrue(buttonController.LevelOne.interactable);
-        Assert.IsTrue(buttonController.LevelTwo.interactable);
-        Assert.IsTrue(buttonController.LevelThree.interactable);
-        Assert.IsTrue(buttonController.LevelFour.interactable);
-        Assert.IsFalse(buttonController.LevelFive.interactable);
+    buttonController.Start();
 
-        Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonFour.color.a);
-        Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
-    }
+    Assert.IsTrue(buttonController.LevelOne.interactable);
+    Assert.IsTrue(buttonController.LevelTwo.interactable);
+    Assert.IsTrue(buttonController.LevelThree.interactable);
+    Assert.IsTrue(buttonController.LevelFour.interactable);
+    Assert.IsFalse(buttonController.LevelFive.interactable);
 
-    [Test]
-    public void PlayerCurrentLevel5_Test()
-    {
-        buttonController.PlayerCurrentLevel = 5;
+    Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonFour.color.a);
+    Assert.AreEqual(1f, buttonController.ImageButtonFive.color.a);        
+  }
 
-        buttonController.Start();
+  [Test]
+  public void PlayerCurrentLevel5_Test()
+  {
+    buttonController.PlayerCurrentLevel = 5;
 
-        Assert.IsTrue(buttonController.LevelOne.interactable);
-        Assert.IsTrue(buttonController.LevelTwo.interactable);
-        Assert.IsTrue(buttonController.LevelThree.interactable);
-        Assert.IsTrue(buttonController.LevelFour.interactable);
-        Assert.IsTrue(buttonController.LevelFive.interactable);
+    buttonController.Start();
 
-        Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonFour.color.a);
-        Assert.AreEqual(0f, buttonController.ImageButtonFive.color.a);        
-    }
+    Assert.IsTrue(buttonController.LevelOne.interactable);
+    Assert.IsTrue(buttonController.LevelTwo.interactable);
+    Assert.IsTrue(buttonController.LevelThree.interactable);
+    Assert.IsTrue(buttonController.LevelFour.interactable);
+    Assert.IsTrue(buttonController.LevelFive.interactable);
 
-    [Test]
-    public void LoadData_Test()
-    {
-        GameData testData = new() { PlayerCurrentLevel = 4 };
-        buttonController.LoadData(testData);
+    Assert.AreEqual(0f, buttonController.ImageButtonTwo.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonThree.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonFour.color.a);
+    Assert.AreEqual(0f, buttonController.ImageButtonFive.color.a);        
+  }
 
-        Assert.AreEqual(4, buttonController.PlayerCurrentLevel);
-    }
+  [Test]
+  public void LoadData_Test()
+  {
+    GameData testData = new() { PlayerCurrentLevel = 4 };
+    buttonController.LoadData(testData);
+
+    Assert.AreEqual(4, buttonController.PlayerCurrentLevel);
+  }
 }

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class QuitGame : MonoBehaviour 
 {
-    public void doQuitGame() 
-    {
-        Application.Quit();
-    }
+  public void doQuitGame() 
+  {
+    Application.Quit();
+  }
 }

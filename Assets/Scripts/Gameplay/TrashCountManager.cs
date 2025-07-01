@@ -2,74 +2,76 @@
 
 public class TrashCountManager : MonoBehaviour
 {
-    public static TrashCountManager Instance;
-    public int CorrectTrashCount = 0;
-    public int IncorrectTrashCount = 0;
-    public GameData GameData;
-    private int trashes;
-    private int lifes;
-    private int totalTrashes;
+  public static TrashCountManager Instance;
+  public int CorrectTrashCount = 0;
+  public int IncorrectTrashCount = 0;
+  public GameData GameData;
+  private int trashes;
+  private int lifes;
+  private int totalTrashes;
 
-    void Awake()
+  void Awake()
+  {
+    if (Instance == null)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+      Instance = this;
     }
-
-    void Start()
+    else
     {
-        trashes = LoadLevelsInfo.Instance.GetTotalWaste();
-        lifes = LoadLevelsInfo.Instance.GetLifes();
-        totalTrashes = trashes + lifes - 1;
+      Destroy(gameObject);
     }
+  }
 
-    void Update()
+  void Start()
+  {
+    trashes = LoadLevelsInfo.Instance.GetTotalWaste();
+    lifes = LoadLevelsInfo.Instance.GetLifes();
+    totalTrashes = trashes + lifes - 1;
+    MusicController.Instance.DecreaseMusicVolume();
+  }
+
+  void Update()
+  {
+    if (CorrectTrashCount + IncorrectTrashCount == totalTrashes)
     {
-        if (CorrectTrashCount + IncorrectTrashCount == totalTrashes)
-        {
-            TimeManager.Instance.timerIsRunning = false;
-            LevelResult.Instance.ShowPopUp("Victory");
-        }
+      TimeManager.Instance.timerIsRunning = false;
+      LevelResult.Instance.ShowPopUp("Victory");
     }
+  }
 
-    public void AddCorrectTrashCount()
+  public void AddCorrectTrashCount()
+  {
+    CorrectTrashCount++;
+
+    if (VerifyIfPlayerWon())
     {
-        CorrectTrashCount++;
-
-        if (VerifyIfPlayerWon())
-        {
-            LevelResult.Instance.victory = true;
-        }
+      LevelResult.Instance.victory = true;
     }
+  }
 
-    public void AddIncorrectTrashCount()
-    {
-        IncorrectTrashCount++;
-    }
+  public void AddIncorrectTrashCount()
+  {
+    IncorrectTrashCount++;
+  }
 
     public bool VerifyIfPlayerWon()
     {
-        if (CorrectTrashCount == trashes - lifes - 1)
+        
+        if (CorrectTrashCount >= trashes)
         {
             return true;
         }
 
-        return false;
-    }
+    return false;
+  }
 
-    public void CleanAllTrashes()
+  public void CleanAllTrashes()
+  {
+    GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
+
+    foreach (GameObject waste in wastes)
     {
-        GameObject[] wastes = GameObject.FindGameObjectsWithTag("Waste");
-
-        foreach (GameObject waste in wastes)
-        {
-            Destroy(waste);
-        }
+      Destroy(waste);
     }
+  }
 }

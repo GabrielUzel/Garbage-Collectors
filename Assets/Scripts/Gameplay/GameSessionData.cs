@@ -1,4 +1,4 @@
 public static class GameSessionData
 {
-    public static int LastPlayedLevel;
+  public static int LastPlayedLevel;
 }

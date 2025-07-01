@@ -4,20 +4,19 @@ using UnityEngine.Video;
 
 public class TutorialScener : MonoBehaviour
 {
-    public VideoPlayer videoPlayer;
-    public GameObject videoPanel; 
+  public VideoPlayer videoPlayer;
+  public GameObject videoPanel;
 
-    public void PlayTutorial()
+  public void PlayTutorial()
+  {
+    PlayerPrefs.DeleteKey("PlayingLevel1AfterTutorial");
+    SceneLoader.LoadScene("Tutorial_Scene");
+
+    Texture2D mouseCursor = Resources.Load<Texture2D>("cursor_mouse");
+      
+    if (mouseCursor != null)
     {
-        videoPanel.SetActive(true);
-        videoPlayer.Play();
+      Cursor.SetCursor(mouseCursor, new Vector2(5, 5), CursorMode.Auto);
     }
-
-    public void StopTutorial()
-    {
-      //  videoPlayer.Stop();
-       // videoPanel.SetActive(false);
-            SceneManager.LoadScene("Main_Menu_Scene");
-
-    }
+  }
 }

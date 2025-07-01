@@ -7,116 +7,116 @@ using System.Collections.Generic;
 
 public class PlayLevelTests
 {
-    private GameObject playLevelObject;
-    private PlayLevel playLevel;
-    private GameObject popUpPanel;
-    private GameObject levelButtonsGroup;
-    private Button returnToHomeButton;
-    private GameObject fadedBackground;
+  private GameObject playLevelObject;
+  private PlayLevel playLevel;
+  private GameObject popUpPanel;
+  private GameObject levelButtonsGroup;
+  private Button returnToHomeButton;
+  private GameObject fadedBackground;
 
-    [SetUp]
-    public void Setup()
+  [SetUp]
+  public void Setup()
+  {
+    playLevelObject = new GameObject("PlayLevel");
+    playLevel = playLevelObject.AddComponent<PlayLevel>();
+
+    popUpPanel = new GameObject("PopUpPanel");
+    levelButtonsGroup = new GameObject("LevelButtonsGroup");
+    returnToHomeButton = new GameObject("ReturnToHomeButton").AddComponent<Button>();
+    fadedBackground = new GameObject("FadedBackground");
+
+    playLevel.PopUpPanel = popUpPanel;
+    playLevel.LevelButtonsGroup = levelButtonsGroup;
+    playLevel.ReturnToHomeButton = returnToHomeButton;
+    playLevel.FadedBackground = fadedBackground;
+
+    var mockLevelData = new LevelData
     {
-        playLevelObject = new GameObject("PlayLevel");
-        playLevel = playLevelObject.AddComponent<PlayLevel>();
+      levelsInitialInfo = new List<LevelInfo>
+      {
+        new() { levelId = 1, trashCount = 10, timeInSeconds = 100 },
+        new() { levelId = 2, trashCount = 20, timeInSeconds = 200 }
+      }
+    };
 
-        popUpPanel = new GameObject("PopUpPanel");
-        levelButtonsGroup = new GameObject("LevelButtonsGroup");
-        returnToHomeButton = new GameObject("ReturnToHomeButton").AddComponent<Button>();
-        fadedBackground = new GameObject("FadedBackground");
+    playLevel.LoadData(mockLevelData);
 
-        playLevel.PopUpPanel = popUpPanel;
-        playLevel.LevelButtonsGroup = levelButtonsGroup;
-        playLevel.ReturnToHomeButton = returnToHomeButton;
-        playLevel.FadedBackground = fadedBackground;
+    GameObject infoPanelObject = new GameObject("InfoPanel");
+    InfoPanel mockInfoPanel = infoPanelObject.AddComponent<InfoPanel>();
 
-        var mockLevelData = new LevelData
-        {
-            levelsInitialInfo = new List<LevelInfo>
-            {
-                new() { levelId = 1, trashCount = 10, timeInSeconds = 100 },
-                new() { levelId = 2, trashCount = 20, timeInSeconds = 200 }
-            }
-        };
+    mockInfoPanel.LevelText = new GameObject("LevelText").AddComponent<Text>();
+    mockInfoPanel.TrashText = new GameObject("TrashText").AddComponent<Text>();
+    mockInfoPanel.TimeText = new GameObject("TimeText").AddComponent<Text>();
 
-        playLevel.LoadData(mockLevelData);
+    InfoPanel.Instance = mockInfoPanel;
+  }
 
-        GameObject infoPanelObject = new GameObject("InfoPanel");
-        InfoPanel mockInfoPanel = infoPanelObject.AddComponent<InfoPanel>();
+  [TearDown]
+  public void Teardown()
+  {
+    Object.DestroyImmediate(playLevelObject);
+  }
 
-        mockInfoPanel.LevelText = new GameObject("LevelText").AddComponent<Text>();
-        mockInfoPanel.TrashText = new GameObject("TrashText").AddComponent<Text>();
-        mockInfoPanel.TimeText = new GameObject("TimeText").AddComponent<Text>();
+  [UnityTest]
+  public IEnumerator LoadPopUp_Test()
+  {
+    var testButton = new GameObject("LevelOne").AddComponent<Button>();
+    testButton.transform.SetParent(levelButtonsGroup.transform);
 
-        InfoPanel.Instance = mockInfoPanel;
-    }
+    playLevel.LoadPopUp(testButton);
 
-    [TearDown]
-    public void Teardown()
-    {
-        Object.DestroyImmediate(playLevelObject);
-    }
+    Assert.IsTrue(popUpPanel.activeSelf);
+    Assert.IsFalse(returnToHomeButton.interactable);
+    Assert.IsTrue(fadedBackground.activeSelf);
 
-    [UnityTest]
-    public IEnumerator LoadPopUp_Test()
-    {
-        var testButton = new GameObject("LevelOne").AddComponent<Button>();
-        testButton.transform.SetParent(levelButtonsGroup.transform);
+    yield return null;
+  }
 
-        playLevel.LoadPopUp(testButton);
+  [UnityTest]
+  public IEnumerator OnClickLevelButton_Button1_Test()
+  {
+    var testButton = new GameObject("LevelOne").AddComponent<Button>();
+    testButton.transform.SetParent(levelButtonsGroup.transform);
 
-        Assert.IsTrue(popUpPanel.activeSelf);
-        Assert.IsFalse(returnToHomeButton.interactable);
-        Assert.IsTrue(fadedBackground.activeSelf);
+    playLevel.OnClickLevelButton(testButton);
 
-        yield return null;
-    }
+    Assert.AreEqual(1, playLevel.GetLevelId());
+    Assert.AreEqual(10, playLevel.GetTrashCount());
+    Assert.AreEqual(100, playLevel.GetTimeInSeconds());
 
-    [UnityTest]
-    public IEnumerator OnClickLevelButton_Button1_Test()
-    {
-        var testButton = new GameObject("LevelOne").AddComponent<Button>();
-        testButton.transform.SetParent(levelButtonsGroup.transform);
+    yield return null;
+  }
 
-        playLevel.OnClickLevelButton(testButton);
+  [UnityTest]
+  public IEnumerator OnClickLevelButton_Button2_Test()
+  {
+    var testButton = new GameObject("LevelTwo").AddComponent<Button>();
+    testButton.transform.SetParent(levelButtonsGroup.transform);
 
-        Assert.AreEqual(1, playLevel.GetLevelId());
-        Assert.AreEqual(10, playLevel.GetTrashCount());
-        Assert.AreEqual(100, playLevel.GetTimeInSeconds());
+    playLevel.OnClickLevelButton(testButton);
 
-        yield return null;
-    }
+    Assert.AreEqual(2, playLevel.GetLevelId());
+    Assert.AreEqual(20, playLevel.GetTrashCount());
+    Assert.AreEqual(200, playLevel.GetTimeInSeconds());
 
-    [UnityTest]
-    public IEnumerator OnClickLevelButton_Button2_Test()
-    {
-        var testButton = new GameObject("LevelTwo").AddComponent<Button>();
-        testButton.transform.SetParent(levelButtonsGroup.transform);
+    yield return null;
+  }
 
-        playLevel.OnClickLevelButton(testButton);
+  [UnityTest]
+  public IEnumerator TestClosePopUp()
+  {
+    var testButton = new GameObject("LevelOne").AddComponent<Button>();
+    testButton.name = "LevelOne";
+    testButton.transform.SetParent(levelButtonsGroup.transform);
 
-        Assert.AreEqual(2, playLevel.GetLevelId());
-        Assert.AreEqual(20, playLevel.GetTrashCount());
-        Assert.AreEqual(200, playLevel.GetTimeInSeconds());
+    playLevel.LoadPopUp(testButton);
+    playLevel.ClosePopUp();
 
-        yield return null;
-    }
+    Assert.IsFalse(popUpPanel.activeSelf);
+    Assert.IsTrue(returnToHomeButton.interactable);
+    Assert.IsFalse(fadedBackground.activeSelf);
 
-    [UnityTest]
-    public IEnumerator TestClosePopUp()
-    {
-        var testButton = new GameObject("LevelOne").AddComponent<Button>();
-        testButton.name = "LevelOne";
-        testButton.transform.SetParent(levelButtonsGroup.transform);
-
-        playLevel.LoadPopUp(testButton);
-        playLevel.ClosePopUp();
-
-        Assert.IsFalse(popUpPanel.activeSelf);
-        Assert.IsTrue(returnToHomeButton.interactable);
-        Assert.IsFalse(fadedBackground.activeSelf);
-
-        yield return null;
-    }
+    yield return null;
+  }
 }
 

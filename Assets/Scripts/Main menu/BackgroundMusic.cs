@@ -1,34 +1,33 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BackgroundMusic : MonoBehaviour
 {
-    public static BackgroundMusic Instance;
-    public AudioSource musicSource;
+  public static BackgroundMusic Instance;
+  public AudioSource musicSource;
 
-    public void Awake()
+  public void Awake()
+  {
+    if (Instance == null)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-        LoadMusicState();
+      Instance = this;
+      DontDestroyOnLoad(gameObject);
+    }
+    else
+    {
+      Destroy(gameObject);
     }
 
-    public void SetMusicMute(bool mute)
-    {
-        musicSource.mute = mute;
-    }
+    bool savedState = PlayerPrefs.GetInt("MusicMuted") == 1;
+    musicSource.mute = savedState;
+  }
 
-    private void LoadMusicState()
-    {
-        bool savedState = PlayerPrefs.GetInt("MusicMuted") == 1;
-        musicSource.mute = savedState;
-    }
+  public void SetMusicMute(bool mute)
+  {
+    musicSource.mute = mute;
+  }
+
+  public void SetMusicVolume(float volume)
+  {
+    musicSource.volume = volume; 
+  }
 }
